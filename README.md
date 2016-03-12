@@ -29,8 +29,8 @@ Branching/merging rules:
     - For example, if develop needs to be merged into master, use the following: `git merge develop --no-ff -m "Merging develop into master for beta release."`
 
 
-References:
+Useful links:
 
-[The seven rules of a great git commit message](http://chris.beams.io/posts/git-commit/#seven-rules)  
-[5 Useful Tips For A Better Commit Message](https://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message)  
-[A successful Git branching model](http://nvie.com/posts/a-successful-git-branching-model)
+[Git Tutorials from Atlassian](https://www.atlassian.com/git/tutorials)  
+[Gitflow branching model](http://nvie.com/posts/a-successful-git-branching-model)  
+[5 Useful Tips For A Better Commit Message](https://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message)
