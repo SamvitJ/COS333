@@ -3,7 +3,9 @@
 
 Commit rules:
 
-1. Every logical change (i.e. everything from a bug fix to a new feature) must be isolated in its own commit, even if the commit will only be a single line or word. This makes it easy to selectively revert changes that are later discovered to be problematic, and to identify the commit in which a particular change was made.
+1. Every logical change (i.e. everything from a bug fix to a new feature) must be isolated in its own commit, even if the commit will only be a single line or word. This makes it easy to selectively revert changes that are later discovered to be problematic, and to identify the commit in which a particular change was made. 
+    
+    - New dependencies or frameworks added to the codebase should, in particular, be isolated, so that it is clear what was in the original package and what the modifications/customizations are.
 
 2. Commit messages should be capitalized and begin with a subject line of 50 characters or less that summarizes the change. The subject line should be a separated from the body with a blank line.
 
