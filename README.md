@@ -11,8 +11,10 @@ Commit rules:
 
 3. The body of a commit message, if included, should be wrapped at 72 characters.
 
+    - This can be automatically configured in an editor. For example, in vim, add the following to the ~/.vimrc file: `autocmd Filetype gitcommit setlocal spell textwidth=72`
 
-Workflow:
+
+Branching/merging rules:
 
 1. Merging decisions must ahere to a variant of the [gitflow branching model](http://nvie.com/posts/a-successful-git-branching-model), described here:
 
