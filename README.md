@@ -16,13 +16,17 @@ Commit rules:
 
 Branching/merging rules:
 
-1. Merging decisions must ahere to a variant of the [gitflow branching model](http://nvie.com/posts/a-successful-git-branching-model), described here:
+1. Workflow decisions should adhere to a variant of the [gitflow branching model](http://nvie.com/posts/a-successful-git-branching-model), described here:
 
     - A permanent master branch holds stable, in-production code, with tagged commits representing major release versions. 
 
     - A permanent develop branch holds a work-in-progress version of the product. Changes made here should be integration-tested in the staging environment before being merged into master.
 
-    - Developer (aka feature) branches (e.g. henry-dev, jdshin-dev) represent the work of individual contributors. To incorporate a commit or series of commits into the develop branch, a contributor must create a pull request. A developer branch can only merged into develop after a code review by another team member.
+    - Developer (a.k.a. feature) branches represent the work of individual contributors (e.g. henry-dev, jdshin-dev). To incorporate a commit or series of commits into the develop branch, a contributor must create a pull request. A developer branch can only merged into develop after a code review by another team member.
+
+2. Merges that constitute decisions about stability and production readiness should be made with the `--no-ff` flag, so that a commit for the merge appears in the [repo history](http://nvie.com/posts/a-successful-git-branching-model/#incorporating-a-finished-feature-on-develop).
+    
+    - For example, if develop needs to be merged into master, use the following: `git merge develop --no-ff -m "Merging develop into master for beta release."`
 
 
 References:
