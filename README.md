@@ -22,7 +22,7 @@ Branching/merging rules:
 
     - A permanent develop branch holds a work-in-progress version of the product. Changes made here should be integration-tested in the staging environment before being merged into master.
 
-    - Developer (a.k.a. feature) branches represent the work of individual contributors (e.g. henry-dev, jdshin-dev). To incorporate a commit or series of commits into the develop branch, the contributor should create a pull request; after a code review by another team member, the developer branch can be merged into develop with the `--no-ff` flag (see 2).
+    - Feature branches represent work on subcomponents of the app, and are named accordingly (e.g. landing-page, server). To incorporate a commit or series of commits into the develop branch, a contributor to the feature branch should create a pull request; after a code review by another team member, the feature branch can be merged into develop with the `--no-ff` flag (see 2).
 
 2. Merges that constitute decisions about stability and production readiness should be made with the `--no-ff` flag, so that a commit for the merge appears in the [repo history](http://nvie.com/posts/a-successful-git-branching-model/#incorporating-a-finished-feature-on-develop).
 
