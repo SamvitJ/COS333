@@ -1,21 +1,33 @@
-var express = require('express');
-var app = express();
+var express     = require('express');
+    app         = express();
+    mongoose    = require('mongoose');
+    Interviewer = require('./models/interviewers');
 
 app.locals.pretty = true;
 app.set('port', (process.env.PORT || 5000))
 
+mongoose.createConnection(process.env.MONGOLAB_URI || 'mongodb://localhost:27017/database', function (err) {
+    if (err) {
+        throw err;
+    }
+});
+
 app.get('/', function (req, res) {
-    var MongoClient = require('mongodb').MongoClient;
-    MongoClient.connect((process.env.MONGOLAB_URI || 'mongodb://localhost:27017/database'), function(err, db) {
+    mongoose.connect((process.env.MONGOLAB_URI || 'mongodb://localhost:27017/database'), function(err, db) {
         if (err) {
             throw err;
         }
-        db.collection('interviewers').find().toArray(function(err, result) {
+        Interviewer.find({}, function (err, docs) {
+            res.write('Interviewers:\n');
+            res.write(JSON.stringify(docs, null, 4));
+            res.end();
+        });
+        /* db.collection('interviewers').find().toArray(function(err, result) {
             if (err) {
                 throw err;
             }
             res.send('Interviewers:\n' + JSON.stringify(result, null, 4));
-        });
+        }); */
     });
 });
 
