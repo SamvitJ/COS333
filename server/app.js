@@ -2,6 +2,7 @@ var express     = require('express');
     app         = express();
     mongoose    = require('mongoose');
     Interviewer = require('./models/interviewers');
+    path        = require('path');
 
 app.locals.pretty = true;
 app.set('port', (process.env.PORT || 5000))
@@ -10,6 +11,14 @@ mongoose.createConnection(process.env.MONGOLAB_URI || 'mongodb://localhost:27017
     if (err) {
         throw err;
     }
+});
+
+app.get('/tokbox', function (req, res) {
+    res.sendFile(path.join(__dirname, 'views', 'tokbox_test.html'))
+});
+
+app.get('/pubnub', function (req, res) {
+    res.sendFile(path.join(__dirname, 'views', 'pubnub_test.html'))
 });
 
 app.get('/', function (req, res) {
