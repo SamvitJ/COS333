@@ -14,11 +14,11 @@ mongoose.createConnection(process.env.MONGOLAB_URI || 'mongodb://localhost:27017
 });
 
 app.get('/tokbox', function (req, res) {
-    res.sendFile(path.join(__dirname, 'views', 'tokbox_test.html'))
+    res.sendFile(path.join(__dirname, '../client/views', 'tokbox_test.html'))
 });
 
 app.get('/pubnub', function (req, res) {
-    res.sendFile(path.join(__dirname, 'views', 'pubnub_test.html'))
+    res.sendFile(path.join(__dirname, '../client/views', 'pubnub_test.html'))
 });
 
 app.get('/', function (req, res) {
