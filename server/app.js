@@ -15,12 +15,20 @@ mongoose.connect(process.env.MONGOLAB_URI || dbURI, function (err) {
 });
 
 app.get('/tokbox', function (req, res) {
-    res.sendFile(path.join(__dirname, '../client/views', 'tokbox_test.html'))
+    res.sendFile(path.join(__dirname, '../client/views/html',
+        'tokbox_test.html'))
 });
 
 app.get('/pubnub', function (req, res) {
-    res.sendFile(path.join(__dirname, '../client/views', 'pubnub_test.html'))
+    res.sendFile(path.join(__dirname, '../client/views/html',
+        'pubnub_test.html'))
 });
+
+app.get('/site', function (req, res) {
+    res.sendFile(path.join(__dirname, '../client/views/html',
+        'projectWebsite.html'))
+});
+
 
 app.get('/', function (req, res) {
     Interviewer.find({}, function (err, docs) {
