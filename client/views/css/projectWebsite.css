@@ -22,3 +22,7 @@ header {
   float: left ;
   width: 50% ;
 }
+
+.sectionTitle{
+   text-align: center;
+}

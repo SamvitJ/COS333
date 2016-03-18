@@ -29,6 +29,16 @@ app.get('/site', function (req, res) {
         'projectWebsite.html'))
 });
 
+app.get('/coachdesigndoc.pdf', function (req, res) {
+    res.sendFile(path.join(__dirname, '../client/views/resources',
+        'coachdesigndoc.pdf'))
+});
+
+app.get('/projectWebsite.css', function (req, res) {
+    res.sendFile(path.join(__dirname, '../client/views/css',
+        'projectWebsite.css'))
+});
+
 
 app.get('/', function (req, res) {
     Interviewer.find({}, function (err, docs) {
