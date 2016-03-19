@@ -3,13 +3,12 @@
     
   function HangoutDemo() {  
     console.log("Starting..."); 
-    gapi.hangout.onApiReady.add(this.onApiReady.bind(this));  // Add callback
+    gapi.hangout.onApiReady.add(this.onApiReady.bind(this));
   } 
     
   HangoutDemo.prototype.onApiReady = function (event) { 
     if (event.isApiReady === true) {  
       console.log("API Ready"); 
-      // we can start doing stuff here  
     } 
   };  
     

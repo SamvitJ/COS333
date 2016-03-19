@@ -39,14 +39,14 @@ app.get('/projectWebsite.css', function (req, res) {
         'projectWebsite.css'))
 });
 
-app.get('/basic.xml', function (req, res) {
+app.get('/demo.xml', function (req, res) {
     res.sendFile(path.join(__dirname, '../client',
-        'basic.xml'))
+        'demo.xml'))
 });
 
-app.get('/basic.js', function (req, res) {
+app.get('/demo.js', function (req, res) {
     res.sendFile(path.join(__dirname, '../client',
-        'basic.js'))
+        'demo.js'))
 });
 
 

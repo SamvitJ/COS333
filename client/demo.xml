@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+  <ModulePrefs title="hangout test">
+   <Require feature="rpc"/>
+   <Require feature="views"/>
+  </ModulePrefs>
+
+  <Content type="html">
+    <![CDATA[
+      <html>
+      <head>
+      <META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+      <script src="//plus.google.com/hangouts/_/api/v1/hangout.js"></script>
+      <script src="https://shrouded-stream-84278.herokuapp.com/demo.js"></script>
+      </head>
+
+      <body>
+        <h1>Hangouts Demo</h1> 
+        <div id="container"></div>
+      </body>
+      </html>
+    ]]>
+  </Content>
+</Module>
