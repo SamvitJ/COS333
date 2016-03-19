@@ -55,7 +55,8 @@
       <META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
       <script src="//plus.google.com/hangouts/_/api/v1/hangout.js"></script>
-      <script src="http://shrouded-stream-84278.herokuapp.com/basic.js"></script>
+      <!--<script src="http://shrouded-stream-84278.herokuapp.com/basic.js"></script>-->
+      <script src="./basic.js"></script>
       </HEAD>
 
       <body>
