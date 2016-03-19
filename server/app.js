@@ -39,6 +39,16 @@ app.get('/projectWebsite.css', function (req, res) {
         'projectWebsite.css'))
 });
 
+app.get('/basic.xml', function (req, res) {
+    res.sendFile(path.join(__dirname, '../client',
+        'basic.xml'))
+});
+
+app.get('/basic.js', function (req, res) {
+    res.sendFile(path.join(__dirname, '../client',
+        'basic.js'))
+});
+
 
 app.get('/', function (req, res) {
     Interviewer.find({}, function (err, docs) {
