@@ -54,7 +54,7 @@
       <!-- this is a minimal client of gapi.hangout, useful for testing the API -->
       <META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 
-
+      <script src="//plus.google.com/hangouts/_/api/v1/hangout.js"></script>
       <script src="demos/basic.js"></script>
       </HEAD>
 
