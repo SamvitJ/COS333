@@ -63,6 +63,18 @@ app.get('/', function (req, res) {
     });
 });
 
+
+app.use(function (req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', 'http://shrouded-stream-84278.herokuapp.com');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+    res.setHeadeR('Access-Control-Allow-Credentials', true);
+    next();
+});
+
+
+
+
 app.listen(app.get('port'), function () {
     console.log('Node app running at localhost:' + app.get('port'));
 });
