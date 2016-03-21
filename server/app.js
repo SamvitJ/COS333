@@ -14,6 +14,15 @@ mongoose.connect(process.env.MONGOLAB_URI || dbURI, function (err) {
     }
 });
 
+
+app.use(function (req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', 'http://shrouded-stream-84278.herokuapp.com');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+    res.setHeadeR('Access-Control-Allow-Credentials', true);
+    next();
+});
+
 app.get('/tokbox', function (req, res) {
     res.sendFile(path.join(__dirname, '../client/views/html',
         'tokbox_test.html'))
@@ -39,7 +48,7 @@ app.get('/projectWebsite.css', function (req, res) {
         'projectWebsite.css'))
 });
 
-app.get('/index.html', function (req, res) {
+app.get('/index.html', function (req, res, next) {
     res.sendFile(path.join(__dirname, '../client/views/html',
         'index.html'))
 });
@@ -62,15 +71,6 @@ app.get('/', function (req, res) {
         res.end();
     });
 });
-
-app.use(function (req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', 'http://shrouded-stream-84278.herokuapp.com');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
-    res.setHeadeR('Access-Control-Allow-Credentials', true);
-    next();
-});
-
 
 
 app.listen(app.get('port'), function () {
