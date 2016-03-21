@@ -39,6 +39,11 @@ app.get('/projectWebsite.css', function (req, res) {
         'projectWebsite.css'))
 });
 
+app.get('/index.html', function (req, res) {
+    res.sendFile(path.join(__dirname, '../client/views/html',
+        'index.html'))
+});
+
 app.get('/demo.xml', function (req, res) {
     res.sendFile(path.join(__dirname, '../client',
         'demo.xml'))
