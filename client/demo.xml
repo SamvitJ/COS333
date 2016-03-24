@@ -11,7 +11,7 @@
       <head>
         <META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
         <script src="//plus.google.com/hangouts/_/api/v1/hangout.js"></script>
-        <script src="https://shrouded-stream-84278.herokuapp.com/demo.js"></script>
+        <script src="https://shrouded-stream-84278.herokuapp.com/static/demo.js"></script>
         <!-- Firebase -->
         <script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
 
