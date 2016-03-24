@@ -14,11 +14,13 @@ mongoose.connect(process.env.MONGOLAB_URI || dbURI, function (err) {
     }
 });
 
-
-app.use('/static', express.static(path.join(__dirname, '../client'));
-app.use('/static', express.static(path.join(__dirname, '../client/views/html'));
-app.use('/static', express.static(path.join(__dirname, '../client/views/resources'));
-app.use('/static', express.static(path.join(__dirname, '../client/views/css'));
+app.get('/', function (req, res) {
+    Interviewer.find({}, function (err, docs) {
+        res.write('Interviewers:\n');
+        res.write(JSON.stringify(docs, null, 4));
+        res.end();
+    });
+});
 
 /*
 app.use(function (req, res) {
@@ -70,18 +72,14 @@ app.get('/demo.js', function (req, res) {
 });
 
 
-app.get('/', function (req, res) {
-    Interviewer.find({}, function (err, docs) {
-        res.write('Interviewers:\n');
-        res.write(JSON.stringify(docs, null, 4));
-        res.end();
-    });
-});
-
-
 app.listen(app.get('port'), function () {
     console.log('Node app running at localhost:' + app.get('port'));
 });
+
+app.use('/static', express.static(path.join(__dirname, '../client')));
+app.use('/static', express.static(path.join(__dirname, '../client/views/html')));
+app.use('/static', express.static(path.join(__dirname, '../client/views/resources')));
+app.use('/static', express.static(path.join(__dirname, '../client/views/css')));
 
 process.on('SIGINT', function() {
     mongoose.connection.close(function() {
