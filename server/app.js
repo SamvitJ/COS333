@@ -14,6 +14,11 @@ mongoose.connect(process.env.MONGOLAB_URI || dbURI, function (err) {
     }
 });
 
+app.use('/static', express.static(__dirname + '../client'));
+app.use('/static', express.static(__dirname + '../client/views/html'));
+app.use('/static', express.static(__dirname + '../client/views/resources'));
+app.use('/static', express.static(__dirname + '../client/views/css'));
+
 app.get('/tokbox', function (req, res) {
     res.sendFile(path.join(__dirname, '../client/views/html',
         'tokbox_test.html'))
@@ -24,10 +29,10 @@ app.get('/pubnub', function (req, res) {
         'pubnub_test.html'))
 });
 
-app.get('/site', function (req, res) {
-    res.sendFile(path.join(__dirname, '../client/views/html',
-        'projectWebsite.html'))
-});
+// app.get('/site', function (req, res) {
+//     res.sendFile(path.join(__dirname, '../client/views/html',
+//         'projectWebsite.html'))
+// });
 
 app.get('/coachdesigndoc.pdf', function (req, res) {
     res.sendFile(path.join(__dirname, '../client/views/resources',
