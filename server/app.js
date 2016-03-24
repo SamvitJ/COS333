@@ -1,10 +1,11 @@
 var express     = require('express');
-    app         = express();
+    cors        = require('cors');
     mongoose    = require('mongoose');
     Interviewer = require('./models/interviewers');
     path        = require('path');
 
-app.locals.pretty = true;
+var app = express();
+app.use(cors())
 app.set('port', (process.env.PORT || 5000))
 
 var dbURI = 'mongodb://localhost:27017/database'
