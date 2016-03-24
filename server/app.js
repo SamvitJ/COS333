@@ -14,10 +14,20 @@ mongoose.connect(process.env.MONGOLAB_URI || dbURI, function (err) {
     }
 });
 
+
 app.use('/static', express.static(__dirname + '../client'));
 app.use('/static', express.static(__dirname + '../client/views/html'));
 app.use('/static', express.static(__dirname + '../client/views/resources'));
 app.use('/static', express.static(__dirname + '../client/views/css'));
+
+/*
+app.use(function (req, res) {
+    res.setHeader('Access-Control-Allow-Origin', 'http://shrouded-stream-84278.herokuapp.com');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+    res.setHeadeR('Access-Control-Allow-Credentials', true);
+    //next();
+});*/
 
 app.get('/tokbox', function (req, res) {
     res.sendFile(path.join(__dirname, '../client/views/html',
@@ -44,6 +54,11 @@ app.get('/projectWebsite.css', function (req, res) {
         'projectWebsite.css'))
 });
 
+app.get('/index.html', function (req, res) {
+    res.sendFile(path.join(__dirname, '../client/views/html',
+        'index.html'))
+});
+
 app.get('/demo.xml', function (req, res) {
     res.sendFile(path.join(__dirname, '../client',
         'demo.xml'))
@@ -62,6 +77,7 @@ app.get('/', function (req, res) {
         res.end();
     });
 });
+
 
 app.listen(app.get('port'), function () {
     console.log('Node app running at localhost:' + app.get('port'));
