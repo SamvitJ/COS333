@@ -15,10 +15,10 @@ mongoose.connect(process.env.MONGOLAB_URI || dbURI, function (err) {
 });
 
 
-app.use('/static', express.static(__dirname + '../client'));
-app.use('/static', express.static(__dirname + '../client/views/html'));
-app.use('/static', express.static(__dirname + '../client/views/resources'));
-app.use('/static', express.static(__dirname + '../client/views/css'));
+app.use('/static', express.static(path.join(__dirname, '../client'));
+app.use('/static', express.static(path.join(__dirname, '../client/views/html'));
+app.use('/static', express.static(path.join(__dirname, '../client/views/resources'));
+app.use('/static', express.static(path.join(__dirname, '../client/views/css'));
 
 /*
 app.use(function (req, res) {
