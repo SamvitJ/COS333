@@ -1,10 +1,11 @@
 var express     = require('express');
-    app         = express();
+    cors        = require('cors');
     mongoose    = require('mongoose');
     Interviewer = require('./models/interviewers');
     path        = require('path');
 
-app.locals.pretty = true;
+var app = express();
+app.use(cors())
 app.set('port', (process.env.PORT || 5000))
 
 var dbURI = 'mongodb://localhost:27017/database'
@@ -22,11 +23,15 @@ app.get('/', function (req, res) {
     });
 });
 
+app.get('/demo.xml', function (req, res) {
+    res.send(path.join(__dirname, '../client/views/xml', 'demo.xml'))
+});
+
 app.listen(app.get('port'), function () {
     console.log('Node app running at localhost:' + app.get('port'));
 });
 
-app.use('/static', express.static(path.join(__dirname, '../client')));
+app.use('/static', express.static(path.join(__dirname, '../client/js')));
 app.use('/static', express.static(path.join(__dirname, '../client/views/html')));
 app.use('/static', express.static(path.join(__dirname, '../client/views/resources')));
 app.use('/static', express.static(path.join(__dirname, '../client/views/css')));
