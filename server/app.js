@@ -15,6 +15,11 @@ mongoose.connect(process.env.MONGOLAB_URI || dbURI, function (err) {
     }
 });
 
+app.use('/static', express.static(path.join(__dirname, '../client/js')));
+app.use('/static', express.static(path.join(__dirname, '../client/views/html')));
+app.use('/static', express.static(path.join(__dirname, '../client/views/resources')));
+app.use('/static', express.static(path.join(__dirname, '../client/views/css')));
+
 app.get('/', function (req, res) {
     Interviewer.find({}, function (err, docs) {
         res.write('Interviewers:\n');
@@ -27,10 +32,9 @@ app.listen(app.get('port'), function () {
     console.log('Node app running at localhost:' + app.get('port'));
 });
 
-app.use('/static', express.static(path.join(__dirname, '../client')));
-app.use('/static', express.static(path.join(__dirname, '../client/views/html')));
-app.use('/static', express.static(path.join(__dirname, '../client/views/resources')));
-app.use('/static', express.static(path.join(__dirname, '../client/views/css')));
+app.get('/demo.xml', function (req, res) {
+    res.sendFile(path.join(__dirname, '../client/views/xml', 'demo.xml'))
+});
 
 /*
 app.use(function (req, res) {
