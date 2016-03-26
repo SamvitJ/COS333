@@ -37,6 +37,7 @@ app.use('/static', express.static(path.join(__dirname, '../client/views/html')))
 app.use('/static', express.static(path.join(__dirname, '../client/views/resources')));
 app.use('/static', express.static(path.join(__dirname, '../client/views/css')));
 app.use('/static', express.static(path.join(__dirname, '../client/views/xml')));
+app.use('/static', express.static(path.join(__dirname, '../client/js)));
 
 process.on('SIGINT', function() {
     mongoose.connection.close(function() {
