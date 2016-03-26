@@ -36,6 +36,16 @@ app.get('/demo.xml', function (req, res) {
     res.sendFile(path.join(__dirname, '../client/views/xml', 'demo.xml'))
 });
 
+app.get('/googlecf5dd8e4691a1f5b.html', function (req, res) {
+  res.sendFile(path.join(__dirname, '../client/views/html',
+     'googlecf5dd8e4691a1f5b.html'))
+});
+
+app.use('/static', express.static(path.join(__dirname, '../client')));
+app.use('/static', express.static(path.join(__dirname, '../client/views/html')));
+app.use('/static', express.static(path.join(__dirname, '../client/views/resources')));
+app.use('/static', express.static(path.join(__dirname, '../client/views/css')));
+
 /*
 app.use(function (req, res) {
     res.setHeader('Access-Control-Allow-Origin', 'http://shrouded-stream-84278.herokuapp.com');
