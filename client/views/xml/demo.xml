@@ -41,7 +41,7 @@
         <script>
           function init() {
             //// Initialize Firebase (change # at end of link to change firepad)
-            var firepadRef = new Firebase('https://crackling-inferno-40.firebaseio.com/firepads/1);
+            var firepadRef = new Firebase('https://crackling-inferno-40.firebaseio.com/firepads/1');
             //// Create CodeMirror (with line numbers and the JavaScript mode).
             var codeMirror = CodeMirror(document.getElementById('firepad-container'), {
               lineNumbers: true,
