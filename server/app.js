@@ -24,7 +24,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/demo.xml', function (req, res) {
-    res.send(path.join(__dirname, '../client/views/xml', 'demo.xml'))
+    res.sendFile(path.join(__dirname, '../client/views/xml', 'demo.xml'))
 });
 
 app.listen(app.get('port'), function () {
