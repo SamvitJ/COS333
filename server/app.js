@@ -25,17 +25,12 @@ app.get('/', function (req, res) {
     });
 });
 
-app.get('/googlecf5dd8e4691a1f5b.html', function (req, res) {
-  res.sendFile(path.join(__dirname, '../client/views/html',
-     'googlecf5dd8e4691a1f5b.html'))
-});
+app.use('/', express.static(path.join(__dirname, '../client/views/html')))
 
-app.use('/static', express.static(path.join(__dirname, '../client')));
-app.use('/static', express.static(path.join(__dirname, '../client/views/html')));
-app.use('/static', express.static(path.join(__dirname, '../client/views/resources')));
-app.use('/static', express.static(path.join(__dirname, '../client/views/css')));
-app.use('/static', express.static(path.join(__dirname, '../client/views/xml')));
 app.use('/static', express.static(path.join(__dirname, '../client/js')));
+app.use('/static', express.static(path.join(__dirname, '../client/views/resources')));
+app.use('/static', express.static(path.join(__dirname, '../client/views/css')))
+app.use('/static', express.static(path.join(__dirname, '../client/views/xml')))
 
 process.on('SIGINT', function() {
     mongoose.connection.close(function() {
