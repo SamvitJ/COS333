@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/SamvitJ/COS333-DesignProject#readme",
   "dependencies": {
+    "body-parser": "^1.15.0",
     "express": "^4.13.4",
     "mongodb": "^2.1.8",
     "mongoose": "^4.4.7"
