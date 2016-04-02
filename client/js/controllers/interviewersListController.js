@@ -1,6 +1,6 @@
-var interviewersControllers = angular.module('interviewersController', []);
+var interviewersListController = angular.module('interviewersListController', []);
 
-interviewersControllers.controller('IntListCtrl', ['$scope', '$resource', function ($scope, $resource) {
+interviewersListController.controller('IntListCtrl', ['$scope', '$resource', function ($scope, $resource) {
   var Interviewer = $resource('/api/interviewers');
 
   Interviewer.query(function (results) {
@@ -21,9 +21,4 @@ interviewersControllers.controller('IntListCtrl', ['$scope', '$resource', functi
       $scope.interviewerHeadline = '';
     });
   }
-}]);
-
-interviewersControllers.controller('IntDetailCtrl', ['$scope', '$routeParams',
-  function ($scope, $routeParams) {
-    $scope.interviewerName = $routeParams.interviewerName;
 }]);
