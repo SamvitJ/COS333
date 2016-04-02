@@ -12,7 +12,15 @@ app.config(['$routeProvider',
         templateUrl: 'partials/interviewer-detail.html',
         controller: 'IntDetailCtrl'
       }).
+      when('/preinterview', {
+        templateUrl: 'partials/preinterview.html',
+        // TODO: CHANGE THIS
+        controller: 'IntDetailCtrl'  
+      }).
       otherwise({
-        redirectTo: '/interviewers'
+        redirectTo: '/',
+        templateUrl: 'partials/landing.html',
+         // TODO: CHANGE THIS
+        controller: 'IntDetailCtrl'  
       });
   }]);
