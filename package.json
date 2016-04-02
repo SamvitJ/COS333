@@ -4,7 +4,17 @@
   "description": "",
   "main": "server/app.js",
   "scripts": {
-    "test": "test"
+    "postinstall": "bower install",
+    "prestart": "npm install",
+    "start": "http-server -a 0.0.0.0 -p 8000",
+    "pretest": "npm install",
+    "test": "node node_modules/karma/bin/karma start test/karma.conf.js",
+    "test-single-run": "node node_modules/karma/bin/karma start test/karma.conf.js  --single-run",
+    "preupdate-webdriver": "npm install",
+    "update-webdriver": "webdriver-manager update",
+    "preprotractor": "npm run update-webdriver",
+    "protractor": "protractor test/protractor-conf.js",
+    "update-index-async": "node -e \"require('shelljs/global'); sed('-i', /\\/\\/@@NG_LOADER_START@@[\\s\\S]*\\/\\/@@NG_LOADER_END@@/, '//@@NG_LOADER_START@@\\n' + cat('bower_components/angular-loader/angular-loader.min.js') + '\\n//@@NG_LOADER_END@@', 'app/index-async.html');\""
   },
   "repository": {
     "type": "git",
@@ -19,7 +29,20 @@
   "dependencies": {
     "body-parser": "^1.15.0",
     "express": "^4.13.4",
+    "jasmine": "^2.4.1",
+    "karma": "^0.13.22",
     "mongodb": "^2.1.8",
-    "mongoose": "^4.4.7"
+    "mongoose": "^4.4.7",
+    "protractor": "^3.2.2"
+  },
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "jasmine-node": "^1.14.5",
+    "karma-browserify": "^5.0.3",
+    "karma-chrome-launcher": "^0.2.3",
+    "karma-firefox-launcher": "^0.1.7",
+    "karma-jasmine": "^0.3.8",
+    "request": "^2.69.0",
+    "watchify": "^3.7.0"
   }
 }
