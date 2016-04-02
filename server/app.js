@@ -3,6 +3,7 @@ var express                = require('express');
     bodyParser             = require('body-parser'),
     path                   = require('path');
     Interviewer            = require('./models/interviewer');
+    Hangout            = require('./models/interviewer');
     interviewersController = require('./controllers/interviewers-controller.js')
 
 var app = express();
