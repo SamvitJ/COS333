@@ -3,8 +3,9 @@ var express                = require('express');
     bodyParser             = require('body-parser'),
     path                   = require('path');
     Interviewer            = require('./models/interviewer');
-    Hangout            = require('./models/interviewer');
+    Hangout                = require('./models/hangout');
     interviewersController = require('./controllers/interviewers-controller.js')
+    hangoutsController     = require('./controllers/hangouts-controller.js')
 
 var app = express();
 
@@ -30,19 +31,15 @@ app.use(bodyParser.json());
 
 app.get('/api/interviewers', interviewersController.list);
 app.post('/api/interviewers', interviewersController.create);
+app.get('/api/hangouts', hangoutsController.mostRecent);
 app.post('/api/hangouts', interviewersController.hangout);
 
 app.get('/', function (req, res) {
-    // Interviewer.find({}, function (err, docs) {
-    //     res.write('Interviewers:\n');
-    //     res.write(JSON.stringify(docs, null, 4));
-    //     res.end();
-    // });
-    Hangout.find({}, function (err, docs) {
-        res.write("Hangout");
+    Interviewer.find({}, function (err, docs) {
+        res.write('Interviewers:\n');
         res.write(JSON.stringify(docs, null, 4));
         res.end();
-    })
+    });
 });
 
 // static routing

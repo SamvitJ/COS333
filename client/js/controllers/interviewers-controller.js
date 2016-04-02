@@ -5,8 +5,6 @@ app.controller('interviewersController', ['$scope', '$resource', function ($scop
     $scope.interviewers = results;
   });
 
-  $scope.interviewers = []
-
   $scope.createInterviewer = function () {
     var interviewer = new Interviewer();
     interviewer.name = $scope.interviewerName;
