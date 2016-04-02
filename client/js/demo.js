@@ -9,6 +9,8 @@
   HangoutDemo.prototype.onApiReady = function (event) { 
     if (event.isApiReady === true) {  
       console.log("API Ready"); 
+      console.log(event)
+      console.log(gapi)
     } 
   };  
     
