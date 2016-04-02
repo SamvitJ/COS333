@@ -1,4 +1,6 @@
-app.controller('interviewersController', ['$scope', '$resource', function ($scope, $resource) {
+var interviewersControllers = angular.module('interviewersController', []);
+
+interviewersControllers.controller('IntListCtrl', ['$scope', '$resource', function ($scope, $resource) {
   var Interviewer = $resource('/api/interviewers');
 
   Interviewer.query(function (results) {
@@ -19,4 +21,9 @@ app.controller('interviewersController', ['$scope', '$resource', function ($scop
       $scope.interviewerHeadline = '';
     });
   }
+}]);
+
+interviewersControllers.controller('IntDetailCtrl', ['$scope', '$routeParams',
+  function ($scope, $routeParams) {
+    $scope.interviewerId = $routeParams.interviewerId;
 }]);

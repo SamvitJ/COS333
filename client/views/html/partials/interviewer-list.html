@@ -1,0 +1,27 @@
+<!-- Interviewers View -->
+<div ng-controller="IntListCtrl">
+  <h1>There are {{interviewers.length}} interviewers</h1>
+  <table style="width:50%">
+    <tr>
+      <th>Name</th>
+      <th>School</th>
+      <th>Headline</th>
+    </tr>
+    <tr ng-repeat="interviewer in interviewers">
+      <td>{{interviewer.name}}</td>
+      <td>{{interviewer.school}}</td>
+      <td>{{interviewer.headline}}</td>
+    </tr>
+  </table>
+  <!-- <ul>
+    <li ng-repeat="interv in interviewers">
+      <p> {{interv.name}} {{interv.school}} {{interv.headline}} </p>
+    </li>
+  </ul> -->
+  <form ng-submit="createInterviewer()">
+    <input type="text" placeholder="Interviewer name" ng-model="interviewerName"></input>
+    <input type="text" placeholder="Interviewer school" ng-model="interviewerSchool"></input>
+    <input type="text" placeholder="Interviewer headline" ng-model="interviewerHeadline"></input>
+    <button type="submit">Add</button>
+  </form>
+</div>
