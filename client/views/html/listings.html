@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="coachApp">
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title></title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <link rel="stylesheet" type="text/css" href="static/listings.css">
+  </head>
+  <body>
+
+      <!-- Interviewers View -->
+      <div ng-controller="interviewersController">
+        <h1>There are {{interviewers.length}} interviewers</h1>
+        <table style="width:50%">
+          <tr>
+            <th>Name</th>
+            <th>School</th>
+            <th>Headline</th>
+          </tr>
+          <tr ng-repeat="interviewer in interviewers">
+            <td>{{interviewer.name}}</td>
+            <td>{{interviewer.school}}</td>
+            <td>{{interviewer.headline}}</td>
+          </tr>
+        </table>
+        <!-- <ul>
+          <li ng-repeat="interv in interviewers">
+            <p> {{interv.name}} {{interv.school}} {{interv.headline}} </p>
+          </li>
+        </ul> -->
+        <form ng-submit="createInterviewer()">
+          <input type="text" placeholder="Interviewer name" ng-model="interviewerName"></input>
+          <input type="text" placeholder="Interviewer school" ng-model="interviewerSchool"></input>
+          <input type="text" placeholder="Interviewer headline" ng-model="interviewerHeadline"></input>
+          <button type="submit">Add</button>
+        </form>
+      </div>
+
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-resource.js"></script>
+
+      <script type="text/javascript" src="static/app.js"></script>
+      <script type="text/javascript" src="static/interviewers-controller.js"></script>
+      <script type="text/javascript" src="static/interviewers-service.js"></script>
+  </body>
+</html>
