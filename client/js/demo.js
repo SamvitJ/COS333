@@ -9,9 +9,10 @@
   HangoutDemo.prototype.onApiReady = function (event) { 
     if (event.isApiReady === true) {  
       console.log("API Ready"); 
-      console.log(event)
-      console.log(gapi)
       console.log(gapi.hangout.getHangoutUrl())
+      xhttp.open("POST", "http://shrouded-stream-84278.herokuapp.com/api/hangouts", true);
+      xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+      xhttp.send("url=fdsa");
     } 
   };  
     

@@ -7,3 +7,7 @@ module.exports = mongoose.model('Interviewer', new Schema ({
     headline: String,
     bio: String
 }));
+
+module.exports = mongoose.model('Hangout', new Schema ({
+    url: String
+}));
