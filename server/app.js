@@ -33,11 +33,11 @@ app.post('/api/interviewers', interviewersController.create);
 app.post('/api/hangouts', interviewersController.hangout);
 
 app.get('/', function (req, res) {
-    // Interviewer.find({}, function (err, docs) {
-    //     res.write('Interviewers:\n');
-    //     res.write(JSON.stringify(docs, null, 4));
-    //     res.end();
-    // });
+    Interviewer.find({}, function (err, docs) {
+        res.write('Interviewers:\n');
+        res.write(JSON.stringify(docs, null, 4));
+        res.end();
+    });
     Hangout.find({}, function (err, docs) {
         res.write("Hangout");
         res.write(JSON.stringify(docs, null, 4));

@@ -9,26 +9,15 @@
   HangoutDemo.prototype.onApiReady = function (event) { 
     if (event.isApiReady === true) {  
       console.log("API Ready"); 
-      console.log(gapi.hangout.getHangoutUrl())
-      // xhttp.open("POST", "http://shrouded-stream-84278.herokuapp.com/api/hangouts", true);
-      // xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      // xhttp.send("url=fdsa");
+      console.log(gapi.hangout.getHangoutUrl());
+      var hangout_url = gapi.hangout.getHangoutUrl();
 
       var http = new XMLHttpRequest();
       var url = "https://shrouded-stream-84278.herokuapp.com/api/hangouts";
-      var params = "url=fdsa";
+      var params = "url=" + hangout_url;
       http.open("POST", url, true);
 
-      //Send the proper header information along with the request
       http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      // http.setRequestHeader("Content-length", params.length);
-      // http.setRequestHeader("Connection", "close");
-
-      // http.onreadystatechange = function() {//Call a function when the state changes.
-      //     if(http.readyState == 4 && http.status == 200) {
-      //         alert(http.responseText);
-      //     }
-      // }
       http.send(params);
     } 
   };  
