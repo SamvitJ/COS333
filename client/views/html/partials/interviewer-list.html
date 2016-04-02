@@ -8,7 +8,7 @@
       <th>Headline</th>
     </tr>
     <tr ng-repeat="interviewer in interviewers">
-      <td>{{interviewer.name}}</td>
+      <td><a href="#/interviewers/{{interviewer.name}}">{{interviewer.name}}</a></td>
       <td>{{interviewer.school}}</td>
       <td>{{interviewer.headline}}</td>
     </tr>

@@ -25,5 +25,5 @@ interviewersControllers.controller('IntListCtrl', ['$scope', '$resource', functi
 
 interviewersControllers.controller('IntDetailCtrl', ['$scope', '$routeParams',
   function ($scope, $routeParams) {
-    $scope.interviewerId = $routeParams.interviewerId;
+    $scope.interviewerName = $routeParams.interviewerName;
 }]);

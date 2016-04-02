@@ -8,7 +8,7 @@ app.config(['$routeProvider',
         templateUrl: 'partials/interviewer-list.html',
         controller: 'IntListCtrl'
       }).
-      when('/interviewers/:interviewerId', {
+      when('/interviewers/:interviewerName', {
         templateUrl: 'partials/interviewer-detail.html',
         controller: 'IntDetailCtrl'
       }).
