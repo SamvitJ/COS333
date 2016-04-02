@@ -15,14 +15,14 @@
       // xhttp.send("url=fdsa");
 
       var http = new XMLHttpRequest();
-      var url = "http://shrouded-stream-84278.herokuapp.com/api/hangouts";
+      var url = "https://shrouded-stream-84278.herokuapp.com/api/hangouts";
       var params = "url=fdsa";
       http.open("POST", url, true);
 
       //Send the proper header information along with the request
       http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-      http.setRequestHeader("Content-length", params.length);
-      http.setRequestHeader("Connection", "close");
+      // http.setRequestHeader("Content-length", params.length);
+      // http.setRequestHeader("Connection", "close");
 
       // http.onreadystatechange = function() {//Call a function when the state changes.
       //     if(http.readyState == 4 && http.status == 200) {
