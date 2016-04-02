@@ -11,6 +11,7 @@
       console.log("API Ready"); 
       console.log(event)
       console.log(gapi)
+      console.log(gapi.hangout.getHangoutUrl())
     } 
   };  
     
