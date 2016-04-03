@@ -1,31 +1,30 @@
-<!-- <script src="https://apis.google.com/js/platform.js" async defer></script>
-<div class="g-hangout" data-render="createhangout"
-    data-initial_apps="[{ app_id : '344521590545', start_data : 'dQw4w9WgXcQ', 'app_type' : 'ROOM_APP' }]">
-    Hangout Button
-</div> -->
+<!DOCTYPE html>
+<html ng-app="coachApp">
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title></title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
 
+      <link rel="stylesheet" type="text/css" href="static/listings.css">
+  </head>
 
-<!-- <script src="https://plus.google.com/hangouts/_/api/v1/hangout.js"></script>
-<script src="https://apis.google.com/js/platform.js" async defer></script>
-<div id="placeholder-rr"></div>
-<script>
-  gapi.hangout.render('placeholder-rr', {
-    'render': 'createhangout',
-    'initial_apps': [{'app_id' : '344521590545', 'start_data' : 'dQw4w9WgXcQ', 'app_type' : 'ROOM_APP' }],
-    'widget_size': 175
-  });
-</script>
- -->
+  <header>
+    <h1><a href="#/">COACH</a></h1>
+  </header>
 
-<html>
-<head>
-    <title>Hangout button demo: Specifying Hangout apps</title>
-    <link rel="canonical" href="http://www.example.com" />
-</head>
-<body>
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
-    <g:hangout render="createhangout"
-        initial_apps="[{ app_id : '344521590545', start_data : 'dQw4w9WgXcQ', 'app_type': 'ROOM_APP' }]">
-    </g:hangout>
-</body>
+  <body>
+    <div ng-view></div>
+
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-resource.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.js"></script>
+
+      <script type="text/javascript" src="static/app.js"></script>
+      <script type="text/javascript" src="static/interviewersListController.js"></script>
+      <script type="text/javascript" src="static/interviewersDetailController.js"></script>
+      <script type="text/javascript" src="static/preinterviewController.js"></script>
+      <script type="text/javascript" src="static/landingController.js"></script>
+  </body>
 </html>
