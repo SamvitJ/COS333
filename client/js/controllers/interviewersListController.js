@@ -7,10 +7,6 @@ interviewersListController.controller('IntListCtrl', ['$scope', '$resource', fun
     $scope.interviewers = results;
   });
 
-  $scope.interviewers = []
-
-  $scope.interviewers = Interviewer.query()
-
   $scope.createInterviewer = function () {
     var interviewer = new Interviewer({
         "name": $scope.interviewerName,
