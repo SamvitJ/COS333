@@ -1,5 +1,5 @@
 var preinterviewController = angular.module('preinterviewController', []);
 
-interviewersControllers.controller('PreIntCtrl', ['$scope', '$resource', function ($scope, $resource) {
+preinterviewController.controller('PreIntCtrl', ['$scope', '$resource', function ($scope, $resource) {
 
 }]);
