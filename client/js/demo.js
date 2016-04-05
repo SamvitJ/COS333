@@ -8,7 +8,7 @@
     
   HangoutDemo.prototype.onApiReady = function (event) { 
     if (event.isApiReady === true) {  
-      console.log("API Ready"); 
+      console.log("API Ready!"); 
       console.log(gapi.hangout.getHangoutUrl());
       var hangout_url = gapi.hangout.getHangoutUrl();
 
@@ -20,6 +20,7 @@
 
       http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
       http.send(params);
+      console.log(url)
     } 
   };  
     
