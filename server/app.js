@@ -47,6 +47,7 @@ app.use('/', express.static(path.join(__dirname, '../client/views/html')));
 
 app.use('/static', express.static(path.join(__dirname, '../client/js')));
 app.use('/static', express.static(path.join(__dirname, '../client/js/controllers')));
+app.use('/static', express.static(path.join(__dirname, '../client/js/services')));
 app.use('/static', express.static(path.join(__dirname, '../client/views/css')));
 app.use('/static', express.static(path.join(__dirname, '../client/views/resources')));
 app.use('/static', express.static(path.join(__dirname, '../client/views/xml')));
