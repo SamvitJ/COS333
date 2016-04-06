@@ -1,13 +1,5 @@
 <!-- Interviewers View -->
 <div ng-controller="IntListCtrl">
-
-  <form ng-submit="createInterviewer()">
-    <input type="text" placeholder="Interviewer name" ng-model="interviewerName"></input>
-    <input type="text" placeholder="Interviewer school" ng-model="interviewerSchool"></input>
-    <input type="text" placeholder="Interviewer headline" ng-model="interviewerHeadline"></input>
-    <button type="submit">Add</button>
-  </form>
-
   <h1>There are {{interviewers.length}} interviewers</h1>
 <!--   <table style="width:50%">
     <tr>
