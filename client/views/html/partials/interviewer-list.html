@@ -1,5 +1,5 @@
 <!-- Interviewers View -->
-<div ng-controller="IntListCtrl">
+<div ng-controller="IntListCtrl" class="container-fluid">
   <h1>There are {{interviewers.length}} interviewers</h1>
 <!--   <table style="width:50%">
     <tr>
@@ -13,17 +13,18 @@
       <td>{{interviewer.headline}}</td>
     </tr>
   </table> -->
-  <div class="card-columns">
-    <div class="card" ng-repeat="interviewer in interviewers">
-      <div class="card-block">
-        <h4 class="card-title">{{interviewer.name}}</h4>
-        <h6 class="card-subtitle text-muted">{{interviewer.school}}</h6>
-      </div>
-      <img data-src="..." alt="Card image">
-      <div class="card-block">
-        <p class="card-text">{{interviewer.headline}}</p>
-        <a href="#/interviewers/{{interviewer.name}}" class="btn btn-primary">More info</a>
-      </div>
+  <div class="profiles-container">
+    <div class="card profile" ng-repeat="interviewer in interviewers">
+      <a href="#/interviewers/{{interviewer.name}}">
+        <div class="card-block">
+          <h4 class="card-title">{{interviewer.name}}</h4>
+          <h6 class="card-subtitle text-muted">{{interviewer.school}}</h6>
+        </div>
+        <img data-src="..." alt="Card image">
+        <div class="card-block">
+          <p class="card-text">{{interviewer.headline}}</p>
+        </div>
+      </a>
     </div>
   </div>
 
