@@ -1,6 +1,6 @@
 var app = angular.module('coachApp', ['ngResource', 'ngRoute',
    'interviewersListController', 'interviewersDetailController', 
-   'preinterviewController', 'landingController']);
+   'preinterviewController', 'loginController', 'landingController']);
 
 app.config(['$routeProvider',
   function($routeProvider) {
@@ -16,6 +16,10 @@ app.config(['$routeProvider',
       when('/preinterview', {
         templateUrl: 'partials/preinterview.html',
         controller: 'PreIntCtrl'  
+      }).
+      when('/login', {
+        templateUrl: 'partials/login.html',
+        controller: 'LoginCtrl'
       }).
       otherwise({
         redirectTo: '/',
