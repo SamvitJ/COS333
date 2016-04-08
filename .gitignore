@@ -3,5 +3,7 @@ node_modules
 
 # Bower
 bower_components/*
+!bower_components/bootstrap/scss/
+bower_components/bootstrap/scss/*
 !bower_components/bootstrap/scss/_variables.scss
 

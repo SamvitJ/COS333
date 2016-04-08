@@ -3,9 +3,17 @@ var express                = require('express');
     bodyParser             = require('body-parser'),
     path                   = require('path');
     Interviewer            = require('./models/interviewer');
+    Hangout                = require('./models/hangout');
     interviewersController = require('./controllers/interviewers-controller.js')
+    hangoutsController     = require('./controllers/hangouts-controller.js')
 
 var app = express();
+
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  next();      
+}); 
 
 // server/DB config
 app.set('port', (process.env.PORT || 5000))
@@ -23,6 +31,8 @@ app.use(bodyParser.json());
 
 app.get('/api/interviewers', interviewersController.list);
 app.post('/api/interviewers', interviewersController.create);
+app.get('/api/hangouts', hangoutsController.mostRecent);
+app.post('/api/hangouts', interviewersController.hangout);
 
 app.get('/', function (req, res) {
     Interviewer.find({}, function (err, docs) {
