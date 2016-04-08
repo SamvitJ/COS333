@@ -13,14 +13,12 @@
       var hangout_url = gapi.hangout.getHangoutUrl();
 
       var http = new XMLHttpRequest();
-      // var url = "https://shrouded-stream-84278.herokuapp.com/api/hangouts";
-      var url = "https://josh-dev.herokuapp.com/api/hangouts"
+      var url = "https://shrouded-stream-84278.herokuapp.com/api/hangouts";
       var params = "url=" + hangout_url;
       http.open("POST", url, true);
 
       http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
       http.send(params);
-      console.log(url)
     } 
   };  
     
