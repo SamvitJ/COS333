@@ -21,5 +21,9 @@
     "express": "^4.13.4",
     "mongodb": "^2.1.8",
     "mongoose": "^4.4.7"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-bower": "^0.21.0"
   }
 }
