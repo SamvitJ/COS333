@@ -12,3 +12,10 @@ module.exports.list = function (req, res) {
     res.json(results);
   });
 }
+
+module.exports.hangout = function (req, res) {
+	var hangout = new Hangout(req.body);
+	hangout.save(function (err, result) {
+		res.json(result);
+	});
+}
