@@ -1,0 +1,22 @@
+{
+  "name": "coach",
+  "description": "cos 333 project",
+  "main": "server/app.js",
+  "authors": [
+    "Samvit Jain"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/SamvitJ/COS333-DesignProject",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "v4.0.0-alpha.2",
+    "jquery": "jquery#2.2.3",
+    "tether": "^1.2.0"
+  }
+}
