@@ -1,7 +1,6 @@
 var interviewersListController = angular.module('interviewersListController', []);
 
-interviewersListController.controller('IntListCtrl', ['$scope', '$resource', function ($scope, $resource) {
-  var Interviewer = $resource('/api/interviewers');
+interviewersListController.controller('IntListCtrl', ['$scope', 'Interviewer', function ($scope, Interviewer) {
 
   Interviewer.query(function (results) {
     $scope.interviewers = results;
