@@ -32,7 +32,7 @@ app.use(bodyParser.json());
 app.get('/api/interviewers', interviewersController.list);
 app.post('/api/interviewers', interviewersController.create);
 app.get('/api/hangouts', hangoutsController.mostRecent);
-app.post('/api/hangouts', interviewersController.hangout);
+app.post('/api/hangouts', hangoutsController.hangout);
 
 app.get('/', function (req, res) {
     Interviewer.find({}, function (err, docs) {
