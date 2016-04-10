@@ -3,12 +3,12 @@
 <meta name="google-signin-client_id" content="344521590545-frgeqsqikblk4i14rn9ffqlgmtk7nj24.apps.googleusercontent.com">
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 
-<div ng-controller="LoginCtrl">
-  <h2>Log in with Google</h2>
-  <div class="g-signin2" data-onsuccess="onLogIn" data-theme="dark"></div>
+<div ng-controller="SignupCtrl">
+  <h2>Create an account</h2>
+  <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
   <!-- <a href="javascript:window.location.reload(true)" ng-click="signOut">Sign out</a> -->
   <script>
-    function onLogIn(googleUser) {
+    function onSignIn(googleUser) {
       // Useful data for your client-side scripts:
       var profile = googleUser.getBasicProfile();
       console.log("ID: " + profile.getId()); // Don't send this directly to your server!
