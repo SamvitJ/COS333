@@ -3,7 +3,9 @@
   "description": "cos 333 project",
   "main": "server/app.js",
   "authors": [
-    "Samvit Jain"
+    "Samvit Jain",
+    "Henry Shangguan",
+    "Joshua Shin"
   ],
   "license": "ISC",
   "homepage": "https://github.com/SamvitJ/COS333-DesignProject",
