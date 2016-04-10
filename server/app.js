@@ -2,9 +2,13 @@ var express                = require('express');
     mongoose               = require('mongoose');
     bodyParser             = require('body-parser'),
     path                   = require('path');
+
     Interviewer            = require('./models/interviewer');
+    User                   = require('./models/user');
     Hangout                = require('./models/hangout');
+
     interviewersController = require('./controllers/interviewersController.js')
+    signupController       = require('./controllers/signupController.js')
     hangoutsController     = require('./controllers/hangoutsController.js')
 
 var app = express();
@@ -31,12 +35,25 @@ app.use(bodyParser.json());
 
 app.get('/api/interviewers', interviewersController.list);
 app.post('/api/interviewers', interviewersController.create);
-app.get('/api/hangouts', hangoutsController.mostRecent);
-app.post('/api/hangouts', interviewersController.hangout);
 
-app.get('/', function (req, res) {
+app.get('/api/hangouts', hangoutsController.mostRecent);
+app.post('/api/hangouts', hangoutsController.hangout);
+
+app.get('/api/users', signupController.create);
+app.post('/api/users', signupController.create);
+
+// For internal testing
+app.get('/interviewers', function (req, res) {
     Interviewer.find({}, function (err, docs) {
         res.write('Interviewers:\n');
+        res.write(JSON.stringify(docs, null, 4));
+        res.end();
+    });
+});
+
+app.get('/users', function (req, res) {
+    User.find({}, function (err, docs) {
+        res.write('Users:\n');
         res.write(JSON.stringify(docs, null, 4));
         res.end();
     });
