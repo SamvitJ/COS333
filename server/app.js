@@ -4,8 +4,8 @@ var express                = require('express');
     path                   = require('path');
     Interviewer            = require('./models/interviewer');
     Hangout                = require('./models/hangout');
-    interviewersController = require('./controllers/interviewers-controller.js')
-    hangoutsController     = require('./controllers/hangouts-controller.js')
+    interviewersController = require('./controllers/interviewersController.js')
+    hangoutsController     = require('./controllers/hangoutsController.js')
 
 var app = express();
 
@@ -32,7 +32,7 @@ app.use(bodyParser.json());
 app.get('/api/interviewers', interviewersController.list);
 app.post('/api/interviewers', interviewersController.create);
 app.get('/api/hangouts', hangoutsController.mostRecent);
-app.post('/api/hangouts', interviewersController.hangout);
+app.post('/api/hangouts', hangoutsController.hangout);
 
 app.get('/', function (req, res) {
     Interviewer.find({}, function (err, docs) {
