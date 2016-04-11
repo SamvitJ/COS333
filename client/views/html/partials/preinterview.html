@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Hangout button demo: Specifying Hangout apps</title>
+</head>
+<body>
+    <h1>Pre-interview page</h1>
+
+
+    <g:hangout render="createhangout"
+        initial_apps="[{ app_id : '344521590545', start_data : 'dQw4w9WgXcQ', 'app_type': 'ROOM_APP' }]">
+    </g:hangout>
+
+    <div ng-controller="PreIntCtrl">
+      <a href="{{hangout.url}}">Join the Hangout</a>
+    </div>
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+      <script src="https://apis.google.com/js/client:platform.js" async defer></script>  
+
+</body>
+</html>

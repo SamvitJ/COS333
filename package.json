@@ -1,0 +1,25 @@
+{
+  "name": "designproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SamvitJ/COS333-DesignProject.git"
+  },
+  "author": "Samvit Jain",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SamvitJ/COS333-DesignProject/issues"
+  },
+  "homepage": "https://github.com/SamvitJ/COS333-DesignProject#readme",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4",
+    "mongodb": "^2.1.8",
+    "mongoose": "^4.4.7"
+  }
+}

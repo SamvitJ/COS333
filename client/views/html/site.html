@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html>
+   <head>
+      <meta charset="utf-8">
+      <link href="static/site.css" rel="stylesheet"  type="text/css">
+
+      <title>Coach Project Website - COS 333 Spring 2016</title>
+   </head>
+   <body>
+      <header>
+         <h1>Coach - COS 333 Spring 2016</h1>
+      </header>
+
+      <section id="docs">
+         <h4><a href="coachdesigndoc.pdf" target="_blank">Design Document</a></h4>
+      </section>
+      
+      <section id="team">
+         <h4>Samvit Jain '17 (samvitj@) - Project Leader</h4>
+         <h4>Henry Shangguan '18 (hys@)</h4>
+         <h4>Joshua Shin '18 (jdshin@)</h4>
+      </section>
+
+
+
+      <div id="plans">
+         <section id="timeline">
+            <h2 class="sectionTitle">Project Timeline</h2>
+            <dl>
+               <dt><h4>Week 0 (Spring Break, ending 03/19)</h4></dt>
+               <dd>Set up GitHub repository and hosting on Heroku</dd>
+               <dd>Set up Node.js server, Express.js framework, and basic site routing</dd>
+               <dd>Integrate MongoDB with Node/Express, listing interviewers in database on a static page</dd>
+               <dd>Experiment with/decide on video-chat and collaborative editor APIs to be used</dd>
+               <dd>Build basic interview page, with embedded video and editor integrations</dd>
+               <dd>Create Project Website (deadline 3/21)</dd>
+
+               <dt><h4>Week 1 (ending 03/26)</h4></dt>
+               <dd>Make basic mockups</dd>
+               <dd>Build Google Hangout app, allowing 2+ people to join a Hangout and communicate through video and embedded code editor</dd>
+               <dd>This (Hangout app), and the static listings page, will comprise our Prototype (deadline 3/28)</dd>
+
+               <dt><h4>Week 2 (ending 04/02)</h4></dt>
+               <dd>Structure/stub client-side code to follow Angular/MVC design pattern</dd>
+               <dd>Set up REST interface between front-end and back-end frameworks</dd>
+               <dd>Use Angular to build dynamic profile listings page, using templating to display data and forms/controllers to create new interviewer objects</dd>
+               <dd>Set up client-side routing (separating controllers and services), and modularize HTML</dd>
+
+               <dt><h4>Week 3 (ending 04/09)</h4></dt>
+               <dd>Set up unit and end-to-end test frameworks (Karma, Jasmine, Protractor)</dd>
+               <dd>Continue work on profile listings page</dd>
+               <dd>Configure Google Sign in and user authentication</dd>
+               <dd>Setup Google Calendar integration</dd>
+
+               <dt><h4>Week 4 (ending 04/16)</h4></dt>
+               <dd>Allow for Interviewee to select a time slot in Interviewer’s Google Calendar</dd>
+               <dd>Build Interviewer profile creation and Interviewee account creation interface</dd>
+               <dd>Test with 5 real users and get feedback</dd>
+               <dd>Test end-to-end functionality for Alpha (deadline 4/18)</dd>
+
+               <dt><h4>Week 5 (ending 04/23)</h4></dt>
+               <dd>Allow Interviewer to review Interviewee at end of session, and vice versa</dd>
+               <dd>Develop landing page</dd>
+               <dd>Test on different screen sizes (resizing, mobile, etc.)</dd>
+               <dd>Test with 10 real users and get feedback</dd>
+               <dd>Test end-to-end functionality for Beta (deadline 4/25)</dd>
+
+               <dt><h4>Week 6 (ending 04/30)</h4></dt>
+               <dd>Allow for Interviewer to send Interviewee notes/summary/code from the interview</dd>
+               <dd>Work on backlog</dd>
+               <dd>Trim partially or poorly implemented features</dd>
+               <dd>Test with 15-20 real users and get feedback</dd>
+               <dd>Test end-to-end functionality for Demo (5/2-4)</dd>
+
+               <dt><h4>Week 7</h4></dt>
+               <dd>Prepare for Demo (5/2-4)</dd>
+               <dd>Write Product Guide and Final Report</dd>
+            </dl>
+         </section>
+
+         <section id="targets">
+            <h2 class="sectionTitle" >Project Targets</h2>
+            <dl>
+               <dt><h4>Minimal Plumbing</h4></dt>
+               <dd>Node.js web server, backed by a MongoDB database,
+               running on Heroku</dd>
+               <dd>Webpage with embedded video-chat and embedded
+               collaborative editor</dd>
+
+               <dt><h4>Prototype</h4></dt>
+               <dd>Webpage with embedded video chat tool and code editor</dd>
+
+               <dt><h4>Alpha</h4></dt>
+               <dd>Profile listings</dd>
+               <dd>Google Calendar integration</dd>
+               <dd>Interviewer profile creation</dd>
+               <dd>Interviewee account creation</dd>
+               <dd>Screen-size/device support</dd>
+
+               <dt><h4>Beta</h4></dt>
+               <dd>End-of-session reviews by both parties</dd>
+               <dd>Session summary notes transmission/download</dd>
+               <dd>Landing page</dd>
+
+            </dl>
+         </section>
+      </div>
+   </body>
+</html>
+
+

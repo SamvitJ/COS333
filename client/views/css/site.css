@@ -1,0 +1,28 @@
+header {
+   text-align: center;
+}
+
+#team {
+   text-align: center;
+}
+
+#docs {
+   text-align: center;
+}
+
+#plans {
+   margin: auto;
+}
+
+#targets {
+  margin-left: 50% ;
+}
+
+#timeline {
+  float: left ;
+  width: 50% ;
+}
+
+.sectionTitle{
+   text-align: center;
+}
