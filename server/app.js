@@ -52,8 +52,8 @@ app.use('/static', express.static(path.join(__dirname, '../client/views/css')));
 app.use('/static', express.static(path.join(__dirname, '../client/views/resources')));
 app.use('/static', express.static(path.join(__dirname, '../client/views/xml')));
 app.use('/static', express.static(path.join(__dirname, '../bower_components/jquery/dist/')));
-app.use('/static', express.static(path.join(__dirname, '../bower_components/bootstrap/dist/js/')));
-app.use('/static', express.static(path.join(__dirname, '../bower_components/bootstrap/dist/css/')));
+app.use('/static', express.static(path.join(__dirname, '../bootstrap4alpha2/dist/js/')));
+app.use('/static', express.static(path.join(__dirname, '../bootstrap4alpha2/dist/css/')));
 app.use('/static', express.static(path.join(__dirname, '../bower_components/tether/dist/js/')));
 
 // start server

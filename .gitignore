@@ -1,10 +1,6 @@
 # Node
 node_modules
 
-# Bower
-bower_components/*
-!bower_components/bootstrap/scss/
-bower_components/bootstrap/scss/*
-# File where flexbox is enabled
-!bower_components/bootstrap/scss/_variables.scss
+#Bower
+bower_components
 
