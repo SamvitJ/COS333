@@ -1,0 +1,23 @@
+{
+  "name": "coach",
+  "description": "cos 333 project",
+  "main": "server/app.js",
+  "authors": [
+    "Samvit Jain",
+    "Henry Shangguan",
+    "Joshua Shin"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/SamvitJ/COS333-DesignProject",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "jquery#2.2.3",
+    "tether": "^1.2.0"
+  }
+}
