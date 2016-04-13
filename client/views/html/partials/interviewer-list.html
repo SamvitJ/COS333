@@ -1,7 +1,7 @@
 <!-- Interviewers View -->
-<div ng-controller="IntListCtrl">
+<div ng-controller="IntListCtrl" class="container-fluid">
   <h1>There are {{interviewers.length}} interviewers</h1>
-  <table style="width:50%">
+<!--   <table style="width:50%">
     <tr>
       <th>Name</th>
       <th>School</th>
@@ -12,16 +12,21 @@
       <td>{{interviewer.school}}</td>
       <td>{{interviewer.headline}}</td>
     </tr>
-  </table>
-  <!-- <ul>
-    <li ng-repeat="interv in interviewers">
-      <p> {{interv.name}} {{interv.school}} {{interv.headline}} </p>
-    </li>
-  </ul> -->
-  <form ng-submit="createInterviewer()">
-    <input type="text" placeholder="Interviewer name" ng-model="interviewerName"></input>
-    <input type="text" placeholder="Interviewer school" ng-model="interviewerSchool"></input>
-    <input type="text" placeholder="Interviewer headline" ng-model="interviewerHeadline"></input>
-    <button type="submit">Add</button>
-  </form>
+  </table> -->
+  <div class="profiles-container">
+    <div class="card profile" ng-repeat="interviewer in interviewers">
+      <a href="#/interviewers/{{interviewer.name}}">
+        <div class="card-block">
+          <h4 class="card-title">{{interviewer.name}}</h4>
+          <h6 class="card-subtitle text-muted">{{interviewer.school}}</h6>
+        </div>
+        <img data-src="..." alt="Card image">
+        <div class="card-block">
+          <p class="card-text">{{interviewer.headline}}</p>
+        </div>
+      </a>
+    </div>
+  </div>
+
 </div>
+
