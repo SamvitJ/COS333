@@ -16,12 +16,13 @@
   <div class="profiles-container">
     <div class="card profile" ng-repeat="interviewer in interviewers">
       <a href="#/interviewers/{{interviewer.name}}">
+        <div class="card-profile-photo">
+          <img src="static/stockprofilephoto.jpg" class="profile-photo" alt="Card image">
+        </div>
+
         <div class="card-block">
           <h4 class="card-title">{{interviewer.name}}</h4>
           <h6 class="card-subtitle text-muted">{{interviewer.school}}</h6>
-        </div>
-        <img data-src="..." alt="Card image">
-        <div class="card-block">
           <p class="card-text">{{interviewer.headline}}</p>
         </div>
       </a>
