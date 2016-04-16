@@ -1,8 +1,8 @@
 var interviewersListController = angular.module('interviewersListController', []);
 
-interviewersListController.controller('IntListCtrl', ['$scope', 'Interviewer', function ($scope, Interviewer) {
+interviewersListController.controller('IntListCtrl', ['$scope', 'User', function ($scope, User) {
 
-  Interviewer.query(function (results) {
+  User.queryInterviewers(function (results) {
     $scope.interviewers = results;
   });
 
