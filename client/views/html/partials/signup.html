@@ -2,6 +2,9 @@
 <link class="cssdeck" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" class="cssdeck">
 
+<!-- Custom CSS -->
+<link rel="stylesheet" type="text/css" href="static/signup.css">
+
 <!-- Google scripts -->
 <meta name="google-signin-scope" content="profile email">
 <meta name="google-signin-client_id" content="344521590545-frgeqsqikblk4i14rn9ffqlgmtk7nj24.apps.googleusercontent.com">
@@ -17,42 +20,52 @@
 
   <form ng-submit="createUser()">
 
-    <label>School</label>
-    <input type="text" value="" class="input-xlarge" ng-model="school">
-    <br>
-    <br>
+    <p>
+      <label>School</label>
+      <input type="text" value="" class="input-xlarge" ng-model="school">
+    </p>
 
-    <h>If you're signing up to be an interviewer, please also provide the following information:</h> <br> <br>
+    <h>If you're signing up to be an interviewer, please also provide the following information:</h> <br><br>
 
     <label>Headline</label>
-    <input type="text" value="" class="input-xlarge" ng-model="headline">
+    <input type="text" value="" class="input-xlarge" ng-model="headline"
+      placeholder="E.g. Summer '15 Software Engineering Intern at Google">
+
     <label>Hourly Rate</label>
-    <input type="text" value="" class="input-xlarge" ng-model="rate">
+    <!-- <input type="text" value="" class="input-xlarge" ng-model="rate"> -->
+    <ng-form class="rate-form">
+      <input type="radio" ng-model="rate" name="rate" id="radio-20" value="20" checked>
+      <label for="radio-20" class="radio">$20</label>
+
+      <input type="radio" ng-model="rate" name="rate" id="radio-25" value="25">
+      <label for="radio-25" class="radio">$25</label>
+
+      <input type="radio" ng-model="rate" name="rate" id="radio-30" value="30">
+      <label for="radio-30" class="radio">$30</label>
+
+      <input type="radio" ng-model="rate" name="rate" id="radio-35" value="35">
+      <label for="radio-35" class="radio">$35</label>
+    </ng-form>
+
     <label>Availability</label>
-    <input type="text" value="" class="input-xlarge" ng-model="calendar">
+    <p>
+      <a href="/calendar"> Google Calendar </a>
+    </p>
+
     <label>Bio</label>
-    <textarea value="Smith" rows="3" class="input-xlarge" ng-model="bio">
+    <textarea value="" rows="4" class="input-xlarge" ng-model="bio"
+      placeholder="E.g. B.S.E. Computer Science '17
+Interned at Cloudera (Apache Kudu), Google (Cloud Dataflow)
+Member of Tau Beta Pi honor society
+LinkedIn: https://www.linkedin.com/in/vladimir-feinberg-64b92895">
     </textarea>
 
     <div>
       <button class="btn btn-primary">Create Account</button>
     </div>
   </form>
-
-  <!-- <form ng-submit="createUser()">
-    <a>To create an account, sign in with Google</a>
-    <div class="g-signin2" data-onsuccess="getGoogleData" data-theme="dark"></div>
-
-    <input type="text" placeholder="School" ng-model="school"></input> <br>
-
-    <a>If you're signing up to be an interviewer, please also provide the following information:</a> <br>
-    <input type="text" placeholder="Headline" ng-model="headline"></input> <br>
-    <input type="text" placeholder="Hourly rate" ng-model="rate"></input> <br>
-    <input type="text" placeholder="Availability (Google Calendar)" ng-model="calendar"></input> <br>
-    <input type="text" placeholder="Bio" ng-model="bio"></input> <br>
-    <button type="submit">Create account</button>
-  </form> -->
 </div>
 
+<!-- More Bootstrap -->
 <script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>

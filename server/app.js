@@ -54,7 +54,7 @@ app.get('/interviewers', function (req, res) {
 app.get('/users', function (req, res) {
     User.find({}, function (err, docs) {
         res.write('Users:\n');
-        res.write(JSON.stringify(docs, null, 4));
+        res.write(JSON.stringify(docs.reverse(), null, 4));
         res.end();
     });
 });

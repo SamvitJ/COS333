@@ -38,6 +38,8 @@ signupController.controller('SignupCtrl', ['$scope', 'User', function ($scope, U
       $scope.rate = '';
       $scope.calendar = '';
       $scope.bio = '';
+
+      window.location.href="/users";
     });
   };
 
