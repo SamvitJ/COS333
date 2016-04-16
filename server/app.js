@@ -72,6 +72,7 @@ app.use('/static', express.static(path.join(__dirname, '../bower_components/jque
 app.use('/static', express.static(path.join(__dirname, '../bootstrap4alpha2/dist/js/')));
 app.use('/static', express.static(path.join(__dirname, '../bootstrap4alpha2/dist/css/')));
 app.use('/static', express.static(path.join(__dirname, '../bower_components/tether/dist/js/')));
+app.use('/static', express.static(path.join(__dirname, '../bower_components/scheduler/codebase/')));
 
 // start server
 app.listen(app.get('port'), function () {
