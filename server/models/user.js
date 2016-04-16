@@ -9,6 +9,6 @@ module.exports = mongoose.model('User', new Schema ({
     school: String,
     headline: String,
     rate: Number,
-    calendar: String,
+    calendar: [String],
     bio: String,
 }));

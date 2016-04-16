@@ -9,12 +9,15 @@ signupController.controller('SignupCtrl', ['$scope', 'User', function ($scope, U
 
   scheduler.init('scheduler_here', new Date(), "week");
 
-  var events = [
-  {id:1, text:"Meeting",   start_date:"04/11/2016 14:00",end_date:"04/11/2016 17:00"},
-  {id:2, text:"Conference",start_date:"04/15/2016 12:00",end_date:"04/18/2016 19:00"},
-  {id:3, text:"Interview", start_date:"04/24/2016 09:00",end_date:"04/24/2016 10:00"}
-  ];
-  scheduler.parse(events, "json");//takes the name and format of the data source
+  // scheduler.attachEvent("onEventAdded", function(id,ev){
+  //   console.log(id)
+  //   // console.log(ev.start_date)
+  //   // console.log(ev.end_date)
+  //   // console.log(typeof(ev.start_date))
+  //   // console.log(Date(ev.start_date))
+  //   // console.log(typeof(new Date(ev.start_date)))
+  //   // scheduler.getEvent(id).readonly = true;
+  // });
 
   window.getGoogleData = function (googleUser) {
     // Useful data for your client-side scripts:
@@ -31,6 +34,10 @@ signupController.controller('SignupCtrl', ['$scope', 'User', function ($scope, U
   };
 
   $scope.createUser = function (credentials) {
+    // get scheduler events
+    var evs = scheduler.getEvents();
+    console.log(evs);
+
     var user = new User({
       "name": $scope.name,
       "email": $scope.email,
@@ -39,7 +46,7 @@ signupController.controller('SignupCtrl', ['$scope', 'User', function ($scope, U
       "school": $scope.school,
       "headline": $scope.headline,
       "rate": $scope.rate,
-      "calendar": $scope.calendar,
+      "calendar": ['first', 'second'],
       "bio": $scope.bio
     });
     user.$save(function (result) {
