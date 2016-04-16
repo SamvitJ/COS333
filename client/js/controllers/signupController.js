@@ -21,7 +21,8 @@ signupController.controller('SignupCtrl', ['$scope', 'User', function ($scope, U
       "name": $scope.name,
       "email": $scope.email,
       "google_token": $scope.google_token,
-
+      // TODO: Change this
+      "interviewer": true, 
       "school": $scope.school,
       "headline": $scope.headline,
       "rate": $scope.rate,
