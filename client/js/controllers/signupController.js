@@ -35,8 +35,14 @@ signupController.controller('SignupCtrl', ['$scope', 'User', function ($scope, U
 
   $scope.createUser = function (credentials) {
     // get scheduler events
-    var evs = scheduler.getEvents();
-    console.log(evs);
+    var availability = []
+    scheduler.getEvents().forEach(function(event) {
+      availability.push({
+        id: event.id,
+        start: event.start_date,
+        end: event.end_date
+      })
+    });
 
     var user = new User({
       "name": $scope.name,
@@ -46,7 +52,7 @@ signupController.controller('SignupCtrl', ['$scope', 'User', function ($scope, U
       "school": $scope.school,
       "headline": $scope.headline,
       "rate": $scope.rate,
-      "calendar": ['first', 'second'],
+      "availability": availability,
       "bio": $scope.bio
     });
     user.$save(function (result) {
@@ -57,7 +63,7 @@ signupController.controller('SignupCtrl', ['$scope', 'User', function ($scope, U
       $scope.school = '';
       $scope.headline = '';
       $scope.rate = '';
-      $scope.calendar = '';
+      $scope.availability = '';
       $scope.bio = '';
 
       window.location.href="/users";
