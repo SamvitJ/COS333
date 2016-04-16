@@ -9,16 +9,6 @@ signupController.controller('SignupCtrl', ['$scope', 'User', function ($scope, U
 
   scheduler.init('scheduler_here', new Date(), "week");
 
-  // scheduler.attachEvent("onEventAdded", function(id,ev){
-  //   console.log(id)
-  //   // console.log(ev.start_date)
-  //   // console.log(ev.end_date)
-  //   // console.log(typeof(ev.start_date))
-  //   // console.log(Date(ev.start_date))
-  //   // console.log(typeof(new Date(ev.start_date)))
-  //   // scheduler.getEvent(id).readonly = true;
-  // });
-
   window.getGoogleData = function (googleUser) {
     // Useful data for your client-side scripts:
     var profile = googleUser.getBasicProfile();
