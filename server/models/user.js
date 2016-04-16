@@ -11,8 +11,8 @@ module.exports = mongoose.model('User', new Schema ({
     rate: Number,
     availability: [{
     	id: Number,
-    	start: String,
-    	end: String
+    	start: Date,
+    	end: Date
     }],
     bio: String,
 }));
