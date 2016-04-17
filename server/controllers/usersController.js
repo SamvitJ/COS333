@@ -12,3 +12,9 @@ module.exports.list = function (req, res) {
     res.json(results);
   });
 }
+
+module.exports.listInterviewers = function (req, res) {
+  User.find({interviewer:true}, function (err, results) {
+    res.json(results);
+  });
+}

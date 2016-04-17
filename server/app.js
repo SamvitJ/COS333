@@ -36,6 +36,7 @@ app.get('/api/hangouts', hangoutsController.mostRecent);
 app.post('/api/hangouts', hangoutsController.hangout);
 
 app.get('/api/users', usersController.list);
+app.get('/api/interviewers', usersController.listInterviewers);
 app.post('/api/users', usersController.create);
 
 // For internal testing
