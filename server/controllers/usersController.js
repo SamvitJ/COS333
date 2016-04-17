@@ -6,3 +6,9 @@ module.exports.create = function (req, res) {
     res.json(result);
   });
 }
+
+module.exports.list = function (req, res) {
+  User.find({}, function (err, results) {
+    res.json(results);
+  });
+}
