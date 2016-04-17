@@ -7,8 +7,7 @@ var express                = require('express');
     User                   = require('./models/user');
     Hangout                = require('./models/hangout');
 
-    interviewersController = require('./controllers/interviewersController.js')
-    signupController       = require('./controllers/signupController.js')
+    usersController       = require('./controllers/usersController.js')
     hangoutsController     = require('./controllers/hangoutsController.js')
 
 var app = express();
@@ -33,14 +32,11 @@ mongoose.connect(process.env.MONGOLAB_URI || dbURI, function (err) {
 app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
 
-app.get('/api/interviewers', interviewersController.list);
-app.post('/api/interviewers', interviewersController.create);
-
 app.get('/api/hangouts', hangoutsController.mostRecent);
 app.post('/api/hangouts', hangoutsController.hangout);
 
-app.get('/api/users', signupController.create);
-app.post('/api/users', signupController.create);
+app.get('/api/users', usersController.list);
+app.post('/api/users', usersController.create);
 
 // For internal testing
 app.get('/interviewers', function (req, res) {
@@ -68,10 +64,8 @@ app.use('/static', express.static(path.join(__dirname, '../client/js/services'))
 app.use('/static', express.static(path.join(__dirname, '../client/views/css')));
 app.use('/static', express.static(path.join(__dirname, '../client/views/resources')));
 app.use('/static', express.static(path.join(__dirname, '../client/views/xml')));
-app.use('/static', express.static(path.join(__dirname, '../bower_components/jquery/dist/')));
 app.use('/static', express.static(path.join(__dirname, '../bootstrap4alpha2/dist/js/')));
 app.use('/static', express.static(path.join(__dirname, '../bootstrap4alpha2/dist/css/')));
-app.use('/static', express.static(path.join(__dirname, '../bower_components/tether/dist/js/')));
 
 // start server
 app.listen(app.get('port'), function () {
