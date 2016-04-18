@@ -32,6 +32,10 @@
           width: 50%;
           height: 50%;
           }
+
+          .powered-by-firepad {
+            display: none;
+          }
         </style>
       </head>
 
