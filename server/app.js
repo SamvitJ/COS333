@@ -73,6 +73,11 @@ app.use('/static', express.static(path.join(__dirname, '../bootstrap4alpha2/dist
 app.use('/static', express.static(path.join(__dirname, '../bootstrap4alpha2/dist/css/')));
 app.use('/static', express.static(path.join(__dirname, '../bower_components/tether/dist/js/')));
 
+app.use('/static/dashboard', express.static(path.join(__dirname, '../client/js/dashboard')));
+app.use('/static/dashboard', express.static(path.join(__dirname, '../client/views/css/dashboard')));
+app.use('/static/dashboard', express.static(path.join(__dirname, '../client/views/fonts/dashboard')));
+app.use('/static/dashboard', express.static(path.join(__dirname, '../client/views/resources/dashboard')));
+
 // start server
 app.listen(app.get('port'), function () {
     console.log('Node app running at localhost:' + app.get('port'));
