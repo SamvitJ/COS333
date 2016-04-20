@@ -6,7 +6,6 @@ signupController.controller('SignupCtrl', ['$scope', 'User', function ($scope, U
   scheduler.locale.labels.new_event = 'Available';
   scheduler.config.icons_select=["icon_delete"];
   scheduler.config.time_step = 60;
-
   scheduler.init('scheduler_here', new Date(), "week");
 
   window.getGoogleData = function (googleUser) {
