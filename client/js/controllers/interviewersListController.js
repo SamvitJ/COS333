@@ -5,5 +5,5 @@ interviewersListController.controller('IntListCtrl', ['$scope', 'Interviewer', f
   Interviewer.query(function (results) {
     $scope.interviewers = results;
   });
-  
+
 }]);
