@@ -26,11 +26,20 @@ signupController.controller('SignupCtrl', ['$scope', 'User', function ($scope, U
     // get scheduler events
     var availability = []
     scheduler.getEvents().forEach(function(event) {
-      availability.push({
-        id: event.id,
-        start: event.start_date,
-        end: event.end_date
-      })
+      var start_date = new Date(event.start_date);
+      var end_date = new Date(event.end_date);
+
+      while (start_date < end_date) {
+        cur_start = new Date(start_date);
+        start_date.setHours(start_date.getHours() + 1)
+        cur_end = new Date(start_date)
+
+        availability.push({
+          id: event.id,
+          start: cur_start,
+          end: cur_end
+        });
+      }
     });
 
     var user = new User.all({
