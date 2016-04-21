@@ -9,7 +9,7 @@ interviewersListController.controller('IntListCtrl', ['$scope', 'User', function
 
 
 
-	  var availability = [
+	var availability = [
 	    {
 	        "id": 1461168524308,
 	        "start": "2016-04-21T18:00:00.000Z",
@@ -27,11 +27,25 @@ interviewersListController.controller('IntListCtrl', ['$scope', 'User', function
 	    }
 	];
 
-
+	var currentTime = new Date();
 	$scope.interviewers.forEach(function(interviewer) {
-		interviewer.availability = availability;
+		// interviewer.availability = availability;
+
+		availability.forEach(function(time) {
+			var start = new Date(time.start)
+			var end = new Date(time.end)
+			//store as available hours e.g. [4, 6, 7, 12, 13, 14] is 4-5am, 6-8am, 12pm-3pm
+			if (start > currentTime) {
+				console.log(start.getHours())
+			}
+		});
 	});
   });
+
+  $scope.getDates = function (interviewer) {
+  	console.log("getDates")
+  	console.log(interviewer)
+  } 
 
 
 
