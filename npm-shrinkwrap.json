@@ -39,11 +39,6 @@
         }
       }
     },
-    "bower": {
-      "version": "1.7.9",
-      "from": "bower@latest",
-      "resolved": "https://registry.npmjs.org/bower/-/bower-1.7.9.tgz"
-    },
     "bson": {
       "version": "0.4.23",
       "from": "bson@>=0.4.21 <0.5.0",

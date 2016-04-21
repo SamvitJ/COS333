@@ -1,27 +1,18 @@
 <!-- Interviewers View -->
+<link rel="stylesheet" type="text/css" href="static/interviewer-list.css">
+
 <div ng-controller="IntListCtrl" class="container-fluid">
   <h1>There are {{interviewers.length}} interviewers</h1>
-<!--   <table style="width:50%">
-    <tr>
-      <th>Name</th>
-      <th>School</th>
-      <th>Headline</th>
-    </tr>
-    <tr ng-repeat="interviewer in interviewers">
-      <td><a href="#/interviewers/{{interviewer.name}}">{{interviewer.name}}</a></td>
-      <td>{{interviewer.school}}</td>
-      <td>{{interviewer.headline}}</td>
-    </tr>
-  </table> -->
   <div class="profiles-container">
     <div class="card profile" ng-repeat="interviewer in interviewers">
       <a href="#/interviewers/{{interviewer.name}}">
+        <div class="card-profile-photo">
+          <img src="static/stockprofilephoto.jpg" class="profile-photo" alt="Card image">
+        </div>
+
         <div class="card-block">
           <h4 class="card-title">{{interviewer.name}}</h4>
           <h6 class="card-subtitle text-muted">{{interviewer.school}}</h6>
-        </div>
-        <img data-src="..." alt="Card image">
-        <div class="card-block">
           <p class="card-text">{{interviewer.headline}}</p>
         </div>
       </a>
