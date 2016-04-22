@@ -7,7 +7,7 @@ var express                = require('express');
     User                   = require('./models/user');
     Hangout                = require('./models/hangout');
 
-    usersController       = require('./controllers/usersController.js')
+    usersController        = require('./controllers/usersController.js')
     hangoutsController     = require('./controllers/hangoutsController.js')
 
 var app = express();
