@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- Meta, title, CSS, favicons, etc. -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Coach! | </title>
+
+  <!-- Bootstrap core CSS -->
+
+  <link href="/static/dashboard/bootstrap.min.css" rel="stylesheet">
+
+  <link href="/static/dashboard/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/static/dashboard/animate.min.css" rel="stylesheet">
+
+  <!-- Custom styling plus plugins -->
+  <link href="/static/dashboard/custom.css" rel="stylesheet">
+  <link href="/static/dashboard/icheck/flat/green.css" rel="stylesheet">
+
+  <script src="/static/dashboard/jquery.min.js"></script>
+
+  <!--[if lt IE 9]>
+        <script src="../assets/js/ie8-responsive-file-warning.js"></script>
+        <![endif]-->
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+</head>
+
+
+<body class="nav-md">
+
+  <div class="container body">
+
+
+    <div class="main_container">
+
+      <div class="col-md-3 left_col">
+        <div class="left_col scroll-view">
+
+          <div class="navbar nav_title" style="border: 0;">
+            <a href="/#/" class="site_title"><i class="fa fa-suitcase"></i> <span>Coach</span></a>
+          </div>
+          <div class="clearfix"></div>
+
+          <!-- menu prile quick info -->
+          <div class="profile">
+            <div class="profile_pic">
+              <img src="/static/dashboard/samvit.jpg" alt="..." class="img-circle profile_img">
+            </div>
+            <div class="profile_info">
+              <span>Welcome,</span>
+              <h2>Samvit Jain</h2>
+            </div>
+          </div>
+          <!-- /menu prile quick info -->
+
+          <br />
+
+          <!-- sidebar menu -->
+          <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+
+            <div class="menu_section">
+              <h3>Account</h3>
+              <ul class="nav side-menu">
+                <li><a href="dashboard.html"><i class="fa fa-home"></i> Home <span class="fa"></span></a>
+                </li>
+                <li><a><i class="fa fa-calendar"></i> Availability <span class="fa"></span></a>
+                </li>
+                <li><a><i class="fa fa-book"></i> History <span class="fa"></span></a>
+                </li>
+                <li><a><i class="fa fa-key"></i> Profile <span class="fa"></span></a>
+                </li>
+              </ul>
+            </div>
+            <div class="menu_section">
+              <h3>General</h3>
+              <ul class="nav side-menu">
+                <li><a><i class="fa fa-phone"></i> Support <span class="fa"></span></a>
+                </li>
+                <li><a href="/#/interviewers"><i class="fa fa-list"></i> Listings <span class="fa"></span></a>
+                </li>
+                <li><a><i class="fa fa-trophy"></i> Rankings <span class="label label-success pull-right">Coming Soon</span></a>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+          <!-- /sidebar menu -->
+
+          <!-- /menu footer buttons -->
+          <div class="sidebar-footer hidden-small">
+            <a data-toggle="tooltip" data-placement="top" title="Settings">
+              <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+            </a>
+            <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+              <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+            </a>
+            <a data-toggle="tooltip" data-placement="top" title="Lock">
+              <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+            </a>
+            <a data-toggle="tooltip" data-placement="top" title="Logout">
+              <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+            </a>
+          </div>
+          <!-- /menu footer buttons -->
+        </div>
+      </div>
+
+      <!-- top navigation -->
+      <div class="top_nav">
+
+        <div class="nav_menu">
+          <nav class="" role="navigation">
+            <div class="nav toggle">
+              <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+            </div>
+
+            <ul class="nav navbar-nav navbar-right">
+              <li class="">
+                <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                  <img src="/static/dashboard/samvit.jpg" alt="">Samvit Jain
+                  <span class=" fa fa-angle-down"></span>
+                </a>
+                <ul class="dropdown-menu dropdown-usermenu pull-right">
+                  <li><a href="javascript:;">  Profile</a>
+                  </li>
+                  <li>
+                    <a href="javascript:;">
+                      <span class="badge bg-red pull-right">50%</span>
+                      <span>Settings</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="javascript:;">Help</a>
+                  </li>
+                  <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
+                  </li>
+                </ul>
+              </li>
+
+              <li role="presentation" class="dropdown">
+                <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                  <i class="fa fa-envelope-o"></i>
+                  <span class="badge bg-green">6</span>
+                </a>
+                <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                  <li>
+                    <a>
+                      <span class="image">
+                        <img src="/static/dashboard/josh.jpg" alt="Profile Image" />
+                      </span>
+                      <span>
+                        <span>Josh Shin</span>
+                        <span class="time">3 mins ago</span>
+                      </span>
+                      <span class="message">
+                        Hey, can we start at 6:15 instead?
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a>
+                      <span class="image">
+                        <img src="/static/dashboard/henry.jpg" alt="Profile Image" />
+                      </span>
+                      <span>
+                        <span>Henry Shangguan</span>
+                        <span class="time">4 mins ago</span>
+                      </span>
+                      <span class="message">
+                        That was great! Would you be free to do another interview next week?
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a>
+                      <span class="image">
+                        <img src="/static/dashboard/shubhro.jpg" alt="Profile Image" />
+                      </span>
+                      <span>
+                        <span>Shubhro Saha</span>
+                        <span class="time">2 hrs ago</span>
+                      </span>
+                      <span class="message">
+                        Thanks so much!
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <a>
+                      <span class="image">
+                        <img src="/static/dashboard/irvin.jpg" alt="Profile Image" />
+                      </span>
+                      <span>
+                        <span>Irvin Zhan</span>
+                        <span class="time">1 day ago</span>
+                      </span>
+                      <span class="message">
+                        Welcome, let me know if you need anything else!
+                      </span>
+                    </a>
+                  </li>
+                  <li>
+                    <div class="text-center">
+                      <a href="inbox.html">
+                        <strong>See All Alerts</strong>
+                        <i class="fa fa-angle-right"></i>
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+
+            </ul>
+          </nav>
+        </div>
+
+      </div>
+      <!-- /top navigation -->
+
+
+      <!-- page content -->
+      <div class="right_col" role="main">
+
+        <div class="x_panel">
+          <div class="x_title">
+            <h2>Upcoming Interviews </h2>
+            <ul class="nav navbar-right panel_toolbox">
+              <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Settings 1</a>
+                  </li>
+                  <li><a href="#">Settings 2</a>
+                  </li>
+                </ul>
+              </li>
+              <li><a class="close-link"><i class="fa fa-close"></i></a>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+            <div class="dashboard-widget-content">
+
+              <ul class="list-unstyled timeline widget">
+                <li>
+                  <div class="block">
+                    <div class="block_content">
+                      <h2 class="title">
+                        <a href="/#/preinterview">Software Engineering Interview (Dynamic Programming)</a>
+                      </h2>
+                      <div class="byline">
+                        <span>April 23 2:00 PM</span> with <a>Brian Kernighan</a>
+                      </div>
+                      <p class="excerpt">I have an interview with Quora next week, and I've heard they really love memoization problems. I've gone through CITR so I'm familiar with the basic problems, like Fibonacci, but wanted some practice with trickier ones (e.g. problems that can ONLY be done with dynamic programming). Thanks so much!
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="block">
+                    <div class="block_content">
+                      <h2 class="title">
+                        <a href="/#/preinterview">Software Engineering Interview (Trees, Recursion)</a>
+                      </h2>
+                      <div class="byline">
+                        <span>April 27 5:00 PM</span> with <a>Andrew Appel</a>
+                      </div>
+                      <p class="excerpt">I'm good with arrays, strings, stacks/queues...the simple data structures basically, but I really get stumped if the problem involves traversing trees (preorder/inorder), finding common ancestors, etc. Also I never see the 3-line recursion solutions, so if you could just shoot those kinds of problems at me, that would be awesome.
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="block">
+                    <div class="block_content">
+                      <h2 class="title">
+                        <a href="/#/preinterview">Software Engineering Interview</a>
+                      </h2>
+                      <div class="byline">
+                        <span>April 29 11:00 AM</span> with <a>Arvind Narayanan</a>
+                      </div>
+                      <p class="excerpt">I have my final coding challenge with Databricks next week, and I have no idea what they are going to ask. I have a feeling it might have to do with distributed systems or ML... Do you think you could walk me through some problems involving MapReduce?
+                      </p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="block">
+                    <div class="block_content">
+                      <h2 class="title">
+                        <a href="/#/preinterview">Software Engineering Interview (General)</a>
+                      </h2>
+                      <div class="byline">
+                        <span>April 29 12:00 PM</span> with <a>Ed Felten</a>
+                      </div>
+                      <p class="excerpt">Anything and everything goes, let's just code!
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- footer content -->
+        <footer>
+          <div class="pull-right">
+            Coach - Adapted from Bootstrap Template by <a href="https://colorlib.com">Colorlib</a>
+          </div>
+          <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
+      </div>
+      <!-- /page content -->
+    </div>
+
+  </div>
+
+  <div id="custom_notifications" class="custom-notifications dsp_none">
+    <ul class="list-unstyled notifications clearfix" data-tabbed_notifications="notif-group">
+    </ul>
+    <div class="clearfix"></div>
+    <div id="notif-group" class="tabbed_notifications"></div>
+  </div>
+
+  <script src="/static/dashboard/bootstrap.min.js"></script>
+
+  <!-- icheck -->
+  <script src="/static/dashboard/icheck/icheck.min.js"></script>
+
+  <script src="/static/dashboard/custom.js"></script>
+
+  <!-- /footer content -->
+</body>
+
+</html>
