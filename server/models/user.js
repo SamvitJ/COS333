@@ -10,6 +10,10 @@ module.exports = mongoose.model('User', new Schema ({
     school: String,
     headline: String,
     rate: Number,
-    calendar: String,
+    availability: [{
+    	id: Number,
+    	start: Date,
+    	end: Date
+    }],
     bio: String,
 }));

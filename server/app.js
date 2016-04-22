@@ -7,7 +7,11 @@ var express                = require('express');
     User                   = require('./models/user');
     Hangout                = require('./models/hangout');
 
+<<<<<<< HEAD
     usersController       = require('./controllers/usersController.js');
+=======
+    usersController        = require('./controllers/usersController.js');
+>>>>>>> d27c30820a29d88e2b139bf848a6af0ca71b49b3
     hangoutsController     = require('./controllers/hangoutsController.js');
 
 var app = express();
@@ -69,6 +73,12 @@ app.use('/static', express.static(path.join(__dirname, '../client/views/xml')));
 app.use(express.static(path.join(__dirname, '../client/views/landing')));
 app.use('/static', express.static(path.join(__dirname, '../bootstrap4alpha2/dist/js/')));
 app.use('/static', express.static(path.join(__dirname, '../bootstrap4alpha2/dist/css/')));
+app.use('/static', express.static(path.join(__dirname, '../js/scheduler/')));
+
+app.use('/static/dashboard', express.static(path.join(__dirname, '../client/js/dashboard')));
+app.use('/static/dashboard', express.static(path.join(__dirname, '../client/views/css/dashboard')));
+app.use('/static/dashboard', express.static(path.join(__dirname, '../client/views/fonts/dashboard')));
+app.use('/static/dashboard', express.static(path.join(__dirname, '../client/views/resources/dashboard')));
 
 // start server
 app.listen(app.get('port'), function () {
