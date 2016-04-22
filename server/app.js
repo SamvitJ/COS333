@@ -67,6 +67,7 @@ app.use('/static', express.static(path.join(__dirname, '../client/views/resource
 app.use('/static', express.static(path.join(__dirname, '../client/views/xml')));
 app.use('/static', express.static(path.join(__dirname, '../bootstrap4alpha2/dist/js/')));
 app.use('/static', express.static(path.join(__dirname, '../bootstrap4alpha2/dist/css/')));
+app.use('/static', express.static(path.join(__dirname, '../bower_components/scheduler/codebase/')));
 
 app.use('/static/dashboard', express.static(path.join(__dirname, '../client/js/dashboard')));
 app.use('/static/dashboard', express.static(path.join(__dirname, '../client/views/css/dashboard')));
