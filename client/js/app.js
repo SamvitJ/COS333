@@ -29,7 +29,12 @@ app.config(['$routeProvider',
       }).
       otherwise({
         redirectTo: '/',
-        templateUrl: 'partials/landing.html',
+        templateUrl: 'landing/index.html',
         controller: 'LandingCtrl'  
       });
+      // otherwise({
+      //   redirectTo: '/',
+      //   templateUrl: 'partials/landing.html',
+      //   controller: 'LandingCtrl'  
+      // });
   }]);

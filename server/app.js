@@ -7,8 +7,8 @@ var express                = require('express');
     User                   = require('./models/user');
     Hangout                = require('./models/hangout');
 
-    usersController       = require('./controllers/usersController.js')
-    hangoutsController     = require('./controllers/hangoutsController.js')
+    usersController       = require('./controllers/usersController.js');
+    hangoutsController     = require('./controllers/hangoutsController.js');
 
 var app = express();
 
@@ -19,7 +19,7 @@ app.use(function (req, res, next) {
 }); 
 
 // server/DB config
-app.set('port', (process.env.PORT || 5000))
+app.set('port', (process.env.PORT || 5000));
 
 var dbURI = 'mongodb://localhost:27017/database'
 mongoose.connect(process.env.MONGOLAB_URI || dbURI, function (err) {
@@ -58,6 +58,7 @@ app.get('/users', function (req, res) {
 
 // static routing
 app.use('/', express.static(path.join(__dirname, '../client/views/html')));
+app.use('/', express.static(path.join(__dirname, '../client/views')));
 
 app.use('/static', express.static(path.join(__dirname, '../client/js')));
 app.use('/static', express.static(path.join(__dirname, '../client/js/controllers')));
@@ -65,6 +66,7 @@ app.use('/static', express.static(path.join(__dirname, '../client/js/services'))
 app.use('/static', express.static(path.join(__dirname, '../client/views/css')));
 app.use('/static', express.static(path.join(__dirname, '../client/views/resources')));
 app.use('/static', express.static(path.join(__dirname, '../client/views/xml')));
+app.use(express.static(path.join(__dirname, '../client/views/landing')));
 app.use('/static', express.static(path.join(__dirname, '../bootstrap4alpha2/dist/js/')));
 app.use('/static', express.static(path.join(__dirname, '../bootstrap4alpha2/dist/css/')));
 
