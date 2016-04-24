@@ -20,7 +20,7 @@ interviewersListController.controller('IntListCtrl', ['$scope', 'User', function
 
 				//check if date is within a one week range
 				if (diffDays > 0 && diffDays <= 7) {
-					schedule[diffDays - 1].push({id: time.id, time: start.getHours()})
+					schedule[diffDays - 1].push({id: time.id, time: start.getHours()});
 				}
 			});
 
@@ -51,6 +51,8 @@ interviewersListController.controller('IntListCtrl', ['$scope', 'User', function
 		}
 		schedule.splice(index, 1);
 		$scope.schedule.selectedInterviewer.availability = schedule;
+		// var user = new User.all({});
+		// user.$save()
 		$scope.schedule.selectedInterviewer.$update(function() {
 			console.log("interviewer schedule updated")
 		});
