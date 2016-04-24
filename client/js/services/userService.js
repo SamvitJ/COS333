@@ -7,7 +7,7 @@ interviewerServices.factory('User', function($resource) {
          update: {method:'PUT'}
       }),
 
-      all: $resource('/api/users'),
+      all: $resource('/api/users')
    }
 });
 
