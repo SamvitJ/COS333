@@ -18,7 +18,8 @@
       </a>
 
       <!-- Trigger the modal with a button -->
-      <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">See Schedule</button>
+      <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" ng-click="updateSelectedInterviewer($index)">See Schedule</button>
+
       <!-- Modal -->
       <div id="myModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
@@ -30,7 +31,17 @@
               <h4 class="modal-title">Schedule Interview</h4>
             </div>
             <div class="modal-body">
-              <p>{{interviewer.availability}}</p>
+              <form ng-submit="scheduleInterview()">
+                <!-- {{schedule.selectedInterviewer.schedule}} -->
+                <div class="dates" ng-repeat="day in schedule.selectedInterviewer.schedule">
+                  <select data-ng-model="schedule" data-ng-options="hour.time for hour in day">                
+                  </select> {{day.start}}
+                </div>
+                <button class="btn btn-primary" type="submit">Schedule!</button>
+              </form>
+              
+
+
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

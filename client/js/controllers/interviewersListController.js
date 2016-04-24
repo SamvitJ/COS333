@@ -3,30 +3,11 @@ var interviewersListController = angular.module('interviewersListController', []
 interviewersListController.controller('IntListCtrl', ['$scope', 'User', function ($scope, User) {
 
   User.interviewers.query(function (results) {
-    $scope.interviewers = results;
+  	var currentTime = new Date();
+  	results.forEach(function(interviewer) {
+  		var availability = interviewer.availability;
 
-    //hard coded data
-	var availability = [
-	    {
-	        "id": 1461168524308,
-	        "start": "2016-04-21T18:00:00.000Z",
-	        "end": "2016-04-21T19:00:00.000Z"
-	    },
-	    {
-	        "id": 1461168524309,
-	        "start": "2016-04-27T09:00:00.000Z",
-	        "end": "2016-04-22T20:00:00.000Z"
-	    },
-	    {
-	        "id": 1461168524310,
-	        "start": "2016-04-28T20:00:00.000Z",
-	        "end": "2016-04-23T21:00:00.000Z"
-	    }
-	];
-
-	var currentTime = new Date();
-	$scope.interviewers.forEach(function(interviewer) {
-		schedule = [];
+		var schedule = [];
 		for (i = 0; i < 7; i++) {
 			schedule.push([]);
 		}
@@ -40,11 +21,28 @@ interviewersListController.controller('IntListCtrl', ['$scope', 'User', function
 
 			//check if date is within a one week range
 			if (diffDays > 0 && diffDays <= 7) {
-				schedule[diffDays - 1].push(start.getHours())
+				schedule[diffDays - 1].push({id: time.id, time: start.getHours()})
 			}
 		});
-		interviewer.availability = schedule;
-	});
+
+		interviewer.schedule = schedule;
+  	})
+    $scope.interviewers = results;
+    $scope.schedule = {
+    	selectedInterviewer: {},
+    	selectedTime: {}
+
+    };
+
+	$scope.scheduleInterview = function(ev) {
+		console.log($scope.schedule.selectedInterviewer);
+		console.log($scope.schedule.selectedTime);
+	}
+
+	$scope.updateSelectedInterviewer = function(index) {
+		$scope.schedule.selectedInterviewer = $scope.interviewers[index];
+	}
+
   });
 
 }]);
