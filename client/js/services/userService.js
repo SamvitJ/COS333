@@ -6,7 +6,11 @@ interviewerServices.factory('User', function($resource) {
          query: {method:'GET', params:{}, isArray:true}
       }),
 
-      all: $resource('/api/users')
+      all: $resource('/api/users'),
+
+      update: $resource('/api/interviewers:id', { id: '@_id' }, {
+      	'update': { method: 'PUT'}
+      })
    }
 });
 
