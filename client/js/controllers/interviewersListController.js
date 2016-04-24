@@ -28,11 +28,13 @@ interviewersListController.controller('IntListCtrl', ['$scope', 'User', function
 		interviewer.schedule = schedule;
   	})
     $scope.interviewers = results;
-    $scope.schedule = {
-    	selectedInterviewer: {},
-    	selectedTime: {}
 
-    };
+
+  });
+	$scope.schedule = {
+		selectedInterviewer: {},
+		selectedTime: {}
+	};
 
 	$scope.scheduleInterview = function(ev) {
 		console.log($scope.schedule.selectedInterviewer);
@@ -42,7 +44,5 @@ interviewersListController.controller('IntListCtrl', ['$scope', 'User', function
 	$scope.updateSelectedInterviewer = function(index) {
 		$scope.schedule.selectedInterviewer = $scope.interviewers[index];
 	}
-
-  });
 
 }]);
