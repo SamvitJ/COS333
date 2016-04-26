@@ -6,9 +6,11 @@ var express                = require('express');
     Interviewer            = require('./models/interviewer');
     User                   = require('./models/user');
     Hangout                = require('./models/hangout');
+    Interview              = require('./models/interview'); 
 
     usersController        = require('./controllers/usersController.js');
     hangoutsController     = require('./controllers/hangoutsController.js');
+    interviewController    = require('./controllers/interviewController.js');
 
 var app = express();
 
