@@ -9,7 +9,7 @@ module.exports.create = function (req, res) {
 
 module.exports.listInterviews = function (req, res) {
 	var userID = req.query.id
-  Interview.find({interviewer: userID}, function (err, results) {
+  Interview.find({interviewer: userID, complete: false}, function (err, results) {
     res.json(results);
   });
 }
