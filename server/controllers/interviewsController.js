@@ -7,7 +7,7 @@ module.exports.create = function (req, res) {
   });
 }
 
-module.exports.listInterviewers = function (req, res) {
+module.exports.listInterviews = function (req, res) {
   Interview.find({}, function (err, results) {
     res.json(results);
   });

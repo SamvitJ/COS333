@@ -10,7 +10,7 @@ var express                = require('express');
 
     usersController        = require('./controllers/usersController.js');
     hangoutsController     = require('./controllers/hangoutsController.js');
-    interviewsController    = require('./controllers/interviewsController.js');
+    interviewsController   = require('./controllers/interviewsController.js');
 
 var app = express();
 
@@ -39,10 +39,9 @@ app.post('/api/hangouts', hangoutsController.hangout);
 
 app.get('/api/users', usersController.list);
 app.get('/api/interviewers', usersController.listInterviewers);
-app.get('/api/interviews:id', interviewsController.listInterviews);
-app.post('/api/users', usersController.create);
-app.put('/api/interviewers/:id', usersController.updateInterviewer);
-app.post('/api/interviews/:id', interviewsController.create);
+app.get('/api/interviews', interviewsController.listInterviews);
+app.put('/api/interviewers', usersController.updateInterviewer);
+app.post('/api/interviews', interviewsController.create);
 
 // For internal testing
 app.get('/interviewers', function (req, res) {
