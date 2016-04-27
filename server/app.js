@@ -38,7 +38,7 @@ app.post('/api/hangouts', hangoutsController.hangout);
 app.get('/api/users', usersController.list);
 app.get('/api/interviewers', usersController.listInterviewers);
 app.post('/api/users', usersController.create);
-app.put('/api/interviewers/:id', usersController.updateInterviewer);
+app.put('/api/interviewers', usersController.updateInterviewer);
 
 // For internal testing
 app.get('/interviewers', function (req, res) {

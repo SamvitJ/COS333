@@ -37,15 +37,15 @@ interviewersListController.controller('IntListCtrl', ['$scope', 'User', function
 	};
 
 	$scope.scheduleInterview = function(ev) {
-		console.log($scope.schedule.selectedInterviewer);
-		console.log($scope.schedule.selectedTime);
-
 		// update availability
 		var schedule = $scope.schedule.selectedInterviewer.availability;
+		console.log(schedule)
 		var eventID = $scope.schedule.selectedTime.id;
+		var hour = $scope.schedule.selectedTime.time;
 		var index = -1;
 		for (var i = 0; i < schedule.length; i++) {
-			if (schedule[i].id == eventID) {
+			start = new Date(schedule[i].start);
+			if (schedule[i].id == eventID && start.getHours() == hour) {
 				index = i;
 			}
 		}
