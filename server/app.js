@@ -76,7 +76,10 @@ app.use('/static/dashboard', express.static(path.join(__dirname, '../client/view
 app.use('/static/dashboard', express.static(path.join(__dirname, '../client/views/fonts/dashboard')));
 app.use('/static/dashboard', express.static(path.join(__dirname, '../client/views/resources/dashboard')));
 
-app.use('/static/landing', express.static(path.join(__dirname, '../client/views/landing')));
+app.use('/static/landing', express.static(path.join(__dirname, '../client/views/css')));
+app.use('/static/landing', express.static(path.join(__dirname, '../client/js/landing')));
+app.use('/static/landing', express.static(path.join(__dirname, '../client/views/fonts/landing')));
+
 
 // start server
 app.listen(app.get('port'), function () {
