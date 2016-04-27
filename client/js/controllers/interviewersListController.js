@@ -50,8 +50,6 @@ interviewersListController.controller('IntListCtrl', ['$scope', 'User', 'Intervi
 			}
 		}
 		var scheduledTime = schedule.splice(index, 1)[0];
-		$scope.schedule.selectedInterviewer.availability = schedule;
-		$scope.schedule.selectedInterviewer.$update();
 
 		// Add to interviews table
 		var interview = new Interview.all({
@@ -62,6 +60,16 @@ interviewersListController.controller('IntListCtrl', ['$scope', 'User', 'Intervi
     });
     interview.$save(function (result) {
       console.log("interview scheduled!")
+
+      // Update Interviewer's availability
+      $scope.schedule.selectedInterviewer.availability = schedule;
+
+      // Save to interviewer and interviewee's histories
+      var interviewerHistory = $scope.schedule.selectedInterviewer.interviews;
+      interviewerHistory.push(interview._id)
+
+      // Send put request to update
+      $scope.schedule.selectedInterviewer.$update()
     });
 
 
