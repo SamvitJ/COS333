@@ -66,7 +66,6 @@ app.use('/static', express.static(path.join(__dirname, '../client/js/services'))
 app.use('/static', express.static(path.join(__dirname, '../client/views/css')));
 app.use('/static', express.static(path.join(__dirname, '../client/views/resources')));
 app.use('/static', express.static(path.join(__dirname, '../client/views/xml')));
-app.use(express.static(path.join(__dirname, '../client/views/landing')));
 app.use('/static', express.static(path.join(__dirname, '../bootstrap4alpha2/dist/js/')));
 app.use('/static', express.static(path.join(__dirname, '../bootstrap4alpha2/dist/css/')));
 app.use('/static', express.static(path.join(__dirname, '../js/scheduler/')));
