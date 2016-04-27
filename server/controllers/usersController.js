@@ -20,11 +20,10 @@ module.exports.listInterviewers = function (req, res) {
 }
 
 module.exports.updateInterviewer = function (req, res) {
-  console.log(req.body)
   User.update(
     {_id: req.body._id}, // is this correct id?
     {$set: { availability: req.body.availability }}, function(err, results) {
-      console.log(results)
+      // console.log(results)
     }
   );
 }

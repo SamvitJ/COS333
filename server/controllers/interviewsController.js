@@ -1,6 +1,7 @@
 var Interview = require('../models/interview');
 
 module.exports.create = function (req, res) {
+	console.log(req.body)
   var interview = new Interview(req.body)
   interview.save(function (err, result) {
     res.json(result);
