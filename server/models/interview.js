@@ -5,8 +5,8 @@ module.exports = mongoose.model('Interview', new Schema ({
     complete: Boolean,
     start: Date,
     end: Date,
-    interviewer: ,
-    interviewee: ,
+    interviewer: String,
+    interviewee: String,
     intervieweeFeedback: {
         feedback: String,
         code: String
