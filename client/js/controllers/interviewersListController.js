@@ -3,7 +3,7 @@ var interviewersListController = angular.module('interviewersListController', []
 interviewersListController.controller('IntListCtrl', ['$scope', 'User', 'Interview', function ($scope, User, Interview) {
 
 	Interview.interviews.query({id: "572050502b0ab9e44b5eaae8"}, function(results) {
-		console.log(results)
+		// console.log(results)
 	});
 
   User.interviewers.query(function (results) {
@@ -12,7 +12,12 @@ interviewersListController.controller('IntListCtrl', ['$scope', 'User', 'Intervi
 
 			var schedule = [];
 			for (i = 0; i < 7; i++) {
-				schedule.push([]);
+				var date = new Date(currentTime);
+				date.setDate(date.getDate() + i)
+				schedule.push({
+					day: date.toDateString(),
+					hours: []
+				});
 			}
 
 			interviewer.availability.forEach(function(time) {
@@ -24,7 +29,7 @@ interviewersListController.controller('IntListCtrl', ['$scope', 'User', 'Intervi
 
 				//check if date is within a one week range
 				if (diffDays > 0 && diffDays <= 7) {
-					schedule[diffDays - 1].push({id: time.id, time: start.getHours()});
+					schedule[diffDays - 1].hours.push({id: time.id, time: start.getHours()});
 				}
 			});
 
