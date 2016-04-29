@@ -1,6 +1,6 @@
 var app = angular.module('coachApp', ['ngResource', 'ngRoute',
    'interviewersListController', 'interviewersDetailController', 
-   'preinterviewController', 'signupController', 'dashboardController',
+   'preinterviewController', 'dashboardController',
    'landingController', 'createInterviewerController',
    'preinterviewServices', 'userServices']);
 
@@ -23,14 +23,10 @@ app.config(['$routeProvider',
         templateUrl: 'partials/create-interviewer.html',
         controller: 'CreateIntCtrl'  
       }).
-      // when('/login', {
-      //   templateUrl: 'partials/login.html',
-      //   controller: 'SignupCtrl'
-      // }).
-      // when('/register', {
-      //   templateUrl: 'partials/login.html#toregister',
-      //   controller: 'SignupCtrl'
-      // }).
+      when('/register', {
+        templateUrl: 'partials/register.html',
+        controller: 'SignupCtrl'
+      }).
       when('/dashboard', {
         templateUrl: 'partials/dashboard.html',
         controller: 'DashboardCtrl'

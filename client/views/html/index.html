@@ -10,11 +10,17 @@
     <link rel="stylesheet" type="text/css" href="static/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="static/index.css">
     <link rel="stylesheet" type="text/css" href="static/dhtmlxscheduler.css">
-  </head>
 
-<!--   <header>
-    <h1><a href="#/">Coach</a></h1>
-  </header> -->
+<!--     Modal pop-up scripts -->
+<!-- <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.js"></script>
+    <script src="https://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.4.js"></script> -->
+
+      <!-- Google scripts -->
+<meta name="google-signin-scope" content="profile email">
+<meta name="google-signin-client_id" content="344521590545-frgeqsqikblk4i14rn9ffqlgmtk7nj24.apps.googleusercontent.com">
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+  </head>
 
   <body>
 
@@ -25,22 +31,25 @@
           <a class="nav-link" href="#">How It Works</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Become an Interviewer</a>
+          <a class="nav-link" href="#/register">Become an Interviewer</a>
         </li>
+<!--         <li class="nav-item pull-xs-right">
+            <div ng-controller="SignupCtrl">
+                <a ng-click="open()" >Sign Up</a>
+            </div>
+        </li> -->
         <li class="nav-item pull-xs-right">
-          <a class="nav-link" href="#">Sign Up</a>
-        </li>
-        <li class="nav-item pull-xs-right">
-          <a class="nav-link" href="#">Log In</a>
+  <div class="g-signin2" data-onsuccess="getGoogleData" data-theme="dark"></div>
         </li>
       </ul>
     </nav>
+
     <div ng-view></div>
 
     <script src="https://code.jquery.com/jquery-2.2.3.min.js"   integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="   crossorigin="anonymous"></script>
     
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-resource.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.js"></script>
+     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-resource.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-route.js"></script>
 
     <script type="text/javascript" src="static/app.js"></script>
@@ -50,7 +59,7 @@
     <script type="text/javascript" src="static/preinterviewController.js"></script>
     <script type="text/javascript" src="static/landingController.js"></script>
     <script type="text/javascript" src="static/createInterviewerController.js"></script>
-    <script type="text/javascript" src="static/signupController.js"></script>
+<!--     <script type="text/javascript" src="static/signupController.js"></script> -->
     <script type="text/javascript" src="static/dashboardController.js"></script>
 
     <script type="text/javascript" src="static/dhtmlxscheduler.js"></script>
