@@ -39,6 +39,7 @@ signupController.controller('SignupCtrl', ['$scope', '$sessionStorage', 'User', 
     });
 
       $sessionStorage.loggedIn = true;
+      $route.reload();
   };
 
 }]);
