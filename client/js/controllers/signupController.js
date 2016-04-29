@@ -35,7 +35,7 @@ signupController.controller('SignupCtrl', ['$scope', '$sessionStorage', 'User', 
       $scope.email = '';
       $scope.google_token = '';
 
-      window.location.href="/partials/dashboard.html";
+      window.location.href="#/dashboard";
     });
 
       console.log('createUser() called');
