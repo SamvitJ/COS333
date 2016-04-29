@@ -15,7 +15,7 @@ interviewersListController.controller('IntListCtrl', ['$scope', 'User', 'Intervi
 				var date = new Date(currentTime);
 				date.setDate(date.getDate() + i)
 				schedule.push({
-					day: date.toDateString(),
+					day: date.toLocaleDateString('en-us', {weekday:'long', month:'short', day:'numeric'}),
 					hours: []
 				});
 			}
