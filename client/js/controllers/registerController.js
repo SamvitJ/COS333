@@ -23,6 +23,7 @@ registerController.controller('RegisterCtrl', ['$scope', 'User', function ($scop
   };
 
   $scope.createUser = function (credentials) {
+    console.log('createUser() called');
     // get scheduler events
     var availability = []
     scheduler.getEvents().forEach(function(event) {
