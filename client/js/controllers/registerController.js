@@ -1,6 +1,6 @@
 var registerController = angular.module('registerController', []);
 
-registerController.controller('RegisterCtrl', ['$scope', 'User', function ($scope, User) {
+registerController.controller('RegisterCtrl', ['$scope', '$sessionStorage', 'User', function ($scope, $sessionStorage, User) {
 
   // Scheduler init
   scheduler.locale.labels.new_event = 'Available';
@@ -8,22 +8,7 @@ registerController.controller('RegisterCtrl', ['$scope', 'User', function ($scop
   scheduler.config.time_step = 60;
   scheduler.init('scheduler_here', new Date(), "week");
 
-  window.getGoogleData = function (googleUser) {
-    // Useful data for your client-side scripts:
-    var profile = googleUser.getBasicProfile();
-    var authResp = googleUser.getAuthResponse();
-
-    $scope.name = profile.getName();
-    $scope.email = profile.getEmail();
-    $scope.google_token = authResp.id_token;
-
-    console.log('Full Name: ' + profile.getName());
-    console.log("Email: " + profile.getEmail());
-    console.log("ID Token: " + authResp.id_token);
-  };
-
   $scope.createUser = function (credentials) {
-    console.log('createUser() called');
     // get scheduler events
     var availability = []
     scheduler.getEvents().forEach(function(event) {
@@ -44,10 +29,9 @@ registerController.controller('RegisterCtrl', ['$scope', 'User', function ($scop
     });
 
     var user = new User.all({
-      "name": $scope.name,
-      "email": $scope.email,
-      "google_token": $scope.google_token,
-      // TODO: Change this
+      "name": $sessionStorage.name,
+      "email": $sessionStorage.email,
+      "google_token": $sessionStorage.google_token,
       "interviewer": true, 
       "school": $scope.school,
       "headline": $scope.headline,
@@ -66,7 +50,7 @@ registerController.controller('RegisterCtrl', ['$scope', 'User', function ($scop
       $scope.availability = '';
       $scope.bio = '';
 
-      window.location.href="/users";
+      window.location.href="/partials/dashboard.html";
     });
   };
 

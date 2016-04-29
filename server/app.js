@@ -1,6 +1,6 @@
 var express                = require('express');
     mongoose               = require('mongoose');
-    bodyParser             = require('body-parser'),
+    bodyParser             = require('body-parser');
     path                   = require('path');
 
     Interviewer            = require('./models/interviewer');

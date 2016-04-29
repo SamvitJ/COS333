@@ -48,14 +48,12 @@
         <section class="login_content">
           <form>
             <h1>Become an Interviewer</h1>
-  <form ng-submit="createUser()">
+  <form>
 
     <p>
       <label>School</label>
       <input type="text" value="" class="input-xlarge" ng-model="school">
     </p>
-
-    <h>If you're signing up to be an interviewer, please also provide the following information:</h> <br><br>
 
     <label>Headline</label>
     <input type="text" value="" class="input-xlarge" ng-model="headline"
@@ -100,7 +98,7 @@ LinkedIn: https://www.linkedin.com/in/vladimir-feinberg-64b92895">
     </textarea>
 
     <div>
-      <button class="btn btn-primary">Create Account</button>
+      <button class="btn btn-primary" ng-click="createUser()">Create Account</button>
     </div>
   </form>
           <!-- form -->

@@ -1,6 +1,8 @@
 var signupController = angular.module('signupController', []);
 
-signupController.controller('SignupCtrl', ['$scope', 'User', function ($scope, User) {
+signupController.controller('SignupCtrl', ['$scope', '$sessionStorage', 'User', function ($scope, $sessionStorage, User) {
+
+   $scope.$storage = $sessionStorage;
 
   window.getGoogleData = function (googleUser) {
     // Useful data for your client-side scripts:
@@ -10,6 +12,10 @@ signupController.controller('SignupCtrl', ['$scope', 'User', function ($scope, U
     $scope.name = profile.getName();
     $scope.email = profile.getEmail();
     $scope.google_token = authResp.id_token;
+
+    $sessionStorage.name = profile.getName();
+    $sessionStorage.email = profile.getEmail();
+    $sessionStorage.google_token = authResp.id_token;
 
     console.log('Full Name: ' + profile.getName());
     console.log("Email: " + profile.getEmail());
@@ -22,20 +28,19 @@ signupController.controller('SignupCtrl', ['$scope', 'User', function ($scope, U
       "name": $scope.name,
       "email": $scope.email,
       "google_token": $scope.google_token,
-      "interviewer": true
+      "interviewer": false
     });
     user.$save(function (result) {
       $scope.name = '';
       $scope.email = '';
       $scope.google_token = '';
 
-      window.location.href="/users";
+      window.location.href="/partials/dashboard.html";
     });
 
       console.log('createUser() called');
+      console.log('storage Full Name: ' + $sessionStorage.name);
   };
-
-
 
 }]);
 
