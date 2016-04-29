@@ -1,8 +1,8 @@
 var app = angular.module('coachApp', ['ngResource', 'ngRoute', 'ngStorage',
    'interviewersListController', 'interviewersDetailController', 
-   'preinterviewController', 'dashboardController',
-   'landingController', 'createInterviewerController', 'signupController',
-   'registerController', 'preinterviewServices', 'userServices']);
+   'preinterviewController', 'signupController', 'dashboardController',
+   'landingController', 'createInterviewerController', 'registerController',
+   'preinterviewServices', 'userServices', 'interviewServices']);
 
 app.config(['$routeProvider',
   function($routeProvider) {

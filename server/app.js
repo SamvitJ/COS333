@@ -6,9 +6,11 @@ var express                = require('express');
     Interviewer            = require('./models/interviewer');
     User                   = require('./models/user');
     Hangout                = require('./models/hangout');
+    Interview              = require('./models/interview'); 
 
     usersController       = require('./controllers/usersController.js');
     hangoutsController     = require('./controllers/hangoutsController.js');
+    interviewsController   = require('./controllers/interviewsController.js');
 
 var app = express();
 
@@ -38,6 +40,9 @@ app.post('/api/hangouts', hangoutsController.hangout);
 app.get('/api/users', usersController.list);
 app.get('/api/interviewers', usersController.listInterviewers);
 app.post('/api/users', usersController.create);
+app.get('/api/interviews', interviewsController.listInterviews);
+app.put('/api/interviewers', usersController.updateInterviewer);
+app.post('/api/interviews', interviewsController.create);
 
 // For internal testing
 app.get('/interviewers', function (req, res) {
