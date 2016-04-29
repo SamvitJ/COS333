@@ -38,8 +38,7 @@ signupController.controller('SignupCtrl', ['$scope', '$sessionStorage', 'User', 
       window.location.href="#/dashboard";
     });
 
-      console.log('createUser() called');
-      console.log('storage Full Name: ' + $sessionStorage.name);
+      $sessionStorage.loggedIn = true;
   };
 
 }]);
