@@ -23,10 +23,14 @@ app.config(['$routeProvider',
         templateUrl: 'partials/create-interviewer.html',
         controller: 'CreateIntCtrl'  
       }).
-      when('/signup', {
-        templateUrl: 'partials/signup.html',
-        controller: 'SignupCtrl'
-      }).
+      // when('/login', {
+      //   templateUrl: 'partials/login.html',
+      //   controller: 'SignupCtrl'
+      // }).
+      // when('/register', {
+      //   templateUrl: 'partials/login.html#toregister',
+      //   controller: 'SignupCtrl'
+      // }).
       when('/dashboard', {
         templateUrl: 'partials/dashboard.html',
         controller: 'DashboardCtrl'
