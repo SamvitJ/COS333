@@ -18,3 +18,12 @@ module.exports.listInterviewers = function (req, res) {
     res.json(results);
   });
 }
+
+module.exports.updateInterviewer = function (req, res) {
+  User.update(
+    {_id: req.body._id}, 
+    {$set: { availability: req.body.availability }}, function(err, results) {
+      console.log(results)
+    }
+  );
+}
