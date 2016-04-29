@@ -1,6 +1,10 @@
 var interviewersListController = angular.module('interviewersListController', []);
 
-interviewersListController.controller('IntListCtrl', ['$scope', 'User', function ($scope, User) {
+interviewersListController.controller('IntListCtrl', ['$scope', 'User', 'Interview', function ($scope, User, Interview) {
+
+	Interview.interviews.query({id: "572050502b0ab9e44b5eaae8"}, function(results) {
+		// console.log(results)
+	});
 
   User.interviewers.query(function (results) {
   	var currentTime = new Date();
@@ -8,7 +12,12 @@ interviewersListController.controller('IntListCtrl', ['$scope', 'User', function
 
 			var schedule = [];
 			for (i = 0; i < 7; i++) {
-				schedule.push([]);
+				var date = new Date(currentTime);
+				date.setDate(date.getDate() + i)
+				schedule.push({
+					day: date.toDateString(),
+					hours: []
+				});
 			}
 
 			interviewer.availability.forEach(function(time) {
@@ -20,7 +29,18 @@ interviewersListController.controller('IntListCtrl', ['$scope', 'User', function
 
 				//check if date is within a one week range
 				if (diffDays > 0 && diffDays <= 7) {
-					schedule[diffDays - 1].push({id: time.id, time: start.getHours()});
+					var hour = start.getHours();
+					var time = ''
+					if (hour == 0) {
+						time = '12 am'
+					} else if (hour < 12) {
+						time = hour.toString() + 'am'
+					} else if (hour == 12) {
+						time = '12 pm'
+					} else {
+						time = (hour - 12).toString() + 'pm'
+					}
+					schedule[diffDays - 1].hours.push({id: time.id, time: time});
 				}
 			});
 
@@ -49,11 +69,30 @@ interviewersListController.controller('IntListCtrl', ['$scope', 'User', function
 				index = i;
 			}
 		}
-		schedule.splice(index, 1);
-		$scope.schedule.selectedInterviewer.availability = schedule;
-		$scope.schedule.selectedInterviewer.$update();
+		var scheduledTime = schedule.splice(index, 1)[0];
 
 		// Add to interviews table
+		var interview = new Interview.all({
+			complete: false,
+			start: scheduledTime.start,
+			end: scheduledTime.end,
+			interviewer: $scope.schedule.selectedInterviewer._id
+    });
+    interview.$save(function (result) {
+      console.log("interview scheduled!")
+
+      // Update Interviewer's availability
+      $scope.schedule.selectedInterviewer.availability = schedule;
+
+      // Save to interviewer and interviewee's histories
+      var interviewerHistory = $scope.schedule.selectedInterviewer.interviews;
+      interviewerHistory.push(interview._id)
+
+      // Send put request to update
+      $scope.schedule.selectedInterviewer.$update()
+    });
+
+
 	}
 
 	$scope.updateSelectedInterviewer = function(index) {

@@ -34,8 +34,8 @@
               <form ng-submit="scheduleInterview()">
                 <!-- {{schedule.selectedInterviewer.schedule}} -->
                 <div class="dates" ng-repeat="day in schedule.selectedInterviewer.schedule">
-                  {{day}}<select data-ng-model="schedule.selectedTime" data-ng-options="hour.time for hour in day">                
-                  </select> {{day.start}}
+                  {{day.day}}<select data-ng-model="schedule.selectedTime" data-ng-options="hour.time for hour in day.hours">                
+                  </select>
                 </div>
                 <button class="btn btn-primary" type="submit">Schedule!</button>
               </form>
