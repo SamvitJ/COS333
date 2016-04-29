@@ -29,7 +29,18 @@ interviewersListController.controller('IntListCtrl', ['$scope', 'User', 'Intervi
 
 				//check if date is within a one week range
 				if (diffDays > 0 && diffDays <= 7) {
-					schedule[diffDays - 1].hours.push({id: time.id, time: start.getHours()});
+					var hour = start.getHours();
+					var time = ''
+					if (hour == 0) {
+						time = '12 am'
+					} else if (hour < 12) {
+						time = hour.toString() + 'am'
+					} else if (hour == 12) {
+						time = '12 pm'
+					} else {
+						time = (hour - 12).toString() + 'pm'
+					}
+					schedule[diffDays - 1].hours.push({id: time.id, time: time});
 				}
 			});
 
