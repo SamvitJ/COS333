@@ -10,6 +10,8 @@
 
   <title>Coach! | </title>
 
+  <link rel="stylesheet" type="text/css" href="static/signup.css">
+
   <!-- Bootstrap core CSS -->
 
   <link href="/static/dashboard/bootstrap.min.css" rel="stylesheet">
@@ -42,11 +44,11 @@
 
 </head>
 
-<body style="background:#F7F7F7;">
+<body>
 
   <div class="">
-    <a class="hiddenanchor" id="toregister"></a>
-    <a class="hiddenanchor" id="tologin"></a>
+<!--     <a class="hiddenanchor" id="toregister"></a>
+    <a class="hiddenanchor" id="tologin"></a> -->
 
     <div id="wrapper">
       <div id="login" class="animate form">
@@ -58,7 +60,7 @@
 
   <br>
   <h>To create an account, sign in with Google: </h> <br><br>
-  <div class="g-signin2" data-onsuccess="getGoogleData" data-theme="dark"></div>
+  <div class="g-signin2" data-onsuccess="getGoogleData" id="googlesignin" data-theme="dark"></div>
   <br>
     
 
