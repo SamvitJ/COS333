@@ -2,10 +2,9 @@ var interviewersListController = angular.module('interviewersListController', []
 
 interviewersListController.controller('IntListCtrl', ['$scope', '$sessionStorage', 'User', 'Interview', function ($scope, $sessionStorage, User, Interview) {
 
-	Interview.interviews.query({id: "572050502b0ab9e44b5eaae8"}, function(results) {
+	Interview.interviews.query({google_token: $sessionStorage.google_token}, function(results) {
 		// console.log(results)
 	});
-	$scope.topic = '';
 
   User.interviewers.query(function (results) {
   	var currentTime = new Date();
@@ -62,7 +61,6 @@ interviewersListController.controller('IntListCtrl', ['$scope', '$sessionStorage
 	$scope.scheduleInterview = function(ev) {
 		// update availability
 		var schedule = $scope.interview.selectedInterviewer.availability;
-		// console.log(schedule)
 		var eventID = $scope.interview.selectedTime.id;
 		var hour = $scope.interview.selectedTime.time;
 		var index = -1;
@@ -79,7 +77,10 @@ interviewersListController.controller('IntListCtrl', ['$scope', '$sessionStorage
 			complete: false,
 			start: scheduledTime.start,
 			end: scheduledTime.end,
-			interviewer: $scope.interview.selectedInterviewer._id
+			topic: $scope.interview.topic,
+			description: $scope.interview.description,
+			interviewer: $scope.interview.selectedInterviewer.google_token,
+			interviewee: $sessionStorage.google_token
     });
     interview.$save(function (result) {
       console.log("interview scheduled!")
