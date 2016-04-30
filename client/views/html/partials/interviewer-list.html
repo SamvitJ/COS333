@@ -5,9 +5,8 @@
 <!--   <h1>There are {{interviewers.length}} interviewers</h1> -->
   <div class="profiles-container">
     <div class="card profile" ng-repeat="interviewer in interviewers">
-      <a href="#/interviewers/{{interviewer.name}}">
         <div class="card-profile-photo">
-          <img src="static/stockprofilephoto.jpg" class="profile-photo" alt="Card image">
+          <img src={{interviewer.image_url}} class="profile-photo" alt="Card image">
         </div>
 
         <div class="card-block">
