@@ -32,7 +32,12 @@
             </div>
             <div class="modal-body">
               <form ng-submit="scheduleInterview()">
-                <!-- {{schedule.selectedInterviewer.schedule}} -->
+                <label>Topic</label>
+                <input type="text" placeholder="Software Engineering Interview (Dynamic Programming)" ng-model=""><br>
+                <label>Description<input type="text" placeholder="I have an interview with Quora next week, and I've heard they really love memoization problems." ng-model=""><br>
+                <label>Availability</label>
+
+
                 <div class="dates" ng-repeat="day in schedule.selectedInterviewer.schedule">
                   {{day.day}} <select data-ng-model="schedule.selectedTime" data-ng-options="hour.timeDisplayed for hour in day.hours">                
                   </select>
