@@ -324,7 +324,27 @@
                     </div>
                   </div>
                 </li>
+
+
+                <div class="interviews" ng-repeat="interview in interviews">
+                  <li>
+                    <div class="block">
+                      <div class="block_content">
+                        <h2 class="title">
+                          <a href="/#/preinterview">{{interview.topic}}</a>
+                        </h2>
+                        <div class="byline">
+                          <span>{{interview.start}}</span> with <a>Ed Felten</a>
+                        </div>
+                        <p class="excerpt">{{interview.description}}
+                        </p>
+                      </div>
+                    </div>
+                  </li>
+                </div>
+
               </ul>
+
             </div>
           </div>
         </div>
