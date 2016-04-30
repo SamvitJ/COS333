@@ -5,6 +5,7 @@ interviewersListController.controller('IntListCtrl', ['$scope', '$sessionStorage
 	Interview.interviews.query({id: "572050502b0ab9e44b5eaae8"}, function(results) {
 		// console.log(results)
 	});
+	$scope.topic = '';
 
   User.interviewers.query(function (results) {
   	var currentTime = new Date();
@@ -51,17 +52,19 @@ interviewersListController.controller('IntListCtrl', ['$scope', '$sessionStorage
   });
 
 
-	$scope.schedule = {
+	$scope.interview = {
 		selectedInterviewer: {},
-		selectedTime: {}
+		selectedTime: {},
+		topic: '',
+		description: ''
 	};
 
 	$scope.scheduleInterview = function(ev) {
 		// update availability
-		var schedule = $scope.schedule.selectedInterviewer.availability;
-		console.log(schedule)
-		var eventID = $scope.schedule.selectedTime.id;
-		var hour = $scope.schedule.selectedTime.time;
+		var schedule = $scope.interview.selectedInterviewer.availability;
+		// console.log(schedule)
+		var eventID = $scope.interview.selectedTime.id;
+		var hour = $scope.interview.selectedTime.time;
 		var index = -1;
 		for (var i = 0; i < schedule.length; i++) {
 			start = new Date(schedule[i].start);
@@ -76,27 +79,27 @@ interviewersListController.controller('IntListCtrl', ['$scope', '$sessionStorage
 			complete: false,
 			start: scheduledTime.start,
 			end: scheduledTime.end,
-			interviewer: $scope.schedule.selectedInterviewer._id
+			interviewer: $scope.interview.selectedInterviewer._id
     });
     interview.$save(function (result) {
       console.log("interview scheduled!")
 
       // Update Interviewer's availability
-      $scope.schedule.selectedInterviewer.availability = schedule;
+      $scope.interview.selectedInterviewer.availability = schedule;
 
       // Save to interviewer and interviewee's histories
-      var interviewerHistory = $scope.schedule.selectedInterviewer.interviews;
+      var interviewerHistory = $scope.interview.selectedInterviewer.interviews;
       interviewerHistory.push(interview._id)
 
       // Send put request to update
-      $scope.schedule.selectedInterviewer.$update()
+      $scope.interview.selectedInterviewer.$update()
     });
 
 
 	}
 
 	$scope.updateSelectedInterviewer = function(index) {
-		$scope.schedule.selectedInterviewer = $scope.interviewers[index];
+		$scope.interview.selectedInterviewer = $scope.interviewers[index];
 	}
 
 }]);
