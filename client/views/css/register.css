@@ -1,0 +1,9 @@
+label.radio {
+  margin-left: 2px;
+}
+
+input[type="radio"] {
+  float: left;
+  clear: none;
+  margin: 3px 0 0 2px;
+}

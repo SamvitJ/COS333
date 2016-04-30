@@ -1,6 +1,6 @@
 var express                = require('express');
     mongoose               = require('mongoose');
-    bodyParser             = require('body-parser'),
+    bodyParser             = require('body-parser');
     path                   = require('path');
 
     Interviewer            = require('./models/interviewer');
@@ -8,7 +8,7 @@ var express                = require('express');
     Hangout                = require('./models/hangout');
     Interview              = require('./models/interview'); 
 
-    usersController        = require('./controllers/usersController.js');
+    usersController       = require('./controllers/usersController.js');
     hangoutsController     = require('./controllers/hangoutsController.js');
     interviewsController   = require('./controllers/interviewsController.js');
 
@@ -63,6 +63,7 @@ app.get('/users', function (req, res) {
 
 // static routing
 app.use('/', express.static(path.join(__dirname, '../client/views/html')));
+app.use('/', express.static(path.join(__dirname, '../client/views')));
 
 app.use('/static', express.static(path.join(__dirname, '../client/js')));
 app.use('/static', express.static(path.join(__dirname, '../client/js/controllers')));
@@ -78,6 +79,12 @@ app.use('/static/dashboard', express.static(path.join(__dirname, '../client/js/d
 app.use('/static/dashboard', express.static(path.join(__dirname, '../client/views/css/dashboard')));
 app.use('/static/dashboard', express.static(path.join(__dirname, '../client/views/fonts/dashboard')));
 app.use('/static/dashboard', express.static(path.join(__dirname, '../client/views/resources/dashboard')));
+
+app.use('/static/landing', express.static(path.join(__dirname, '../client/views/css')));
+app.use('/static/landing', express.static(path.join(__dirname, '../client/views/resources')));
+app.use('/static/landing', express.static(path.join(__dirname, '../client/js/landing')));
+app.use('/static/landing', express.static(path.join(__dirname, '../client/views/fonts/landing')));
+
 
 // start server
 app.listen(app.get('port'), function () {

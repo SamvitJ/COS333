@@ -1,6 +1,6 @@
 var interviewersListController = angular.module('interviewersListController', []);
 
-interviewersListController.controller('IntListCtrl', ['$scope', 'User', 'Interview', function ($scope, User, Interview) {
+interviewersListController.controller('IntListCtrl', ['$scope', '$sessionStorage', 'User', 'Interview', function ($scope, $sessionStorage, User, Interview) {
 
 	Interview.interviews.query({id: "572050502b0ab9e44b5eaae8"}, function(results) {
 		// console.log(results)
