@@ -49,3 +49,7 @@
 .modal-body input, textarea {
    width: 100%;
 }
+
+.modal-body select {
+   width: 35%;
+}
