@@ -5,7 +5,7 @@ interviewersListController.controller('IntListCtrl', ['$scope', '$sessionStorage
 	Interview.interviews.query({id: "572050502b0ab9e44b5eaae8"}, function(results) {
 		// console.log(results)
 	});
-
+   
   User.interviewers.query(function (results) {
   	var currentTime = new Date();
   	results.forEach(function(interviewer) {

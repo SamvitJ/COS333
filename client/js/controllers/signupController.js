@@ -14,15 +14,20 @@ signupController.controller('SignupCtrl', ['$scope', '$sessionStorage', 'User', 
     $scope.google_token = authResp.id_token;
     $scope.image_url = profile.getImageUrl();
 
+    if (profile.getImageUrl() ===  undefined) {
+      console.log("if");
+      $scope.image_url = "static/stockprofilephoto.jpg";
+    }
+
     $sessionStorage.name = profile.getName();
     $sessionStorage.email = profile.getEmail();
     $sessionStorage.google_token = authResp.id_token;
-    $sessionStorage.image_url = profile.getImageUrl();
+    $sessionStorage.image_url = $scope.image_url;
 
     console.log('Full Name: ' + profile.getName());
     console.log("Email: " + profile.getEmail());
     console.log("ID Token: " + authResp.id_token);
-    console.log("Image URL: " + profile.getImageUrl());
+    console.log("Image URL: " + $scope.image_url);
   };
 
   $scope.createUser = function (credentials) {

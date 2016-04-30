@@ -2,17 +2,17 @@
 <link rel="stylesheet" type="text/css" href="static/interviewer-list.css">
 
 <div ng-controller="IntListCtrl" class="container-fluid">
-<!--   <h1>There are {{interviewers.length}} interviewers</h1> -->
   <div class="profiles-container">
     <div class="card profile" ng-repeat="interviewer in interviewers">
         <div class="card-profile-photo">
-          <img src={{interviewer.image_url}} class="profile-photo" alt="Card image">
+          <img ng-src="{{interviewer.image_url}}" class="profile-photo" alt="Card image">
         </div>
 
         <div class="card-block">
           <h4 class="card-title">{{interviewer.name}}</h4>
           <h6 class="card-subtitle text-muted">{{interviewer.school}}</h6>
           <p class="card-text">{{interviewer.headline}}</p>
+          
         </div>
       </a>
 

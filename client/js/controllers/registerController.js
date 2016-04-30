@@ -32,6 +32,7 @@ registerController.controller('RegisterCtrl', ['$scope', '$sessionStorage', 'Use
       "name": $sessionStorage.name,
       "email": $sessionStorage.email,
       "google_token": $sessionStorage.google_token,
+      "image_url": $sessionStorage.image_url,
       "interviewer": true, 
       "school": $scope.school,
       "headline": $scope.headline,
