@@ -7,7 +7,7 @@ interviewersListController.controller('IntListCtrl', ['$scope', '$sessionStorage
 	});
 
   User.interviewers.query(function (results) {
-  	var currentTime = new Date();
+  	var currentTime = new Date((new Date()).setHours(0,0,0,0))
   	results.forEach(function(interviewer) {
 
 			var schedule = [];
