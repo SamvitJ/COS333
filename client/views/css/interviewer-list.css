@@ -51,5 +51,9 @@
 }
 
 .modal-body select {
-   width: 35%;
+   width: 30%;
+}
+
+.modal-body label {
+   font-weight: bold;
 }

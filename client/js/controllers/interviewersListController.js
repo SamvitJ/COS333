@@ -32,11 +32,11 @@ interviewersListController.controller('IntListCtrl', ['$scope', '$sessionStorage
 					var hour = start.getHours();
 					var timeDisplayed = ''
 					if (hour == 0) {
-						timeDisplayed = '12 am'
+						timeDisplayed = '12am'
 					} else if (hour < 12) {
 						timeDisplayed = hour.toString() + 'am'
 					} else if (hour == 12) {
-						timeDisplayed = '12 pm'
+						timeDisplayed = '12pm'
 					} else {
 						timeDisplayed = (hour - 12).toString() + 'pm'
 					}
