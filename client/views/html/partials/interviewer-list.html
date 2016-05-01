@@ -2,23 +2,23 @@
 <link rel="stylesheet" type="text/css" href="static/interviewer-list.css">
 
 <div ng-controller="IntListCtrl" class="container-fluid">
-<!--   <h1>There are {{interviewers.length}} interviewers</h1> -->
   <div class="profiles-container">
     <div class="card profile" ng-repeat="interviewer in interviewers">
-      <a href="#/interviewers/{{interviewer.name}}">
         <div class="card-profile-photo">
-          <img src="static/stockprofilephoto.jpg" class="profile-photo" alt="Card image">
+          <img ng-src="{{interviewer.image_url}}" class="profile-photo" alt="Interviewer Photo">
         </div>
 
         <div class="card-block">
           <h4 class="card-title">{{interviewer.name}}</h4>
           <h6 class="card-subtitle text-muted">{{interviewer.school}}</h6>
           <p class="card-text">{{interviewer.headline}}</p>
+          
         </div>
-      </a>
 
-      <!-- Trigger the modal with a button -->
-      <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#scheduleModal" ng-click="updateSelectedInterviewer($index)">See Schedule</button>
+        <div class="schedule-button">
+          <!-- Trigger the modal with a button -->
+          <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#scheduleModal" ng-click="updateSelectedInterviewer($index)">See Availability</button>
+        </div>
 
       <!-- Modal -->
       <div id="scheduleModal" class="modal fade" role="dialog">
@@ -32,19 +32,20 @@
             </div>
             <div class="modal-body">
               <form ng-submit="scheduleInterview()">
-                <!-- {{schedule.selectedInterviewer.schedule}} -->
-                <div class="dates" ng-repeat="day in schedule.selectedInterviewer.schedule">
-                  {{day.day}} <select data-ng-model="schedule.selectedTime" data-ng-options="hour.timeDisplayed for hour in day.hours">                
+                <label>Topic</label><br>
+                <input type="text" placeholder="Software Engineering Interview (Dynamic Programming)" ng-model="interview.topic"><br>
+
+                <label>Description</label><br>
+                <textarea placeholder="I have an interview with Quora next week, and I've heard they really love memoization problems." ng-model="interview.description"></textarea>
+
+                <label>Availability</label>
+                <div class="dates" ng-repeat="day in interview.selectedInterviewer.schedule" align="right">
+                  {{day.day}} <select data-ng-model="interview.selectedTime" data-ng-options="hour.timeDisplayed for hour in day.hours">                
                   </select>
-                </div>
+                </div><br>
                 <button class="btn btn-primary" type="submit">Schedule!</button>
               </form>
-              
 
-
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>

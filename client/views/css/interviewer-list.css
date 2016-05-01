@@ -12,8 +12,8 @@
 }
 
 .profile-photo {
-   width: 100px;
-   height: 150px;
+   width: 175px;
+   height: 175px;
    display: block;
    margin-left: auto;
    margin-right: auto;
@@ -23,7 +23,7 @@
 
 .card-profile-photo {
    float: left;
-   width: 120px;
+   width: 175px;
    height: 100%;
 }
 
@@ -40,4 +40,26 @@
    margin-top: 5px;
    font-size: 90%;
    color: black;
+}
+
+.schedule-button {
+   position: absolute;
+   bottom: 0;
+   right: 0;
+}
+
+.dates {
+   width: 40%;
+}
+
+.modal-body input, textarea {
+   width: 100%;
+}
+
+.modal-body select {
+   width: 30%;
+}
+
+.modal-body label {
+   font-weight: bold;
 }

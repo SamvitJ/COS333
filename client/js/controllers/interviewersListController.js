@@ -2,12 +2,12 @@ var interviewersListController = angular.module('interviewersListController', []
 
 interviewersListController.controller('IntListCtrl', ['$scope', '$sessionStorage', 'User', 'Interview', function ($scope, $sessionStorage, User, Interview) {
 
-	Interview.interviews.query({id: "572050502b0ab9e44b5eaae8"}, function(results) {
+	Interview.interviews.query({google_token: $sessionStorage.google_token}, function(results) {
 		// console.log(results)
 	});
-
+   
   User.interviewers.query(function (results) {
-  	var currentTime = new Date();
+  	var currentTime = new Date((new Date()).setHours(0,0,0,0))
   	results.forEach(function(interviewer) {
 
 			var schedule = [];
@@ -32,11 +32,11 @@ interviewersListController.controller('IntListCtrl', ['$scope', '$sessionStorage
 					var hour = start.getHours();
 					var timeDisplayed = ''
 					if (hour == 0) {
-						timeDisplayed = '12 am'
+						timeDisplayed = '12am'
 					} else if (hour < 12) {
 						timeDisplayed = hour.toString() + 'am'
 					} else if (hour == 12) {
-						timeDisplayed = '12 pm'
+						timeDisplayed = '12pm'
 					} else {
 						timeDisplayed = (hour - 12).toString() + 'pm'
 					}
@@ -51,17 +51,18 @@ interviewersListController.controller('IntListCtrl', ['$scope', '$sessionStorage
   });
 
 
-	$scope.schedule = {
+	$scope.interview = {
 		selectedInterviewer: {},
-		selectedTime: {}
+		selectedTime: {},
+		topic: '',
+		description: ''
 	};
 
 	$scope.scheduleInterview = function(ev) {
 		// update availability
-		var schedule = $scope.schedule.selectedInterviewer.availability;
-		console.log(schedule)
-		var eventID = $scope.schedule.selectedTime.id;
-		var hour = $scope.schedule.selectedTime.time;
+		var schedule = $scope.interview.selectedInterviewer.availability;
+		var eventID = $scope.interview.selectedTime.id;
+		var hour = $scope.interview.selectedTime.time;
 		var index = -1;
 		for (var i = 0; i < schedule.length; i++) {
 			start = new Date(schedule[i].start);
@@ -76,27 +77,36 @@ interviewersListController.controller('IntListCtrl', ['$scope', '$sessionStorage
 			complete: false,
 			start: scheduledTime.start,
 			end: scheduledTime.end,
-			interviewer: $scope.schedule.selectedInterviewer._id
+			topic: $scope.interview.topic,
+			description: $scope.interview.description,
+			interviewer: $scope.interview.selectedInterviewer.google_token,
+			interviewee: $sessionStorage.google_token
     });
     interview.$save(function (result) {
       console.log("interview scheduled!")
 
       // Update Interviewer's availability
-      $scope.schedule.selectedInterviewer.availability = schedule;
+      $scope.interview.selectedInterviewer.availability = schedule;
 
       // Save to interviewer and interviewee's histories
-      var interviewerHistory = $scope.schedule.selectedInterviewer.interviews;
+      var interviewerHistory = $scope.interview.selectedInterviewer.interviews;
       interviewerHistory.push(interview._id)
 
       // Send put request to update
-      $scope.schedule.selectedInterviewer.$update()
+      $scope.interview.selectedInterviewer.$update()
+
+      // Janky solution but works - close modal and redirect after timeout
+      $('.modal-close').click();
+      setTimeout(function() {
+      	window.location.href="#/dashboard";
+      }, 500);
     });
 
 
 	}
 
 	$scope.updateSelectedInterviewer = function(index) {
-		$scope.schedule.selectedInterviewer = $scope.interviewers[index];
+		$scope.interview.selectedInterviewer = $scope.interviewers[index];
 	}
 
 }]);

@@ -5,6 +5,8 @@ module.exports = mongoose.model('Interview', new Schema ({
     complete: Boolean,
     start: Date,
     end: Date,
+    topic: String,
+    description: String,
     interviewer: String,
     interviewee: String,
     hangout: String,
