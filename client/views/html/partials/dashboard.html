@@ -8,12 +8,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Coach! | </title>
+  <title>Coach</title>
 
   <!-- Bootstrap core CSS -->
-
   <link href="/static/dashboard/bootstrap.min.css" rel="stylesheet">
-
   <link href="/static/dashboard/css/font-awesome.min.css" rel="stylesheet">
   <link href="/static/dashboard/animate.min.css" rel="stylesheet">
 
@@ -21,7 +19,10 @@
   <link href="/static/dashboard/custom.css" rel="stylesheet">
   <link href="/static/dashboard/icheck/flat/green.css" rel="stylesheet">
 
+  <!-- jQuery -->
   <script src="/static/dashboard/jquery.min.js"></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="https://apis.google.com/js/client:platform.js" async defer></script>  
 
   <!--[if lt IE 9]>
         <script src="../assets/js/ie8-responsive-file-warning.js"></script>
@@ -69,7 +70,7 @@
           <!-- menu profile quick info -->
           <div class="profile">
             <div class="profile_pic">
-              <img src="/static/dashboard/samvit.jpg" alt="..." class="img-circle profile_img">
+              <img ng-src="{{image_url}}" alt="..." class="img-circle profile_img">
             </div>
             <div class="profile_info">
               <span>Welcome,</span>
@@ -86,7 +87,7 @@
             <div class="menu_section">
               <h3>Account</h3>
               <ul class="nav side-menu">
-                <li><a href="dashboard.html"><i class="fa fa-home"></i> Home <span class="fa"></span></a>
+                <li><a href="/#/dashboard"><i class="fa fa-home"></i> Home <span class="fa"></span></a>
                 </li>
                 <li><a><i class="fa fa-calendar"></i> Availability <span class="fa"></span></a>
                 </li>
@@ -140,7 +141,7 @@
             <ul class="nav navbar-nav navbar-right">
               <li class="">
                 <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                  <img src="/static/dashboard/samvit.jpg" alt="">{{user}}
+                  <img ng-src="{{image_url}}" alt="">{{user}}
                   <span class=" fa fa-angle-down"></span>
                 </a>
                 <ul class="dropdown-menu dropdown-usermenu pull-right">
@@ -272,13 +273,18 @@
                   <div class="block">
                     <div class="block_content">
                       <h2 class="title">
-                        <a href="/#/preinterview">Software Engineering Interview (Dynamic Programming)</a>
+                        <p>Software Engineering Interview (Dynamic Programming)</p>
                       </h2>
                       <div class="byline">
                         <span>April 23 2:00 PM</span> with <a>Brian Kernighan</a>
                       </div>
                       <p class="excerpt">I have an interview with Quora next week, and I've heard they really love memoization problems. I've gone through CITR so I'm familiar with the basic problems, like Fibonacci, but wanted some practice with trickier ones (e.g. problems that can ONLY be done with dynamic programming). Thanks so much!
                       </p>
+                    </div>
+                    <div class="block_button">
+                      <g:hangout render="createhangout"
+                      initial_apps="[{ app_id : '344521590545', start_data : 'dQw4w9WgXcQ', 'app_type': 'ROOM_APP' }]">
+                      </g:hangout>
                     </div>
                   </div>
                 </li>
@@ -370,11 +376,9 @@
     <div id="notif-group" class="tabbed_notifications"></div>
   </div>
 
+  <!-- javascript imports -->
   <script src="/static/dashboard/bootstrap.min.js"></script>
-
-  <!-- icheck -->
   <script src="/static/dashboard/icheck/icheck.min.js"></script>
-
   <script src="/static/dashboard/custom.js"></script>
 
   <!-- /footer content -->

@@ -2,23 +2,23 @@
 <link rel="stylesheet" type="text/css" href="static/interviewer-list.css">
 
 <div ng-controller="IntListCtrl" class="container-fluid">
-<!--   <h1>There are {{interviewers.length}} interviewers</h1> -->
   <div class="profiles-container">
     <div class="card profile" ng-repeat="interviewer in interviewers">
-      <a href="#/interviewers/{{interviewer.name}}">
         <div class="card-profile-photo">
-          <img src="static/stockprofilephoto.jpg" class="profile-photo" alt="Card image">
+          <img ng-src="{{interviewer.image_url}}" class="profile-photo" alt="Interviewer Photo">
         </div>
 
         <div class="card-block">
           <h4 class="card-title">{{interviewer.name}}</h4>
           <h6 class="card-subtitle text-muted">{{interviewer.school}}</h6>
           <p class="card-text">{{interviewer.headline}}</p>
+          
         </div>
-      </a>
 
-      <!-- Trigger the modal with a button -->
-      <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#scheduleModal" ng-click="updateSelectedInterviewer($index)">See Schedule</button>
+        <div class="schedule-button">
+          <!-- Trigger the modal with a button -->
+          <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#scheduleModal" ng-click="updateSelectedInterviewer($index)">See Availability</button>
+        </div>
 
       <!-- Modal -->
       <div id="scheduleModal" class="modal fade" role="dialog">
@@ -46,9 +46,6 @@
                 <button class="btn btn-primary" type="submit">Schedule!</button>
               </form>
 
-            </div>
-            <div class="modal-footer">
-              <button class="modal-close" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
           </div>
         </div>

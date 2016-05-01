@@ -3,6 +3,7 @@ var dashboardController = angular.module('dashboardController', []);
 dashboardController.controller('DashboardCtrl', ['$scope', '$sessionStorage', 'Interview', '$resource', function ($scope, $sessionStorage, Interview, $resource) {
 
   $scope.user=$sessionStorage.name;
+  $scope.image_url=$sessionStorage.image_url;
 
   Interview.interviews.query({google_token: $sessionStorage.google_token}, function(results) {
   	results.forEach(function(result) {

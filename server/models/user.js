@@ -5,6 +5,7 @@ module.exports = mongoose.model('User', new Schema ({
     name: String,
     email: String,
     google_token: String,
+    image_url: String,
     interviewer: Boolean,
 
     school: String,

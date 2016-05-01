@@ -32,6 +32,7 @@ registerController.controller('RegisterCtrl', ['$scope', '$sessionStorage', 'Use
       "name": $sessionStorage.name,
       "email": $sessionStorage.email,
       "google_token": $sessionStorage.google_token,
+      "image_url": $sessionStorage.image_url,
       "interviewer": true, 
       "school": $scope.school,
       "headline": $scope.headline,
@@ -50,8 +51,11 @@ registerController.controller('RegisterCtrl', ['$scope', '$sessionStorage', 'Use
       $scope.availability = '';
       $scope.bio = '';
 
-      window.location.href="#/interviewers";
+      $sessionStorage.isInterviewer=true;
+      location.reload();
     });
+
+   window.location.href="#/dashboard";
   };
 
 }]);

@@ -5,7 +5,7 @@ interviewersListController.controller('IntListCtrl', ['$scope', '$sessionStorage
 	Interview.interviews.query({google_token: $sessionStorage.google_token}, function(results) {
 		// console.log(results)
 	});
-
+   
   User.interviewers.query(function (results) {
   	var currentTime = new Date((new Date()).setHours(0,0,0,0))
   	results.forEach(function(interviewer) {
@@ -97,10 +97,10 @@ interviewersListController.controller('IntListCtrl', ['$scope', '$sessionStorage
       $scope.interview.selectedInterviewer.$update()
 
       // Janky solution but works - close modal and redirect after timeout
-      $('.modal-close').click();
+      $('.close').click();
       setTimeout(function() {
       	window.location.href="#/dashboard";
-      }, 500);
+      }, 1000);
     });
 
 
