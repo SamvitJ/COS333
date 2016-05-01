@@ -1,6 +1,16 @@
 var dashboardController = angular.module('dashboardController', []);
 
 dashboardController.controller('DashboardCtrl', ['$scope', '$sessionStorage', 'Interview', '$resource', function ($scope, $sessionStorage, Interview, $resource) {
+  scheduler.locale.labels.new_event = 'Available';
+  scheduler.config.icons_select=["icon_delete"];
+  scheduler.config.time_step = 60;
+
+  $scope.openScheduler = function() {
+      // Scheduler init
+      setTimeout(function() {
+        scheduler.init('scheduler_here', new Date(), "week");
+      }, 500);
+  }
 
   $scope.user=$sessionStorage.name;
   $scope.image_url=$sessionStorage.image_url;
