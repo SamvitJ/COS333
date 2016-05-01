@@ -21,6 +21,8 @@
 
   <!-- jQuery -->
   <script src="/static/dashboard/jquery.min.js"></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="https://apis.google.com/js/client:platform.js" async defer></script>  
 
   <!--[if lt IE 9]>
         <script src="../assets/js/ie8-responsive-file-warning.js"></script>
@@ -271,13 +273,18 @@
                   <div class="block">
                     <div class="block_content">
                       <h2 class="title">
-                        <a href="/#/preinterview">Software Engineering Interview (Dynamic Programming)</a>
+                        <p>Software Engineering Interview (Dynamic Programming)</p>
                       </h2>
                       <div class="byline">
                         <span>April 23 2:00 PM</span> with <a>Brian Kernighan</a>
                       </div>
                       <p class="excerpt">I have an interview with Quora next week, and I've heard they really love memoization problems. I've gone through CITR so I'm familiar with the basic problems, like Fibonacci, but wanted some practice with trickier ones (e.g. problems that can ONLY be done with dynamic programming). Thanks so much!
                       </p>
+                    </div>
+                    <div class="block_button">
+                      <g:hangout render="createhangout"
+                      initial_apps="[{ app_id : '344521590545', start_data : 'dQw4w9WgXcQ', 'app_type': 'ROOM_APP' }]">
+                      </g:hangout>
                     </div>
                   </div>
                 </li>
