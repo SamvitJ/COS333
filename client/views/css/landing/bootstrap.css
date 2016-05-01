@@ -282,9 +282,9 @@ th {
     page-break-after: avoid;
   }
 
-  .navbar {
+/*  .navbar {
     display: none;
-  }
+  }*/
 
   .btn > .caret,
   .dropup > .btn > .caret {
@@ -4486,7 +4486,7 @@ tbody.collapse.in {
   margin-left: -1px;
 }
 
-.nav {
+/*.nav {
   margin-bottom: 0;
   padding-left: 0;
   list-style: none;
@@ -5167,7 +5167,7 @@ tbody.collapse.in {
 }
 .navbar-inverse .btn-link[disabled]:hover, .navbar-inverse .btn-link[disabled]:focus, fieldset[disabled] .navbar-inverse .btn-link:hover, fieldset[disabled] .navbar-inverse .btn-link:focus {
   color: #444;
-}
+}*/
 
 .breadcrumb {
   padding: 8px 15px;

@@ -1,3 +1,23 @@
-header {
-   text-align: center;
+.nav-custom {
+   font-size: 15px!important;
+   height: 50px!important;
+   background-color: white!important;
+}
+
+.nav-item {
+   font-family: "Helvetica"!important;
+   color: blue!important;
+}
+
+.navbar-brand {
+   color: black!important;
+   font-size: 20px!important;
+}
+
+.stick-to-right {
+   float: right!important;
+}
+
+.stick-to-left {
+   float: left!important;
 }
