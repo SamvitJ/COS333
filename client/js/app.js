@@ -28,7 +28,7 @@ app.config(['$routeProvider',
         controller: 'RegisterCtrl'
       }).
       when('/signup', {
-        templateUrl: 'partials/new-signup.html',
+        templateUrl: 'partials/signup.html',
         controller: 'SignupCtrl'
       }).
       when('/dashboard', {
