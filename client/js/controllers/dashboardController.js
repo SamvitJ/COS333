@@ -1,7 +1,12 @@
 var dashboardController = angular.module('dashboardController', []);
 
-dashboardController.controller('DashboardCtrl', ['$scope', '$sessionStorage', 'Interview', 'User', '$resource', function ($scope, $sessionStorage, Interview, User, $resource) {
-	var events = [];
+dashboardController.controller('DashboardCtrl', ['$scope', '$sessionStorage', 'Interview', 'User', 'Hangout', '$resource', function ($scope, $sessionStorage, Interview, User, Hangout, $resource) {
+	Hangout.query(function (result) {
+    $scope.hangout = result[0];
+    // $scope.hangout = "https://talkgadget.google.com/hangouts/_/kw2pjp5vy5golkmraxaeczk6aue?hl=en"
+  });
+
+  var events = [];
   User.interviewer.query({google_token: $sessionStorage.google_token}, function(result) {
   	var availability = result.availability;
 
@@ -39,6 +44,8 @@ dashboardController.controller('DashboardCtrl', ['$scope', '$sessionStorage', 'I
   	results.forEach(function(result) {
   		var start = new Date(result.start);
   		result.start = start.toLocaleDateString('en-us', {weekday:'long', month:'short', day:'numeric', hour:'2-digit', minute: '2-digit'});
+
+      result.isInterviewer = result.interviewer == $sessionStorage.google_token ? true : false;
   	})
 		$scope.interviews = results;
 	});
