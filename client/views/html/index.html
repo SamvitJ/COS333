@@ -28,13 +28,13 @@
         <li class="nav-item">
           <a class="nav-link" href="#/interviewers">See Interviewers</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" ng-if="loggedIn && !isInterviewer">
           <a class="nav-link" href="#/register">Become an Interviewer</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#/dashboard">Dashboard</a>
+        <li class="nav-item" ng-if=loggedIn>
+          <a class="nav-link" href="#/dashboard">My Dashboard</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" ng-if="!loggedIn">
           <a class="nav-link" href="#/signup">Sign Up</a>
         </li>
 <!--         <li class="nav-item pull-xs-right">

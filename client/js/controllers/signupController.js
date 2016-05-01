@@ -44,12 +44,14 @@ signupController.controller('SignupCtrl', ['$scope', '$sessionStorage', 'User', 
       $scope.email = '';
       $scope.google_token = '';
       $scope.image_url = '';
-
-      window.location.href="#/dashboard";
+      
+      $sessionStorage.loggedIn = true;
+      location.reload();
     });
 
-      $sessionStorage.loggedIn = true;
-      $route.reload();
+
+      window.location.href="#/dashboard";
+      
   };
 
 }]);

@@ -51,8 +51,11 @@ registerController.controller('RegisterCtrl', ['$scope', '$sessionStorage', 'Use
       $scope.availability = '';
       $scope.bio = '';
 
-      window.location.href="#/dashboard";
+      $sessionStorage.isInterviewer=true;
+      location.reload();
     });
+
+   window.location.href="#/dashboard";
   };
 
 }]);
