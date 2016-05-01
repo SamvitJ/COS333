@@ -74,7 +74,7 @@
               <ul class="nav side-menu">
                 <li><a href="/#/dashboard"><i class="fa fa-home"></i> Home <span class="fa"></span></a>
                 </li>
-                <li><a><i class="fa fa-calendar"></i> Availability <span class="fa"></span></a>
+                <li><a data-toggle="modal" data-target="#scheduleModal" ng-click="openScheduler()"><i class="fa fa-calendar"></i> Availability <span class="fa"></span></a>
                 </li>
                 <li><a><i class="fa fa-book"></i> History <span class="fa"></span></a>
                 </li>
@@ -94,6 +94,34 @@
 
           </div>
           <!-- /sidebar menu -->
+
+          <!-- Modal -->
+          <div id="scheduleModal" class="modal" role="dialog">
+            <div class="modal-dialog">
+
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Schedule Interview</h4>
+                </div>
+                <div class="modal-body">
+                  <div id="scheduler_container" style="width:100%; height:500px;">
+                    <div id="scheduler_here" class="dhx_cal_container" style='width:100%; height:100%;'>
+                      <div class="dhx_cal_navline">
+                          <div class="dhx_cal_prev_button">&nbsp;</div>
+                          <div class="dhx_cal_next_button">&nbsp;</div>
+                          <div class="dhx_cal_date"></div>
+                      </div>
+                      <div class="dhx_cal_header"></div>
+                      <div class="dhx_cal_data"></div>
+                    </div>
+                  </div><br>
+                  <button class="btn btn-primary" data-dismiss="modal">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <!-- /menu footer buttons -->
           <div class="sidebar-footer hidden-small">

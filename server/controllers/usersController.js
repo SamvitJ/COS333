@@ -13,6 +13,13 @@ module.exports.list = function (req, res) {
   });
 }
 
+module.exports.getInterviewer = function (req, res) {
+  var userID = req.query.google_token
+  User.findOne({google_token:userID}, function (err, results) {
+    res.json(results);
+  });
+}
+
 module.exports.listInterviewers = function (req, res) {
   User.find({interviewer:true}, function (err, results) {
     res.json(results);

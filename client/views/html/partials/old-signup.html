@@ -1,80 +1,80 @@
-<!-- Bootstrap -->
-<link class="cssdeck" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" class="cssdeck">
+<!DOCTYPE html>
+<html lang="en">
 
-<!-- Custom CSS -->
-<link rel="stylesheet" type="text/css" href="static/signup.css">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- Meta, title, CSS, favicons, etc. -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- Google scripts -->
+  <title>Coach! | </title>
+
+  <link rel="stylesheet" type="text/css" href="static/signup.css">
+
+  <!-- Bootstrap core CSS -->
+
+  <link href="/static/dashboard/bootstrap.min.css" rel="stylesheet">
+
+  <link href="/static/dashboard/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/static/dashboard/animate.min.css" rel="stylesheet">
+
+  <!-- Custom styling plus plugins -->
+  <link href="/static/dashboard/custom.css" rel="stylesheet">
+  <link href="/static/dashboard/icheck/flat/green.css" rel="stylesheet">
+
+  <script src="/static/dashboard/jquery.min.js"></script>
+
+  <!-- Google scripts -->
 <meta name="google-signin-scope" content="profile email">
 <meta name="google-signin-client_id" content="344521590545-frgeqsqikblk4i14rn9ffqlgmtk7nj24.apps.googleusercontent.com">
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 
 <div class="" id="loginModal" ng-controller="SignupCtrl">
 
+  <!--[if lt IE 9]>
+        <script src="../assets/js/ie8-responsive-file-warning.js"></script>
+        <![endif]-->
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+</head>
+
+<body>
+
+  <div class="">
+<!--     <a class="hiddenanchor" id="toregister"></a>
+    <a class="hiddenanchor" id="tologin"></a> -->
+
+    <div id="wrapper">
+      <div id="login" class="animate form">
+        <section class="login_content">
+          <form>
+            <h1>Sign Up</h1>
+            <p id="test"></p>
+  <form>
+
   <br>
   <h>To create an account, sign in with Google: </h> <br><br>
-  <div class="g-signin2" data-onsuccess="getGoogleData" data-theme="dark"></div>
-  <!-- <a href="javascript:window.location.reload(true)" ng-click="signOut">Sign out</a> -->
+  <div class="g-signin2" data-onsuccess="getGoogleData" id="googlesignin" data-theme="dark"></div>
   <br>
-
-  <form ng-submit="createUser()">
-
-    <p>
-      <label>School</label>
-      <input type="text" value="" class="input-xlarge" ng-model="school">
-    </p>
-
-    <h>If you're signing up to be an interviewer, please also provide the following information:</h> <br><br>
-
-    <label>Headline</label>
-    <input type="text" value="" class="input-xlarge" ng-model="headline"
-      placeholder="E.g. Summer '15 Software Engineering Intern at Google">
-
-    <label>Hourly Rate</label>
-    <!-- <input type="text" value="" class="input-xlarge" ng-model="rate"> -->
-    <ng-form class="rate-form">
-      <input type="radio" ng-model="rate" name="rate" id="radio-20" value="20" checked>
-      <label for="radio-20" class="radio">$20</label>
-
-      <input type="radio" ng-model="rate" name="rate" id="radio-25" value="25">
-      <label for="radio-25" class="radio">$25</label>
-
-      <input type="radio" ng-model="rate" name="rate" id="radio-30" value="30">
-      <label for="radio-30" class="radio">$30</label>
-
-      <input type="radio" ng-model="rate" name="rate" id="radio-35" value="35">
-      <label for="radio-35" class="radio">$35</label>
-    </ng-form>
-
-    <label>Availability</label>
-    <div id="scheduler_container" style="width:500px; height:500px;">
-      <div id="scheduler_here" class="dhx_cal_container" style='width:100%; height:100%;'>
-        <div class="dhx_cal_navline">
-            <div class="dhx_cal_prev_button">&nbsp;</div>
-            <div class="dhx_cal_next_button">&nbsp;</div>
-            <div class="dhx_cal_date"></div>
-        </div>
-        <div class="dhx_cal_header"></div>
-        <div class="dhx_cal_data"></div>
-      </div>
-    </div>
-
-
-    <label>Bio</label>
-    <textarea value="" rows="4" class="input-xlarge" ng-model="bio"
-      placeholder="E.g. B.S.E. Computer Science '17
-Interned at Cloudera (Apache Kudu), Google (Cloud Dataflow)
-Member of Tau Beta Pi honor society
-LinkedIn: https://www.linkedin.com/in/vladimir-feinberg-64b92895">
-    </textarea>
+    
 
     <div>
-      <button class="btn btn-primary">Create Account</button>
+      <button class="btn btn-primary" ng-click="createUser()">Create Account</button>
     </div>
   </form>
-</div>
+          <!-- form -->
+        </section>
+        <!-- content -->
+      </div>
+    </div>
+  </div>
 
-<!-- More Bootstrap -->
-<script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script class="cssdeck" src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

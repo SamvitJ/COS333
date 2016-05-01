@@ -2,7 +2,7 @@ var signupController = angular.module('signupController', []);
 
 signupController.controller('SignupCtrl', ['$scope', '$sessionStorage', 'User', function ($scope, $sessionStorage, User) {
 
-   $scope.$storage = $sessionStorage;
+  $scope.$storage = $sessionStorage;
 
   window.getGoogleData = function (googleUser) {
     // Useful data for your client-side scripts:
@@ -37,20 +37,24 @@ signupController.controller('SignupCtrl', ['$scope', '$sessionStorage', 'User', 
       "email": $scope.email,
       "google_token": $scope.google_token,
       "image_url": $scope.image_url,
-      "interviewer": false
+      "interviewer": false,
+      "school": $scope.school,
+      "grad": $scope.grad
     });
     user.$save(function (result) {
       $scope.name = '';
       $scope.email = '';
       $scope.google_token = '';
       $scope.image_url = '';
+      $scope.school = '';
+      $scope.grad = '';
       
       $sessionStorage.loggedIn = true;
       location.reload();
     });
 
 
-      window.location.href="#/dashboard";
+    window.location.href="#/dashboard";
       
   };
 
