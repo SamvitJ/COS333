@@ -3,7 +3,7 @@ var dashboardController = angular.module('dashboardController', []);
 dashboardController.controller('DashboardCtrl', ['$scope', '$sessionStorage', 'Interview', 'User', '$resource', function ($scope, $sessionStorage, Interview, User, $resource) {
 	var events = [];
   User.interviewer.query({google_token: $sessionStorage.google_token}, function(result) {
-  	var availability = result;
+  	var availability = result.availability;
 
   	var options = {year:'numeric',month:'numeric',day:'numeric',hour: '2-digit', minute: '2-digit', hour12: false};
   	var idCount = 0;
