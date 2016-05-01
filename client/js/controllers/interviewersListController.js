@@ -96,11 +96,9 @@ interviewersListController.controller('IntListCtrl', ['$scope', '$sessionStorage
       // Send put request to update
       $scope.interview.selectedInterviewer.$update()
 
-      // Janky solution but works - close modal and redirect after timeout
+      // Janky solution but works - close modal with click and redirect
       $('.close').click();
-      setTimeout(function() {
-      	window.location.href="#/dashboard";
-      }, 1000);
+      window.location.href="#/dashboard";
     });
 
 
