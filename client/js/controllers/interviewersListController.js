@@ -96,10 +96,10 @@ interviewersListController.controller('IntListCtrl', ['$scope', '$sessionStorage
       $scope.interview.selectedInterviewer.$update()
 
       // Janky solution but works - close modal and redirect after timeout
-      $('.modal-close').click();
+      $('.close').click();
       setTimeout(function() {
       	window.location.href="#/dashboard";
-      }, 500);
+      }, 1000);
     });
 
 
