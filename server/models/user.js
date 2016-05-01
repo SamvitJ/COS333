@@ -9,6 +9,7 @@ module.exports = mongoose.model('User', new Schema ({
     interviewer: Boolean,
 
     school: String,
+    grad: Number,
     headline: String,
     rate: Number,
     interviews: [String],
