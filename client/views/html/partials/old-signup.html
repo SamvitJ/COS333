@@ -1,9 +1,10 @@
 <!-- Bootstrap -->
 <link class="cssdeck" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css" class="cssdeck">
+<!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap-responsive.min.css" class="cssdeck"> -->
+<link rel="stylesheet" href="/static/register/bootstrap-responsive.css" class="cssdeck">
 
 <!-- Custom CSS -->
-<link rel="stylesheet" type="text/css" href="static/signup.css">
+<link rel="stylesheet" type="text/css" href="static/register.css">
 
 <!-- Google scripts -->
 <meta name="google-signin-scope" content="profile email">
@@ -12,20 +13,12 @@
 
 <div class="" id="loginModal" ng-controller="SignupCtrl">
 
-  <br>
-  <h>To create an account, sign in with Google: </h> <br><br>
-  <div class="g-signin2" data-onsuccess="getGoogleData" data-theme="dark"></div>
-  <!-- <a href="javascript:window.location.reload(true)" ng-click="signOut">Sign out</a> -->
-  <br>
+  <h3> Become an Interviewer </h3>
 
   <form ng-submit="createUser()">
 
-    <p>
-      <label>School</label>
-      <input type="text" value="" class="input-xlarge" ng-model="school">
-    </p>
-
-    <h>If you're signing up to be an interviewer, please also provide the following information:</h> <br><br>
+    <label>School</label>
+    <input type="text" value="" class="input-xlarge" ng-model="school">
 
     <label>Headline</label>
     <input type="text" value="" class="input-xlarge" ng-model="headline"
@@ -70,7 +63,7 @@ LinkedIn: https://www.linkedin.com/in/vladimir-feinberg-64b92895">
     </textarea>
 
     <div>
-      <button class="btn btn-primary">Create Account</button>
+      <button class="btn btn-primary">Become Interviewer</button>
     </div>
   </form>
 </div>
