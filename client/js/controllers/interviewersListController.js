@@ -80,6 +80,7 @@ interviewersListController.controller('IntListCtrl', ['$scope', '$sessionStorage
 			topic: $scope.interview.topic,
 			description: $scope.interview.description,
 			interviewer: $scope.interview.selectedInterviewer.google_token,
+			interviewerName: $scope.interview.selectedInterviewer.name,
 			interviewee: $sessionStorage.google_token
     });
     interview.$save(function (result) {
