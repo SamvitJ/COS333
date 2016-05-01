@@ -1,8 +1,23 @@
 var dashboardController = angular.module('dashboardController', []);
 
 dashboardController.controller('DashboardCtrl', ['$scope', '$sessionStorage', 'Interview', 'User', '$resource', function ($scope, $sessionStorage, Interview, User, $resource) {
+	var events = [];
   User.interviewer.query({google_token: $sessionStorage.google_token}, function(result) {
-  	console.log(result)
+  	var availability = result;
+
+  	var options = {year:'numeric',month:'numeric',day:'numeric',hour: '2-digit', minute: '2-digit', hour12: false};
+  	var idCount = 0;
+  	availability.forEach(function(event) {
+  		var start = (new Date(event.start)).toLocaleString('en-us', options).replace(',', '');
+  		var end = (new Date(event.end)).toLocaleString('en-us', options).replace(',', '');
+  		events.push({
+  			id: idCount,
+  			text: "Available",
+  			start_date: start,
+  			end_date: end
+  		})
+  		idCount++;
+  	});
   });
 
   scheduler.locale.labels.new_event = 'Available';
@@ -13,6 +28,7 @@ dashboardController.controller('DashboardCtrl', ['$scope', '$sessionStorage', 'I
       // Scheduler init
       setTimeout(function() {
         scheduler.init('scheduler_here', new Date(), "week");
+        scheduler.parse(events, "json")
       }, 500);
   }
 
