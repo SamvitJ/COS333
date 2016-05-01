@@ -1,10 +1,6 @@
 var interviewersListController = angular.module('interviewersListController', []);
 
 interviewersListController.controller('IntListCtrl', ['$scope', '$sessionStorage', 'User', 'Interview', function ($scope, $sessionStorage, User, Interview) {
-
-	Interview.interviews.query({google_token: $sessionStorage.google_token}, function(results) {
-		// console.log(results)
-	});
    
   User.interviewers.query(function (results) {
   	var currentTime = new Date((new Date()).setHours(0,0,0,0))

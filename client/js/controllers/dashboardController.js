@@ -1,6 +1,10 @@
 var dashboardController = angular.module('dashboardController', []);
 
-dashboardController.controller('DashboardCtrl', ['$scope', '$sessionStorage', 'Interview', '$resource', function ($scope, $sessionStorage, Interview, $resource) {
+dashboardController.controller('DashboardCtrl', ['$scope', '$sessionStorage', 'Interview', 'User', '$resource', function ($scope, $sessionStorage, Interview, User, $resource) {
+  User.interviewer.query({google_token: $sessionStorage.google_token}, function(result) {
+  	console.log(result)
+  });
+
   scheduler.locale.labels.new_event = 'Available';
   scheduler.config.icons_select=["icon_delete"];
   scheduler.config.time_step = 60;
