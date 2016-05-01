@@ -4,6 +4,7 @@ navbarController.controller('NavbarCtrl', ['$scope', '$sessionStorage', function
 
    $scope.loggedIn = $sessionStorage.loggedIn;
    $scope.name = $sessionStorage.name;
+   $scope.isInterviewer = $sessionStorage.isInterviewer;
    console.log($scope.loggedIn);
 
 }]);
