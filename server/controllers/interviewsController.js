@@ -9,7 +9,7 @@ module.exports.create = function (req, res) {
 
 module.exports.listInterviews = function (req, res) {
 	var userID = req.query.google_token
-  Interview.find({interviewer: userID, complete: false}, function (err, results) {
+  Interview.find({$or: [{interviewer: userID, complete: false}, {interviewee: userID, complete: false}]}, function (err, results) {
     res.json(results);
-  });
+  }).sort({ start: 1 });
 }

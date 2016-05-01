@@ -89,7 +89,7 @@
               <ul class="nav side-menu">
                 <li><a href="/#/dashboard"><i class="fa fa-home"></i> Home <span class="fa"></span></a>
                 </li>
-                <li><a><i class="fa fa-calendar"></i> Availability <span class="fa"></span></a>
+                <li><a data-toggle="modal" data-target="#scheduleModal" ng-click="openScheduler()"><i class="fa fa-calendar"></i> Availability <span class="fa"></span></a>
                 </li>
                 <li><a><i class="fa fa-book"></i> History <span class="fa"></span></a>
                 </li>
@@ -109,6 +109,34 @@
 
           </div>
           <!-- /sidebar menu -->
+
+          <!-- Modal -->
+          <div id="scheduleModal" class="modal" role="dialog">
+            <div class="modal-dialog">
+
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">Schedule Interview</h4>
+                </div>
+                <div class="modal-body">
+                  <div id="scheduler_container" style="width:100%; height:500px;">
+                    <div id="scheduler_here" class="dhx_cal_container" style='width:100%; height:100%;'>
+                      <div class="dhx_cal_navline">
+                          <div class="dhx_cal_prev_button">&nbsp;</div>
+                          <div class="dhx_cal_next_button">&nbsp;</div>
+                          <div class="dhx_cal_date"></div>
+                      </div>
+                      <div class="dhx_cal_header"></div>
+                      <div class="dhx_cal_data"></div>
+                    </div>
+                  </div><br>
+                  <button class="btn btn-primary" data-dismiss="modal">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <!-- /menu footer buttons -->
           <div class="sidebar-footer hidden-small">
@@ -269,6 +297,27 @@
             <div class="dashboard-widget-content">
 
               <ul class="list-unstyled timeline widget">
+                <div class="interviews" ng-repeat="interview in interviews">
+                  <li>
+                    <div class="block">
+                      <div class="block_content">
+                        <h2 class="title">
+                          <p>{{interview.topic}}<p>
+                        </h2>
+                        <div class="byline">
+                          <span>{{interview.start}} with {{interview.interviewerName}}</span>
+                        </div>
+                        <p class="excerpt">{{interview.description}}
+                        </p>
+                      </div>
+                      <div class="block_button">
+                        <g:hangout render="createhangout"
+                        initial_apps="[{ app_id : '344521590545', start_data : 'dQw4w9WgXcQ', 'app_type': 'ROOM_APP' }]">
+                        </g:hangout>
+                      </div>
+                    </div>
+                  </li>
+                </div>
                 <li>
                   <div class="block">
                     <div class="block_content">
@@ -276,7 +325,7 @@
                         <p>Software Engineering Interview (Dynamic Programming)</p>
                       </h2>
                       <div class="byline">
-                        <span>April 23 2:00 PM</span> with <a>Brian Kernighan</a>
+                        <span>Thursday, May 5, 1:00 PM with Brian Kernighan</span>
                       </div>
                       <p class="excerpt">I have an interview with Quora next week, and I've heard they really love memoization problems. I've gone through CITR so I'm familiar with the basic problems, like Fibonacci, but wanted some practice with trickier ones (e.g. problems that can ONLY be done with dynamic programming). Thanks so much!
                       </p>
@@ -292,45 +341,62 @@
                   <div class="block">
                     <div class="block_content">
                       <h2 class="title">
-                        <a href="/#/preinterview">Software Engineering Interview (Trees, Recursion)</a>
+                        <p>Software Engineering Interview (Trees, Recursion)</p>
                       </h2>
                       <div class="byline">
-                        <span>April 27 5:00 PM</span> with <a>Andrew Appel</a>
+                        <span>Monday, May 2, 5:00 PM with Andrew Appel</span>
                       </div>
                       <p class="excerpt">I'm good with arrays, strings, stacks/queues...the simple data structures basically, but I really get stumped if the problem involves traversing trees (preorder/inorder), finding common ancestors, etc. Also I never see the 3-line recursion solutions, so if you could just shoot those kinds of problems at me, that would be awesome.
                       </p>
                     </div>
+                    <div class="block_button">
+                      <g:hangout render="createhangout"
+                      initial_apps="[{ app_id : '344521590545', start_data : 'dQw4w9WgXcQ', 'app_type': 'ROOM_APP' }]">
+                      </g:hangout>
+                    </div>
                   </div>
                 </li>
                 <li>
                   <div class="block">
                     <div class="block_content">
                       <h2 class="title">
-                        <a href="/#/preinterview">Software Engineering Interview</a>
+                        <p>Software Engineering Interview</p>
                       </h2>
                       <div class="byline">
-                        <span>April 29 11:00 AM</span> with <a>Arvind Narayanan</a>
+                        <span>Tuesday, May 3, 6:00 PM with Arvind Narayanan</span>
                       </div>
                       <p class="excerpt">I have my final coding challenge with Databricks next week, and I have no idea what they are going to ask. I have a feeling it might have to do with distributed systems or ML... Do you think you could walk me through some problems involving MapReduce?
                       </p>
                     </div>
+                    <div class="block_button">
+                      <g:hangout render="createhangout"
+                      initial_apps="[{ app_id : '344521590545', start_data : 'dQw4w9WgXcQ', 'app_type': 'ROOM_APP' }]">
+                      </g:hangout>
+                    </div>
                   </div>
                 </li>
                 <li>
                   <div class="block">
                     <div class="block_content">
                       <h2 class="title">
-                        <a href="/#/preinterview">Software Engineering Interview (General)</a>
+                        <p>Software Engineering Interview (General)</p>
                       </h2>
                       <div class="byline">
-                        <span>April 29 12:00 PM</span> with <a>Ed Felten</a>
+                        <span>Tuesday, May 3, 7:00 PM with Ed Felten</span>
                       </div>
                       <p class="excerpt">Anything and everything goes, let's just code!
                       </p>
                     </div>
+                    <div class="block_button">
+                      <g:hangout render="createhangout"
+                      initial_apps="[{ app_id : '344521590545', start_data : 'dQw4w9WgXcQ', 'app_type': 'ROOM_APP' }]">
+                      </g:hangout>
+                    </div>
                   </div>
                 </li>
+
               </ul>
+
             </div>
           </div>
         </div>
