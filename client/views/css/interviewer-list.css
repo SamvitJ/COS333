@@ -41,3 +41,9 @@
    font-size: 90%;
    color: black;
 }
+
+.schedule-button {
+   position: absolute;
+   bottom: 0;
+   right: 0;
+}
