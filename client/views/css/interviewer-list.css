@@ -47,3 +47,19 @@
    bottom: 0;
    right: 0;
 }
+
+.dates {
+   width: 40%;
+}
+
+.modal-body input, textarea {
+   width: 100%;
+}
+
+.modal-body select {
+   width: 30%;
+}
+
+.modal-body label {
+   font-weight: bold;
+}

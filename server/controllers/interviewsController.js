@@ -8,7 +8,7 @@ module.exports.create = function (req, res) {
 }
 
 module.exports.listInterviews = function (req, res) {
-	var userID = req.query.id
+	var userID = req.query.google_token
   Interview.find({interviewer: userID, complete: false}, function (err, results) {
     res.json(results);
   });
