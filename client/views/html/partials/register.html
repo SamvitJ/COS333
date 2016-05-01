@@ -77,19 +77,38 @@
       <label for="radio-35" class="radio">$35</label>
     </ng-form>
 
-    <label>Availability</label>
-    <div id="scheduler_container" style="width:500px; height:500px;">
-      <div id="scheduler_here" class="dhx_cal_container" style='width:100%; height:100%;'>
-        <div class="dhx_cal_navline">
-            <div class="dhx_cal_prev_button">&nbsp;</div>
-            <div class="dhx_cal_next_button">&nbsp;</div>
-            <div class="dhx_cal_date"></div>
-        </div>
-        <div class="dhx_cal_header"></div>
-        <div class="dhx_cal_data"></div>
-      </div>
+    <div class="schedule-button">
+      <!-- Trigger the modal with a button -->
+      <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#scheduleModal" ng-click="openScheduler()">See Availability</button>
     </div>
 
+    <!-- Modal -->
+    <div id="scheduleModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Schedule Interview</h4>
+          </div>
+          <div class="modal-body">
+            <div id="scheduler_container" style="width:500px; height:500px;">
+              <div id="scheduler_here" class="dhx_cal_container" style='width:100%; height:100%;'>
+                <div class="dhx_cal_navline">
+                    <div class="dhx_cal_prev_button">&nbsp;</div>
+                    <div class="dhx_cal_next_button">&nbsp;</div>
+                    <div class="dhx_cal_date"></div>
+                </div>
+                <div class="dhx_cal_header"></div>
+                <div class="dhx_cal_data"></div>
+              </div>
+            </div>
+            <button class="btn btn-primary">Done</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <label>Bio</label>
     <textarea value="" rows="4" class="input-xlarge" ng-model="bio"
