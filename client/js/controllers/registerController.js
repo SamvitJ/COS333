@@ -2,11 +2,16 @@ var registerController = angular.module('registerController', []);
 
 registerController.controller('RegisterCtrl', ['$scope', '$sessionStorage', 'User', function ($scope, $sessionStorage, User) {
 
-  // Scheduler init
   scheduler.locale.labels.new_event = 'Available';
   scheduler.config.icons_select=["icon_delete"];
   scheduler.config.time_step = 60;
-  scheduler.init('scheduler_here', new Date(), "week");
+
+  $scope.openScheduler = function() {
+      // Scheduler init
+      setTimeout(function() {
+        scheduler.init('scheduler_here', new Date(), "week");
+      }, 500);
+  }
 
   $scope.createUser = function (credentials) {
     // get scheduler events
