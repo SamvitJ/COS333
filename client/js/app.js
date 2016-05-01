@@ -24,7 +24,7 @@ app.config(['$routeProvider',
         controller: 'CreateIntCtrl'  
       }).
       when('/register', {
-        templateUrl: 'partials/register.html',
+        templateUrl: 'partials/old-signup.html',
         controller: 'RegisterCtrl'
       }).
       when('/signup', {
@@ -40,4 +40,5 @@ app.config(['$routeProvider',
         templateUrl: 'partials/landing.html',
         controller: 'LandingCtrl'  
       });
-  }]);
+  }
+]);
