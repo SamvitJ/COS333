@@ -34,6 +34,7 @@ signupController.controller('SignupCtrl', ['$scope', '$sessionStorage', 'User', 
 
   $scope.createUser = function (credentials) {
 
+    console.log("Signup createUser called");
     $sessionStorage.school = $scope.school;
     $sessionStorage.grad= $scope.grad;
         console.log("School: " + $sessionStorage.school);
@@ -55,12 +56,12 @@ signupController.controller('SignupCtrl', ['$scope', '$sessionStorage', 'User', 
       $scope.school = '';
       $scope.grad = '';
       
-      $sessionStorage.loggedIn = true;
-      location.reload();
+      $sessionStorage.loggedIn = true;  
+      location.reload();    
     });
 
-
     window.location.href="#/dashboard";
+    
       
   };
 
