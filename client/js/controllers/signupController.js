@@ -56,11 +56,12 @@ signupController.controller('SignupCtrl', ['$scope', '$sessionStorage', 'User', 
       $scope.grad = '';
       
       $sessionStorage.loggedIn = true;
-      location.reload();
+      
     });
 
 
     window.location.href="#/dashboard";
+    location.reload();
       
   };
 
