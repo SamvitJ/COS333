@@ -59,7 +59,10 @@ dashboardController.controller('DashboardCtrl', ['$scope', '$sessionStorage', 'I
     $sessionStorage.email = "";
     $sessionStorage.google_token = "";
     $sessionStorage.image_url = "";
+    $sessionStorage.school = "";
+    $sessionStorage.grad = "";
     $sessionStorage.loggedIn = false;
+    $sessionStorage.isInterviewer = false;
       
     
     window.location.href="#/";
