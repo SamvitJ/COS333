@@ -5333,3 +5333,7 @@ ul.notifications {
 div[class="modal-backdrop in"] {
   display: none;
 }
+
+.timeline li button {
+  background-color: #009933 !important;
+}
