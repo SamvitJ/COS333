@@ -2,8 +2,8 @@ var dashboardController = angular.module('dashboardController', []);
 
 dashboardController.controller('DashboardCtrl', ['$scope', '$sessionStorage', 'Interview', 'User', 'Hangout', '$resource', function ($scope, $sessionStorage, Interview, User, Hangout, $resource) {
 	Hangout.query(function (result) {
-    // $scope.hangout = result[0];
-    $scope.hangout = "https://talkgadget.google.com/hangouts/_/kw2pjp5vy5golkmraxaeczk6aue?hl=en"
+    $scope.hangout = result[0];
+    // $scope.hangout = "https://talkgadget.google.com/hangouts/_/kw2pjp5vy5golkmraxaeczk6aue?hl=en"
   });
 
   var events = [];
