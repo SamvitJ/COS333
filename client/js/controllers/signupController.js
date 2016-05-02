@@ -24,17 +24,19 @@ signupController.controller('SignupCtrl', ['$scope', '$sessionStorage', 'User', 
     $sessionStorage.google_token = authResp.id_token;
     $sessionStorage.image_url = $scope.image_url;
     $sessionStorage.isInterviewer = false;
-    $sessionStorage.school = $scope.school;
-    $sessionStorage.grad= $scope.grad;
-
 
     console.log('Full Name: ' + profile.getName());
     console.log("Email: " + profile.getEmail());
     console.log("ID Token: " + authResp.id_token);
     console.log("Image URL: " + $scope.image_url);
+
   };
 
   $scope.createUser = function (credentials) {
+
+    $sessionStorage.school = $scope.school;
+    $sessionStorage.grad= $scope.grad;
+        console.log("School: " + $sessionStorage.school);
 
     var user = new User.all({
       "name": $scope.name,

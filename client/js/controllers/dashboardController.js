@@ -63,6 +63,7 @@ dashboardController.controller('DashboardCtrl', ['$scope', '$sessionStorage', 'I
     $sessionStorage.school = "";
     $sessionStorage.grad = "";
     $sessionStorage.loggedIn = false;
+    $sessionStorage.isInterviewer = false;
       
     
     window.location.href="#/";
