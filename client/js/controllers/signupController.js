@@ -24,6 +24,8 @@ signupController.controller('SignupCtrl', ['$scope', '$sessionStorage', 'User', 
     $sessionStorage.google_token = authResp.id_token;
     $sessionStorage.image_url = $scope.image_url;
     $sessionStorage.isInterviewer = false;
+    $sessionStorage.school = $scope.school;
+    $sessionStorage.grad= $scope.grad;
 
 
     console.log('Full Name: ' + profile.getName());
