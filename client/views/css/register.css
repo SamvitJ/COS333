@@ -9,11 +9,15 @@ input[type="radio"] {
 }
 
 div[class="modal-backdrop fade in"] {
-	z-index: -1;
+	display: none;
+}
+
+div[class="modal-backdrop in"] {
+	display: none;
 }
 
 .modal {
-	height: 700px;
+	height: 580px;
 	padding-left: 0px;
 }
 
