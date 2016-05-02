@@ -51,7 +51,7 @@ dashboardController.controller('DashboardCtrl', ['$scope', '$sessionStorage', 'I
 	});
 
   $scope.joinInterview = function() {
-    window.open($scope.hangout, "_blank", "height=750,width=1000");
+    window.open($scope.hangout.url, "_blank", "height=750,width=1000");
   };
 
   $scope.logout = function() {
