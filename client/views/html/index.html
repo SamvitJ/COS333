@@ -11,6 +11,7 @@
     <link rel="stylesheet" type="text/css" href="static/index.css">
     <link rel="stylesheet" type="text/css" href="static/dhtmlxscheduler.css">
 
+
     <meta name="google-signin-scope" content="profile email">
 <meta name="google-signin-client_id" content="344521590545-frgeqsqikblk4i14rn9ffqlgmtk7nj24.apps.googleusercontent.com">
 <script src="https://apis.google.com/js/platform.js" async defer></script>
@@ -39,57 +40,57 @@
           <a class="nav-link" data-toggle="modal" data-target="#signupModal">Sign Up</a>
         </li>
       </ul>
-  </nav>
+    </nav>
 
-      <!-- Modal -->
-      <div id="signupModal" class="modal" role="dialog" ng-controller="SignupCtrl">
-        <div class="modal-dialog">
+    <!-- Sign Up Modal -->
+    <div id="signupModal" class="modal" role="dialog" ng-controller="SignupCtrl">
+    <div class="modal-dialog">
 
-          <!-- Modal content-->
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">Sign Up</h4>
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Sign Up</h4>
+        </div>
+        <div class="modal-body">
+          <form>
+
+            <h>To create an account, sign in with Google: </h>
+
+            <br>
+            <p>
+              <div class="g-signin2" data-onsuccess="getGoogleData" id="googlesignin" data-theme="dark"></div>
+            </p>
+
+            <h> Please also provide the following information: </h>
+            <br>
+            <br>
+            <label>School</label>
+            <br>
+            <input type="text" value="" class="input-xlarge" ng-model="school">
+            <br>
+            <label>Graduation Year</label>
+            <br>
+            <select data-ng-model="grad">
+              <option value="2019">2015</option>
+              <option value="2016">2016</option>
+              <option value="2017">2017</option>
+              <option value="2018">2018</option>
+              <option value="2019">2019</option>
+              <option value="2019">2020</option>
+            </select>
+
+            <br>
+            <br>
+
+            <div>
+              <button class="btn btn-primary" ng-click="createUser()">Create Account</button>
             </div>
-            <div class="modal-body">
-              <form>
-
-                <h>To create an account, sign in with Google: </h>
-
-                <br>
-                <p>
-                  <div class="g-signin2" data-onsuccess="getGoogleData" id="googlesignin" data-theme="dark"></div>
-                </p>
-                <br>
-
-                <h> Please also provide the following information: </h>
-                <br>
-                <br>
-
-                <label>School</label>
-                <input type="text" value="" class="input-xlarge" ng-model="school">
-
-                <label>Graduation Year</label>
-                <select data-ng-model="grad">
-                  <option value="2019">2015</option>
-                  <option value="2016">2016</option>
-                  <option value="2017">2017</option>
-                  <option value="2018">2018</option>
-                  <option value="2019">2019</option>
-                  <option value="2019">2020</option>
-                </select>
-
-                <br>
-                <br>
-
-                <div>
-                  <button class="btn btn-primary" ng-click="createUser()">Create Account</button>
-                </div>
-              </form>
-            </div>
-          </div>
+          </form>
         </div>
       </div>
+    </div>
+    </div>
 
     <div ng-view></div>
 

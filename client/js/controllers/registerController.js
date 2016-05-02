@@ -13,7 +13,7 @@ registerController.controller('RegisterCtrl', ['$scope', '$sessionStorage', 'Use
       }, 500);
   }
 
-  $scope.createUser = function (credentials) {
+  $scope.registerUser = function (credentials) {
     // get scheduler events
     var availability = []
     scheduler.getEvents().forEach(function(event) {
