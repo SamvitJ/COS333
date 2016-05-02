@@ -23,6 +23,8 @@ signupController.controller('SignupCtrl', ['$scope', '$sessionStorage', 'User', 
     $sessionStorage.email = profile.getEmail();
     $sessionStorage.google_token = authResp.id_token;
     $sessionStorage.image_url = $scope.image_url;
+    $sessionStorage.school = $scope.school;
+    $sessionStorage.grad= $scope.grad;
 
 
     console.log('Full Name: ' + profile.getName());
