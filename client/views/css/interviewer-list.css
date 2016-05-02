@@ -63,3 +63,7 @@
 .modal-body label {
    font-weight: bold;
 }
+
+div[class="modal-backdrop in"] {
+   display: none;
+}
