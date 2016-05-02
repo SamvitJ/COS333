@@ -5330,3 +5330,6 @@ ul.notifications {
   height: 2px;
 }
 
+div[class="modal-backdrop in"] {
+  display: none;
+}
