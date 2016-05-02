@@ -45,7 +45,7 @@ dashboardController.controller('DashboardCtrl', ['$scope', '$sessionStorage', 'I
   	results.forEach(function(result) {
   		var start = new Date(result.start);
   		result.start = start.toLocaleDateString('en-us', {weekday:'long', month:'short', day:'numeric'});
-      result.start = result.start + ' ' + date.toLocaleTimeString().slice(0,-10) + ' ' + start.toLocaleTimeString().slice(-6,-4);
+      result.start = result.start + ' ' + start.toLocaleTimeString().slice(0,-10) + ' ' + start.toLocaleTimeString().slice(-6,-4);
       result.isInterviewer = result.interviewer == $sessionStorage.google_token ? true : false;
   	})
 		$scope.interviews = results;
