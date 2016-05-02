@@ -40,12 +40,14 @@ dashboardController.controller('DashboardCtrl', ['$scope', '$sessionStorage', 'I
   $scope.user=$sessionStorage.name;
   $scope.image_url=$sessionStorage.image_url;
   $scope.isInterviewer=$sessionStorage.isInterviewer;
+  var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 
   Interview.interviews.query({google_token: $sessionStorage.google_token}, function(results) {
   	results.forEach(function(result) {
   		var start = new Date(result.start);
-  		result.start = start.toLocaleDateString('en-us', {weekday:'long', month:'short', day:'numeric'});
-      result.start = result.start + ' ' + start.toLocaleTimeString().slice(0,-10) + ' ' + start.toLocaleTimeString().slice(-6,-4);
+      result.start = days[start.getDay()] + ', '
+  		result.start = result.start + start.toLocaleDateString('en-us', {weekday:'long', month:'short', day:'numeric'}).slice(0,-6);
+      result.start = result.start + ', ' + start.toLocaleTimeString().slice(0,-10) + ' ' + start.toLocaleTimeString().slice(-6,-4);
       result.isInterviewer = result.interviewer == $sessionStorage.google_token ? true : false;
   	})
 		$scope.interviews = results;
