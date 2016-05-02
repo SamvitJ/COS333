@@ -23,6 +23,7 @@ signupController.controller('SignupCtrl', ['$scope', '$sessionStorage', 'User', 
     $sessionStorage.email = profile.getEmail();
     $sessionStorage.google_token = authResp.id_token;
     $sessionStorage.image_url = $scope.image_url;
+    $sessionStorage.isInterviewer = false;
 
     console.log('Full Name: ' + profile.getName());
     console.log("Email: " + profile.getEmail());
