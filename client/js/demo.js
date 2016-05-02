@@ -13,7 +13,7 @@
       var hangout_url = gapi.hangout.getHangoutUrl();
 
       var http = new XMLHttpRequest();
-      var url = "https://areta-app.herokuapp.com/api/hangouts";
+      var url = "https://henrys-dev.herokuapp.com/api/hangouts";
       var params = "url=" + hangout_url;
       http.open("POST", url, true);
 
