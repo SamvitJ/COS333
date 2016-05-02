@@ -47,10 +47,10 @@
       <div class="col-md-3 left_col">
         <div class="left_col scroll-view">
 
-          <div class="navbar nav_title" style="border: 0;">
+          <!-- <div class="navbar nav_title" style="border: 0;">
             <a href="/#/" class="site_title"><i class="fa fa-suitcase"></i> <span>Coach</span></a>
           </div>
-          <div class="clearfix"></div>
+          <div class="clearfix"></div> -->
 
           <!-- menu profile quick info -->
           <div class="profile">
@@ -296,9 +296,10 @@
                         </p>
                       </div>
                       <div class="block_button">
-                        <g:hangout render="createhangout"
+                        <g:hangout ng-if="interview.isInterviewer" render="createhangout"
                         initial_apps="[{ app_id : '344521590545', start_data : 'dQw4w9WgXcQ', 'app_type': 'ROOM_APP' }]">
                         </g:hangout>
+                        <a ng-if="interview.isInterviewer==false" href={{hangout}}>Join Interview</a>
                       </div>
                     </div>
                   </li>
