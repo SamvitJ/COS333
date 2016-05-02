@@ -11,7 +11,7 @@ interviewersListController.controller('IntListCtrl', ['$scope', '$sessionStorage
 				var date = new Date(currentTime);
 				date.setDate(date.getDate() + i)
 				schedule.push({
-					day: date.getDay() + ', ' + date.toLocaleDateString('en-us', {weekday:'long', month:'short', day:'numeric'}),
+					day: days[date.getDay()] + ', ' + date.toLocaleDateString('en-us', {weekday:'long', month:'short', day:'numeric'}),
 					hours: []
 				});
 			}
