@@ -53,4 +53,16 @@ dashboardController.controller('DashboardCtrl', ['$scope', '$sessionStorage', 'I
   $scope.joinInterview = function() {
     window.open($scope.hangout, "_blank", "height=750,width=1000");
   };
+
+  $scope.logout = function() {
+    $sessionStorage.name = "";
+    $sessionStorage.email = "";
+    $sessionStorage.google_token = "";
+    $sessionStorage.image_url = "";
+    $sessionStorage.loggedIn = false;
+      
+    
+    window.location.href="#/";
+    location.reload();
+  }
 }]);
