@@ -44,6 +44,9 @@ dashboardController.controller('DashboardCtrl', ['$scope', '$sessionStorage', 'I
   Interview.interviews.query({google_token: $sessionStorage.google_token}, function(results) {
   	results.forEach(function(result) {
   		var start = new Date(result.start);
+      console.log(result)
+      console.log(result.start)
+      console.log(start)
   		result.start = start.toLocaleDateString('en-us', {weekday:'long', month:'short', day:'numeric', hour:'2-digit', minute: '2-digit'});
 
       result.isInterviewer = result.interviewer == $sessionStorage.google_token ? true : false;
