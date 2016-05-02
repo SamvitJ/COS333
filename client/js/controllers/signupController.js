@@ -24,6 +24,7 @@ signupController.controller('SignupCtrl', ['$scope', '$sessionStorage', 'User', 
     $sessionStorage.google_token = authResp.id_token;
     $sessionStorage.image_url = $scope.image_url;
 
+
     console.log('Full Name: ' + profile.getName());
     console.log("Email: " + profile.getEmail());
     console.log("ID Token: " + authResp.id_token);

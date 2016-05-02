@@ -49,4 +49,16 @@ dashboardController.controller('DashboardCtrl', ['$scope', '$sessionStorage', 'I
   	})
 		$scope.interviews = results;
 	});
+
+  $scope.logout = function() {
+    $sessionStorage.name = "";
+    $sessionStorage.email = "";
+    $sessionStorage.google_token = "";
+    $sessionStorage.image_url = "";
+    $sessionStorage.loggedIn = false;
+      
+    
+    window.location.href="#/";
+    location.reload();
+  }
 }]);

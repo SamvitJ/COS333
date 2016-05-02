@@ -1,4 +1,4 @@
-var app = angular.module('coachApp', ['ngResource', 'ngRoute', 'ngStorage',
+var app = angular.module('coachApp', ['ngResource', 'ngRoute', 'ngStorage', 
    'interviewersListController', 'interviewersDetailController', 
    'preinterviewController', 'signupController', 'dashboardController',
    'landingController', 'createInterviewerController', 'registerController',
