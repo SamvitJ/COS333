@@ -17,7 +17,7 @@
 
         <!-- CodeMirror -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.10.0/codemirror.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.14.2/mode/python/python.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.14.2/mode/clike/clike.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.10.0/codemirror.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.14.2/theme/base16-dark.css" />
 
@@ -52,7 +52,7 @@
             var codeMirror = CodeMirror(document.getElementById('firepad-container'), {
               lineNumbers: true,
               theme: 'base16-dark',
-              mode: 'python'
+              mode: 'text/x-java'
             });
             //// Create Firepad.
             var firepad = Firepad.fromCodeMirror(firepadRef, codeMirror, {
