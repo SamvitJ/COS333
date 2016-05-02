@@ -1,7 +1,7 @@
 var interviewersListController = angular.module('interviewersListController', []);
 
 interviewersListController.controller('IntListCtrl', ['$scope', '$sessionStorage', 'User', 'Interview', function ($scope, $sessionStorage, User, Interview) {
-   
+  var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
   User.interviewers.query(function (results) {
   	var currentTime = new Date((new Date()).setHours(0,0,0,0))
   	results.forEach(function(interviewer) {
@@ -11,7 +11,7 @@ interviewersListController.controller('IntListCtrl', ['$scope', '$sessionStorage
 				var date = new Date(currentTime);
 				date.setDate(date.getDate() + i)
 				schedule.push({
-					day: date.toLocaleDateString('en-us', {weekday:'long', month:'short', day:'numeric'}),
+					day: date.getDay() + ', ' + date.toLocaleDateString('en-us', {weekday:'long', month:'short', day:'numeric'}),
 					hours: []
 				});
 			}
