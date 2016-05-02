@@ -48,7 +48,7 @@ dashboardController.controller('DashboardCtrl', ['$scope', '$sessionStorage', 'I
       console.log(result.start)
       console.log(start)
   		result.start = start.toLocaleDateString('en-us', {weekday:'long', month:'short', day:'numeric', hour:'2-digit', minute: '2-digit'});
-
+      console.log(result.start)
       result.isInterviewer = result.interviewer == $sessionStorage.google_token ? true : false;
   	})
 		$scope.interviews = results;
