@@ -94,6 +94,7 @@ interviewersListController.controller('IntListCtrl', ['$scope', '$sessionStorage
 
       // Janky solution but works - close modal with click and redirect
       $('.close').click();
+      $('.modal-backdrop in').hide();
       window.location.href="#/dashboard";
     });
 
