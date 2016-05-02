@@ -39,6 +39,7 @@ dashboardController.controller('DashboardCtrl', ['$scope', '$sessionStorage', 'I
 
   $scope.user=$sessionStorage.name;
   $scope.image_url=$sessionStorage.image_url;
+  $scope.isInterviewer=$sessionStorage.isInterviewer;
 
   Interview.interviews.query({google_token: $sessionStorage.google_token}, function(results) {
   	results.forEach(function(result) {
