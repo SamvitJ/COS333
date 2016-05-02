@@ -23,6 +23,11 @@ dashboardController.controller('DashboardCtrl', ['$scope', '$sessionStorage', 'I
   		})
   		idCount++;
   	});
+
+    events = [
+      {id:1, text:"Available", start_date:"05/04/2016 18:00", end_date:"05/04/2016 20:00"},
+      {id:2, text:"Available", start_date:"05/06/2016 18:00", end_date:"05/06/2016 20:00"}
+    ];
   });
 
   scheduler.locale.labels.new_event = 'Available';
