@@ -40,4 +40,5 @@ app.config(['$routeProvider',
         templateUrl: 'partials/landing.html',
         controller: 'LandingCtrl'  
       });
-  }]);
+  }
+]);
