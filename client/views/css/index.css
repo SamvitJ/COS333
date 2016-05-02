@@ -21,3 +21,7 @@
 .stick-to-left {
    float: left!important;
 }
+
+div[class="modal-backdrop in"] {
+	display: none;
+}
