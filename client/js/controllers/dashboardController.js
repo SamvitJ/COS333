@@ -1,4 +1,6 @@
 var dashboardController = angular.module('dashboardController', []);
+var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+var isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
 
 dashboardController.controller('DashboardCtrl', ['$scope', '$sessionStorage', 'Interview', 'User', 'Hangout', '$resource', function ($scope, $sessionStorage, Interview, User, Hangout, $resource) {
 	Hangout.query(function (result) {
@@ -56,14 +58,16 @@ dashboardController.controller('DashboardCtrl', ['$scope', '$sessionStorage', 'I
         result.isIncomplete = true;
 
         result.start = days[start.getDay()] + ', '
-        result.start = result.start + start.toLocaleDateString('en-us', {weekday:'long', month:'short', day:'numeric'}).slice(0,-6);
-        result.start = result.start + ', ' + start.toLocaleTimeString().slice(0,-10) + ' ' + start.toLocaleTimeString().slice(-6,-4);
-        // result.start = result.start + start.toLocaleDateString('en-us', {month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'});
+        if (isSafari) {
+          result.start = result.start + start.toLocaleDateString('en-us', {weekday:'long', month:'short', day:'numeric'}).slice(0,-6);
+          result.start = result.start + ', ' + start.toLocaleTimeString().slice(0,-10) + ' ' + start.toLocaleTimeString().slice(-6,-4);
+        } else if (isChrome) {
+          result.start = result.start + start.toLocaleDateString('en-us', {month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'});
+        }
         result.isInterviewer = result.interviewer == $sessionStorage.google_token ? true : false;
 
         var timeDiff = start.getTime() - currentTime.getTime();
         var diffHours = Math.ceil(timeDiff / (1000 * 3600));
-        console.log(diffHours)
         if (diffHours <= 1) {
           result.isReady = true;
         }
