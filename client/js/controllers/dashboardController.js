@@ -63,18 +63,18 @@ dashboardController.controller('DashboardCtrl', ['$scope', '$sessionStorage', 'I
     window.open($scope.hangout.url, "_blank", "height=750,width=1000");
   };
 
-  $scope.logout = function() {
-    $sessionStorage.name = "";
-    $sessionStorage.email = "";
-    $sessionStorage.google_token = "";
-    $sessionStorage.image_url = "";
-    $sessionStorage.school = "";
-    $sessionStorage.grad = "";
-    $sessionStorage.loggedIn = false;
-    $sessionStorage.isInterviewer = false;
+  // $scope.logout = function() {
+  //   $sessionStorage.name = "";
+  //   $sessionStorage.email = "";
+  //   $sessionStorage.google_token = "";
+  //   $sessionStorage.image_url = "";
+  //   $sessionStorage.school = "";
+  //   $sessionStorage.grad = "";
+  //   $sessionStorage.loggedIn = false;
+  //   $sessionStorage.isInterviewer = false;
       
     
-    window.location.href="#/";
-    location.reload();
-  }
+  //   window.location.href="#/";
+  //   location.reload();
+  // }
 }]);
