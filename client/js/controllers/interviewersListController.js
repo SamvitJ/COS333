@@ -1,4 +1,6 @@
 var interviewersListController = angular.module('interviewersListController', []);
+var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+var isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
 
 interviewersListController.controller('IntListCtrl', ['$scope', '$sessionStorage', 'User', 'Interview', function ($scope, $sessionStorage, User, Interview) {
   var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
@@ -11,7 +13,9 @@ interviewersListController.controller('IntListCtrl', ['$scope', '$sessionStorage
 				var date = new Date(currentTime);
 				date.setDate(date.getDate() + i)
 				schedule.push({
-					day: days[date.getDay()] + ', ' + date.toLocaleDateString('en-us', {weekday:'long', month:'short', day:'numeric'}).slice(0,-6),
+					day: isSafari ?
+						days[date.getDay()] + ', ' + date.toLocaleDateString('en-us', {weekday:'long', month:'short', day:'numeric'}).slice(0,-6): 
+						date.toLocaleDateString('en-us', {weekday:'long', month:'short', day:'numeric'}),
 					hours: []
 				});
 			}
