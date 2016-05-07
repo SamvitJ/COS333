@@ -38,7 +38,7 @@
                 <label>Description</label><br>
                 <textarea placeholder="I have an interview with Quora next week, and I've heard they really love memoization problems." ng-model="interview.description"></textarea>
 
-                <label>Availability</label>
+                <label>Choose a time</label>
                 <div class="dates" ng-repeat="day in interview.selectedInterviewer.schedule" align="right">
                   {{day.day}} <select data-ng-model="interview.selectedTime" data-ng-options="hour.timeDisplayed for hour in day.hours">                
                   </select>
