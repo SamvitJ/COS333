@@ -11,7 +11,9 @@ interviewerServices.factory('User', function($resource) {
       	query: {method:'GET', params:{}, isArray:false}
       }),
 
-      all: $resource('/api/users')
+      all: $resource('/api/users/:google_token', {}, {
+         update: {method:'PUT', params: {google_token: '@google_token'}}
+      })
    }
 });
 

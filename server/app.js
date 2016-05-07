@@ -38,12 +38,17 @@ app.get('/api/hangouts', hangoutsController.mostRecent);
 app.post('/api/hangouts', hangoutsController.hangout);
 
 app.get('/api/users', usersController.list);
-app.get('/api/interviewers', usersController.listInterviewers);
-app.get('/api/interviewer', usersController.getInterviewer);
 app.post('/api/users', usersController.create);
-app.get('/api/interviews', interviewsController.listInterviews);
+app.put('/api/users/:google_token', usersController.updateUser);
+
+app.get('/api/interviewers', usersController.listInterviewers);
 app.put('/api/interviewers', usersController.updateInterviewer);
+
+app.get('/api/interviewer', usersController.getInterviewer);
+
+app.get('/api/interviews', interviewsController.listInterviews);
 app.post('/api/interviews', interviewsController.create);
+
 
 // For internal testing
 app.get('/interviewers', function (req, res) {

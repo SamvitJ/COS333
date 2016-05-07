@@ -46,7 +46,11 @@ signupController.controller('SignupCtrl', ['$scope', '$sessionStorage', 'User', 
       "image_url": $scope.image_url,
       "interviewer": false,
       "school": $scope.school,
-      "grad": $scope.grad
+      "grad": $scope.grad,
+      "headline": "",
+      "rate": "",
+      "availability": "",
+      "bio": ""
     });
     user.$save(function (result) {
       $scope.name = '';

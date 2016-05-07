@@ -14,6 +14,8 @@ registerController.controller('RegisterCtrl', ['$scope', '$sessionStorage', 'Use
   }
 
   $scope.registerUser = function (credentials) {
+    $sessionStorage.isInterviewer=true;
+
     // get scheduler events
     var availability = []
     scheduler.getEvents().forEach(function(event) {
@@ -46,7 +48,13 @@ registerController.controller('RegisterCtrl', ['$scope', '$sessionStorage', 'Use
       "availability": availability,
       "bio": $scope.bio
     });
-    user.$save(function (result) {
+
+    
+
+    User.all.update(user, function (result) {
+
+      console.log("user.update called");
+
       $scope.name = '';
       $scope.email = '';
       $scope.google_token = '';
@@ -56,12 +64,26 @@ registerController.controller('RegisterCtrl', ['$scope', '$sessionStorage', 'Use
       $scope.rate = '';
       $scope.availability = '';
       $scope.bio = '';
-
-      $sessionStorage.isInterviewer=true;
-      location.reload();
     });
 
+    // user.$save(function (result) {
+    //   $scope.name = '';
+    //   $scope.email = '';
+    //   $scope.google_token = '';
+
+    //   $scope.school = '';
+    //   $scope.headline = '';
+    //   $scope.rate = '';
+    //   $scope.availability = '';
+    //   $scope.bio = '';
+
+    //   $sessionStorage.isInterviewer=true;
+    //   // location.reload();
+    // });
+
+    
    window.location.href="#/dashboard";
+   location.reload();
   };
 
 }]);
