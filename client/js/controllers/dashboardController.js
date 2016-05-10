@@ -1,4 +1,6 @@
 var dashboardController = angular.module('dashboardController', []);
+var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+var isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
 
 dashboardController.controller('DashboardCtrl', ['$scope', '$sessionStorage', 'Interview', 'User', 'Hangout', '$resource', function ($scope, $sessionStorage, Interview, User, Hangout, $resource) {
 	Hangout.query(function (result) {
@@ -47,14 +49,29 @@ dashboardController.controller('DashboardCtrl', ['$scope', '$sessionStorage', 'I
   $scope.isInterviewer=$sessionStorage.isInterviewer;
   var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 
+  var currentTime = new Date();
   Interview.interviews.query({google_token: $sessionStorage.google_token}, function(results) {
   	results.forEach(function(result) {
   		var start = new Date(result.start);
-      result.start = days[start.getDay()] + ', '
-  		result.start = result.start + start.toLocaleDateString('en-us', {weekday:'long', month:'short', day:'numeric'}).slice(0,-6);
-      result.start = result.start + ', ' + start.toLocaleTimeString().slice(0,-10) + ' ' + start.toLocaleTimeString().slice(-6,-4);
-      // result.start = result.start + start.toLocaleDateString('en-us', {month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'});
-      result.isInterviewer = result.interviewer == $sessionStorage.google_token ? true : false;
+
+      if (start > currentTime) {
+        result.isIncomplete = true;
+
+        result.start = days[start.getDay()] + ', '
+        if (isSafari) {
+          result.start = result.start + start.toLocaleDateString('en-us', {weekday:'long', month:'short', day:'numeric'}).slice(0,-6);
+          result.start = result.start + ', ' + start.toLocaleTimeString().slice(0,-10) + ' ' + start.toLocaleTimeString().slice(-6,-4);
+        } else if (isChrome) {
+          result.start = result.start + start.toLocaleDateString('en-us', {month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'});
+        }
+        result.isInterviewer = result.interviewer == $sessionStorage.google_token ? true : false;
+
+        var timeDiff = start.getTime() - currentTime.getTime();
+        var diffHours = Math.ceil(timeDiff / (1000 * 3600));
+        if (diffHours <= 1) {
+          result.isReady = true;
+        }
+      }
   	})
 		$scope.interviews = results;
 	});
